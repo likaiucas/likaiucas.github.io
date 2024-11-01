@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+Hi, I am LI Kai(李鍇). I am now a PhD student at University of Chinese Academy of Sciences ([UCAS](https://www.ucas.ac.cn/)) and also undergoing a joint PhD project in City University of Hong Kong ([CityU](https://www.cityu.edu.hk/)). In UCAS, I am supervised by [Prof. Zhongming Zhao](http://aircas.ac.cn/ykjs/lrld/201909/t20190903_5375259.html) and [Prof. Yu Meng](https://people.ucas.ac.cn/~0010249). In CityU, I am supervised by [Prof. Xiangyu Zhao](https://zhaoxyai.github.io/) in Applied Machine Learning Lab ([AML](https://aml-cityu.github.io/)).
 
 A data-driven personal website
 ======
