@@ -16,7 +16,9 @@ My researches focus on computer vision and remote sensing images. Latestly, most
 
 News
 ======
-`2024.10 One paper accepted by ISPRS!`
+
+- *2024.10*: &nbsp;🎉🎉One paper accepted by TGRS!
+- *2024.09*: &nbsp;🎉🎉One paper accepted by ISPRS!
 
 Getting started
 ======
