@@ -28,6 +28,6 @@ I am very into doing sports, like playing football and table tennis. I used to s
 
 I love music and I can play guitar, and I used to have a very lovely band. Latestly, I am practicing some solo with electronic guitar. 
 
-I also collecting stamps and postcards. In weekend, I prefer to sending some DIY postcards to some of my pen friends, which were printed from my photography portfolio. 
+I am also collecting stamps and postcards. In weekend, I prefer to sending some DIY postcards to some of my pen friends, which were printed from my photography portfolio. 
 
 So, contact me! No matter for academics, sports or my postcards!
