@@ -21,4 +21,9 @@ News
 - *2024.09*: &nbsp;🎉🎉 One paper accepted by ISPRS!
 
 
-## Hobby
+For more
+======
+
+I am very into doing sports, like playing football and table tennis. I used to serve as a school representive in UESTC for table tennis, but I spend most of my time on football. If you are in Hong Kong or Beijing, contact me, we can play together!
+
+I love music and I can play guitar. I used to have a very lovely band. 
