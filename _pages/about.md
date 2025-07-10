@@ -21,6 +21,8 @@ News
 - *2024.09*: &nbsp;🎉🎉 One paper accepted by ISPRS!
 
 
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=C6ZFZiDNt5ay8H5TstwMrSMojJ9WX9P4BG7Jtj_vHMg&cl=ffffff&w=a"></script>
+
 For more
 ======
 
