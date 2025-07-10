@@ -21,7 +21,7 @@ News
 - *2024.09*: &nbsp;🎉🎉 One paper accepted by ISPRS!
 
 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=C6ZFZiDNt5ay8H5TstwMrSMojJ9WX9P4BG7Jtj_vHMg&cl=ffffff&w=a"></script>
+
 
 For more
 ======
@@ -33,3 +33,7 @@ I love music and I can play guitar, and I used to have a very lovely band. Lates
 I am also collecting stamps and postcards. In weekend, I prefer to sending some DIY postcards to some of my pen friends, which were printed from my photography portfolio. 
 
 So, contact me! No matter for academics, sports or my postcards!
+
+For more
+======
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=C6ZFZiDNt5ay8H5TstwMrSMojJ9WX9P4BG7Jtj_vHMg&cl=ffffff&w=a"></script>
