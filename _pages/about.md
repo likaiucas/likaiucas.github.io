@@ -16,8 +16,9 @@ My researches focus on computer vision and remote sensing images. Latestly, most
 
 News
 ======
-- *2025.04*: &nbsp;🎉🎉 IGARSS 2025 Travel Grands!
-- *2024.10*: &nbsp;🎉🎉 One paper accepted by TGRS!
+- *2025.07*: &nbsp;🎉🎉 Our PolyFootNet is accepted by TGRS!
+- *2025.04*: &nbsp;🎉🎉 IGARSS 2025 Travel Grands! See you in Brisbane! 
+- *2024.10*: &nbsp;🎉🎉 Our OBM accepted by TGRS!
 - *2024.09*: &nbsp;🎉🎉 One paper accepted by ISPRS!
 
 
