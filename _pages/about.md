@@ -16,10 +16,12 @@ My researches focus on computer vision and remote sensing images. Recently, most
 
 News
 ======
-- *2025.07*: &nbsp;🎉🎉 OBM was selected for 3MT Final Round (Top 10) in IGARSS 2025!
+- *2025.08*: &nbsp;🎉🎉 One paper accepted by TGRS!
+- *2025.08*: &nbsp;👏👏 I was nominated for "the IEEE Excellence in Technical Communication Student Prize Award" by IEEE GRSS in 2025!
+- *2025.07*: &nbsp;👏👏 OBM was selected for 3MT Final Round (Top 10) in IGARSS 2025!
 - *2025.07*: &nbsp;🎉🎉 Our PolyFootNet is accepted by TGRS!
 - *2025.04*: &nbsp;🎉🎉 One paper accepted by WWW Companion!
-- *2025.04*: &nbsp;🎉🎉 I was granted with IGARSS 2025 Travel Grants! See you in Brisbane! 
+- *2025.04*: &nbsp;👏👏 I was granted with IGARSS 2025 Travel Grants! See you in Brisbane! 
 - *2024.10*: &nbsp;🎉🎉 Our OBM accepted by TGRS!
 - *2024.09*: &nbsp;🎉🎉 One paper accepted by ISPRS!
 
