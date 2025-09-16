@@ -41,4 +41,3 @@ So, contact me! No matter for academics, sports or my postcards!
 
 
 
-<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=C6ZFZiDNt5ay8H5TstwMrSMojJ9WX9P4BG7Jtj_vHMg"></script>
