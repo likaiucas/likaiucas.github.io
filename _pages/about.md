@@ -16,6 +16,7 @@ My researches focus on computer vision and remote sensing images. Recently, most
 
 News
 ======
+- *2025.09*: &nbsp;🎉🎉 One paper accepted by TGRS!
 - *2025.08*: &nbsp;🎉🎉 One paper accepted by TGRS!
 - *2025.08*: &nbsp;👏👏 I was nominated for "the IEEE Excellence in Technical Communication Student Prize Award" by IEEE GRSS in 2025（年度唯一华人）!
 - *2025.07*: &nbsp;👏👏 OBM was selected for 3MT Final Round (Top 10) in IGARSS 2025!
