@@ -16,6 +16,7 @@ My researches focus on computer vision and remote sensing images. Recently, most
 
 News
 ======
+- *2025.10*: &nbsp;👍👍 It is my Honour to join Tencent Omni Research Team again!
 - *2025.09*: &nbsp;🎉🎉 One paper accepted by TGRS!
 - *2025.08*: &nbsp;🎉🎉 One paper accepted by TGRS!
 - *2025.08*: &nbsp;👏👏 I was nominated for "the IEEE Excellence in Technical Communication Student Prize Award" by IEEE GRSS in 2025（年度唯一华人）!
