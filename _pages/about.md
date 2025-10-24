@@ -15,8 +15,9 @@ In 2021, I obtained a bachelor's degree in space information and digital technol
 My researches focus on computer vision and remote sensing images. Recently, most of my work will concentrate on Off-Nadir Images. I proposed a very important concept, "Offset Token", in Off-Nadir Images, which bridged the gap between the former building-related model and transformer-based foundation models. In the future, I will dedicate myself to establishing a more comprehensive knowledge system for "Offset Token". If you are interested in my work, please contact me. 
 
 News
-======
-- *2025.10*: &nbsp;👍👍 It is my Honour to join Tencent Omni Research Team again!
+=====================
+- *2025.10*: &nbsp;🎉🎉 One paper accepted by JSTARS!
+- *2025.10*: &nbsp;👍👍 It is my Honour to join the _Tencent Omni Research Team_ again!
 - *2025.09*: &nbsp;🎉🎉 One paper accepted by TGRS!
 - *2025.08*: &nbsp;🎉🎉 One paper accepted by TGRS!
 - *2025.08*: &nbsp;👏👏 I was nominated for "the IEEE Excellence in Technical Communication Student Prize Award" by IEEE GRSS in 2025（年度唯一华人）!
