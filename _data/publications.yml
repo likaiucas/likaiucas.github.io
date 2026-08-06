@@ -91,7 +91,7 @@ parts:
           venue_short: "IEEE TGRS"
           year: 2024
           status: "published"
-          teaser: ""                 # -> images/papers/obm.png
+          teaser: "/images/papers/obm.png"
           abstract:
             en: >-
               In off-nadir aerial imagery a building roof is projected away from its real
@@ -149,7 +149,7 @@ parts:
           venue_short: "IEEE TGRS"
           year: 2025
           status: "published"
-          teaser: ""                 # -> images/papers/polyfootnet.png
+          teaser: "/images/papers/polyfootnet.png"
           abstract:
             en: >-
               Raster masks are not what GIS pipelines consume — maps are vectors. PolyFootNet
@@ -170,7 +170,7 @@ parts:
             - en: "Delivers GIS-ready products that align with real mapping workflows."
               zh: "产出与真实测绘生产流程对齐、可直接入库的成果。"
           links:
-            pdf: ""
+            pdf: "/files/polyfootnet.pdf"
             arxiv: ""
             code: ""
             project: ""
@@ -204,7 +204,7 @@ parts:
           venue_short: ""
           year: 2025
           status: "preprint"
-          teaser: ""                 # -> images/papers/dragosm.png
+          teaser: "/images/papers/dragosm.png"
           abstract:
             en: >-
               Enormous amounts of historical vector labels (e.g. OpenStreetMap) already exist,
@@ -226,7 +226,7 @@ parts:
             - en: "Recovers both roof and footprint geometry in a single interaction."
               zh: "在一次交互中同时恢复屋顶与足迹几何。"
           links:
-            pdf: ""
+            pdf: "/files/dragosm.pdf"
             arxiv: ""
             code: ""
             project: ""
@@ -259,7 +259,7 @@ parts:
           venue_short: ""
           year: 2025
           status: "preprint"
-          teaser: ""                 # -> images/papers/oblicity.png
+          teaser: "/images/papers/oblicity.png"
           abstract:
             en: >-
               Offset estimation had always ridden along with segmentation. This work makes it
@@ -281,7 +281,7 @@ parts:
             - en: "Releases the ObliCity benchmark and the DragRoof baseline."
               zh: "发布 ObliCity 基准数据集与 DragRoof 基线模型。"
           links:
-            pdf: ""
+            pdf: "/files/oblicity.pdf"
             arxiv: ""
             code: ""
             project: ""
@@ -314,7 +314,7 @@ parts:
           venue_short: ""
           year: 2025
           status: "preprint"
-          teaser: ""                 # -> images/papers/lodeot.png
+          teaser: "/images/papers/lodeot.png"
           abstract:
             en: >-
               Why should a displacement need a high-dimensional token at all? Viewed through
@@ -336,7 +336,7 @@ parts:
             - en: "Substantially reduces terminal-side computational complexity."
               zh: "大幅降低终端侧计算复杂度。"
           links:
-            pdf: ""
+            pdf: "/files/lodeot.pdf"
             arxiv: ""
             code: ""
             project: ""
@@ -389,7 +389,7 @@ parts:
           venue_short: ""
           year: 2026
           status: "preprint"
-          teaser: ""                 # -> images/papers/scenix.png
+          teaser: "/images/papers/scenix.png"
           abstract:
             en: >-
               Classical reconstruction wants calibrated cameras and many views. Scenix instead
@@ -410,7 +410,7 @@ parts:
             - en: "Outputs a program, so the resulting 3D scene stays editable and re-runnable."
               zh: "输出的是程序，因此生成的三维场景可编辑、可复现执行。"
           links:
-            pdf: ""
+            pdf: "/files/scenix.pdf"
             arxiv: ""
             code: ""
             project: ""

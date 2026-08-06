@@ -8,8 +8,14 @@ name_zh: "李锴"
 
 # Small pill above the hero name
 tag:
-  en: "PhD Candidate · UCAS &times; CityU Hong Kong"
+  en: "PhD Candidate &middot; UCAS &times; CityU Hong Kong"
   zh: "中国科学院大学 &times; 香港城市大学 联合培养博士生"
+
+# Highlighted job-market badge next to the pill above.
+# Leave both values empty to hide the badge entirely.
+seeking:
+  en: "Seeking 2026 Positions"
+  zh: "2026 求职中"
 
 role:
   en: "Computer Vision &middot; Remote Sensing &middot; Vision-Language Models"
@@ -47,7 +53,7 @@ bio:
     <a href="http://www.aircas.cas.cn/ykjs/lrld/202505/t20250521_7789207.html" target="_blank" rel="noopener">赵忠明教授</a>
     与 <a href="https://people.ucas.ac.cn/~0010249" target="_blank" rel="noopener">孟瑜 教授</a>；
     在香港城市大学，我在应用机器学习实验室（<a href="https://aml-cityu.github.io/" target="_blank" rel="noopener">AML</a>）
-    由 <a href="https://zhaoxyai.github.io/" target="_blank" rel="noopener">赵向宇 教授</a> 指导。
+    由 <a href="https://zhaoxyai.github.io/" target="_blank" rel="noopener">赵翔宇   教授</a> 指导。
     2021 年，我以专业第 2 名的成绩获得电子科技大学（<a href="https://en.uestc.edu.cn/" target="_blank" rel="noopener">UESTC</a>）
     空间信息与数字技术专业学士学位，并获推荐直接攻读博士学位。
 
@@ -87,7 +93,7 @@ metrics:
       en: "Citations"
       zh: "论文引用"
 
-# ---- Hero call-to-action ---------------------------------------------------
+# ---- Contact call-to-action (rendered in the Contact section) --------------
 open_to:
-  en: "Open to research scientist / algorithm engineer roles from 2026."
-  zh: "2026 年起开放研究科学家 / 算法工程师岗位机会。"
+  en: "Open to faculty, postdoctoral, research scientist and algorithm engineer positions from 2026."
+  zh: "2026 年起开放教职、博士后、研究科学家与算法工程师岗位机会。"

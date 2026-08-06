@@ -2,6 +2,31 @@
    KSPACE · CV page + print styles
    ========================================================================== */
 
+/* ---- Availability banner (CV header) ---- */
+.k-opento {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 0 0 var(--k-sp-4);
+  padding: .6rem 1rem;
+  border-radius: var(--k-r-pill);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--k-surface-2), var(--k-surface-2)) padding-box,
+    var(--k-grad) border-box;
+  font-family: var(--k-font-display);
+  font-size: var(--k-fs-sm);
+  font-weight: 600;
+  color: var(--k-text);
+}
+
+.k-opento svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: var(--k-accent);
+}
+
 .k-cv__overview {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -228,4 +253,13 @@ html[data-lang="zh"] .k-cv__ovcard h3 { letter-spacing: .06em; text-transform: n
   .k-chapter__caret,
   .k-links,
   .k-bib { display: none !important; }
+
+  .k-opento {
+    background: #fff !important;
+    border: 1px solid #999 !important;
+    border-radius: 4px !important;
+    color: #111 !important;
+  }
+
+  .k-opento svg { color: #111 !important; }
 }

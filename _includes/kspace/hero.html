@@ -6,7 +6,16 @@
   <div class="k-wrap">
     <div class="k-hero__inner">
       <div class="k-hero__text">
-        <span class="k-hero__tag">{%- include kspace/i18n.html en=pf.tag.en zh=pf.tag.zh -%}</span>
+        <div class="k-hero__badges">
+          <span class="k-hero__tag">{%- include kspace/i18n.html en=pf.tag.en zh=pf.tag.zh -%}</span>
+          {%- assign seek_en = pf.seeking.en | default: "" | strip -%}
+          {%- if seek_en != "" -%}
+          <a class="k-hero__seeking" href="#contact">
+            {%- include kspace/icon.html name="spark" -%}
+            {%- include kspace/i18n.html en=pf.seeking.en zh=pf.seeking.zh -%}
+          </a>
+          {%- endif -%}
+        </div>
 
         <h1 class="k-hero__name">
           {%- include kspace/i18n.html en=pf.name_en zh=pf.name_zh -%}

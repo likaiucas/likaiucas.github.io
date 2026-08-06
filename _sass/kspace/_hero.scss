@@ -15,6 +15,14 @@
   gap: clamp(2rem, 5vw, 4rem);
 }
 
+.k-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--k-sp-2);
+  margin-bottom: var(--k-sp-4);
+}
+
 .k-hero__tag {
   display: inline-flex;
   align-items: center;
@@ -29,7 +37,6 @@
   font-weight: 600;
   letter-spacing: .05em;
   color: var(--k-text-dim);
-  margin-bottom: var(--k-sp-4);
 }
 
 .k-hero__tag::before {
@@ -40,6 +47,49 @@
   background: var(--k-ok);
   box-shadow: 0 0 0 4px rgba(16, 185, 129, .16);
   animation: k-pulse 2.4s var(--k-ease) infinite;
+}
+
+/* Job-market badge — deliberately the loudest element in the hero */
+.k-hero__seeking {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .34rem .82rem;
+  border-radius: var(--k-r-pill);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--k-surface-2), var(--k-surface-2)) padding-box,
+    var(--k-grad) border-box;
+  font-family: var(--k-font-display);
+  font-size: var(--k-fs-xs);
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--k-text);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--k-t) var(--k-ease), box-shadow var(--k-t) var(--k-ease);
+}
+
+.k-hero__seeking::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--k-grad-soft);
+  pointer-events: none;
+}
+
+.k-hero__seeking > * { position: relative; z-index: 1; }
+
+.k-hero__seeking svg {
+  width: 14px;
+  height: 14px;
+  color: var(--k-accent);
+}
+
+.k-hero__seeking:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px -12px rgba(34, 211, 238, .5);
 }
 
 @keyframes k-pulse {

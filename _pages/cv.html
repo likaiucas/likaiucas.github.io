@@ -21,6 +21,14 @@ redirect_from:
 {%- assign mail = pf.email_user | append: "@" | append: pf.email_domain -%}
 
 <div class="k-wrap k-section k-section--tight">
+  {%- assign seek_en = pf.open_to.en | default: "" | strip -%}
+  {%- if seek_en != "" -%}
+  <p class="k-opento">
+    {%- include kspace/icon.html name="spark" -%}
+    {%- include kspace/i18n.html en=pf.open_to.en zh=pf.open_to.zh -%}
+  </p>
+  {%- endif -%}
+
   <div class="k-btn-row k-no-print">
     <a class="k-btn k-btn--primary" href="{{ pf.cv_pdf | relative_url }}">
       {%- include kspace/icon.html name="download" -%}
