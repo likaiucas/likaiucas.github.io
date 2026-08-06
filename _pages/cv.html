@@ -1,0 +1,110 @@
+---
+layout: kspace-page
+published: true
+permalink: /cv/
+title: "CV"
+description: "Curriculum vitae of LI Kai (李锴): education at UCAS and CityU Hong Kong, research experience, publications, awards and skills."
+eyebrow_en: "Curriculum Vitae"
+eyebrow_zh: "个人简历"
+heading_en: "LI Kai"
+heading_zh: "李锴"
+subtitle_en: "PhD candidate working on off-nadir remote sensing, promptable vision models and 3D scene understanding."
+subtitle_zh: "博士研究生，研究方向为偏移摄影遥感、可提示视觉大模型与三维场景理解。"
+redirect_from:
+  - /resume
+---
+
+{%- assign pf = site.data.profile -%}
+{%- assign cv = site.data.cv -%}
+{%- assign pubs = site.data.publications -%}
+{%- assign t = site.data.i18n -%}
+{%- assign mail = pf.email_user | append: "@" | append: pf.email_domain -%}
+
+<div class="k-wrap k-section k-section--tight">
+  <div class="k-btn-row k-no-print">
+    <a class="k-btn k-btn--primary" href="{{ pf.cv_pdf | relative_url }}">
+      {%- include kspace/icon.html name="download" -%}
+      {%- include kspace/i18n.html en=t.download_cv.en zh=t.download_cv.zh -%}
+    </a>
+    <button type="button" class="k-btn" onclick="window.print()">
+      {%- include kspace/icon.html name="printer" -%}
+      {%- include kspace/i18n.html en=t.print_cv.en zh=t.print_cv.zh -%}
+    </button>
+  </div>
+</div>
+
+<div class="k-wrap">
+  <div class="k-cv__overview k-reveal">
+    <div class="k-cv__ovcard">
+      <h3>{%- include kspace/i18n.html en="Profile" zh="个人简介" -%}</h3>
+      <div class="k-prose">{%- include kspace/i18n.html en=pf.bio.en zh=pf.bio.zh tag="div" -%}</div>
+    </div>
+
+    <div class="k-cv__ovcard">
+      <h3>{%- include kspace/i18n.html en="Research focus" zh="研究方向" -%}</h3>
+      <p>{%- include kspace/i18n.html en=pf.role.en zh=pf.role.zh -%}</p>
+      <div class="k-tags k-mt-4">
+        {%- for part in pubs.parts -%}
+          {%- for ch in part.chapters -%}
+          <a class="k-tag" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">{{ ch.paper.short_name }}</a>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="k-cv__ovcard">
+      <h3>{%- include kspace/i18n.html en="Contact" zh="联系方式" -%}</h3>
+      <p><a href="mailto:{{ mail }}">{{ mail }}</a></p>
+      <p>{%- include kspace/i18n.html en=pf.location.en zh=pf.location.zh -%}</p>
+      {%- if pf.wechat -%}<p>WeChat: {{ pf.wechat }}</p>{%- endif -%}
+      {%- if site.author.googlescholar -%}<p><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">Google Scholar</a></p>{%- endif -%}
+      {%- if site.author.orcid -%}<p><a href="{{ site.author.orcid }}" target="_blank" rel="noopener">ORCID</a></p>{%- endif -%}
+      {%- if site.author.github -%}<p><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">github.com/{{ site.author.github }}</a></p>{%- endif -%}
+    </div>
+  </div>
+
+  {%- include kspace/cv-section.html id="cv-education" items=cv.education title_en=t.sec_education.en title_zh=t.sec_education.zh -%}
+  {%- include kspace/cv-section.html id="cv-experience" items=cv.experience title_en=t.sec_experience.en title_zh=t.sec_experience.zh -%}
+
+  <section class="k-cvsec" id="cv-publications">
+    <h2 class="k-cvsec__title">{%- include kspace/i18n.html en=t.sec_publications.en zh=t.sec_publications.zh -%}</h2>
+    <ul class="k-cv__pubs">
+      {%- for part in pubs.parts -%}
+        {%- for ch in part.chapters -%}
+        {%- assign p = ch.paper -%}
+        <li class="k-cv__pub">
+          <p class="k-cv__pub-title">
+            <a href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">{{ p.title }}</a>
+          </p>
+          <p class="k-cv__pub-meta">
+            {{ p.authors }}{% if p.venue.en and p.venue.en != "" %} &middot; {{ p.venue.en }}{% endif %}{% if p.year %} &middot; {{ p.year }}{% endif %}
+          </p>
+        </li>
+        {%- endfor -%}
+      {%- endfor -%}
+      {%- for o in pubs.others -%}
+      <li class="k-cv__pub">
+        <p class="k-cv__pub-title"><a href="{{ o.url }}" target="_blank" rel="noopener">{{ o.title }}</a></p>
+        <p class="k-cv__pub-meta">{{ o.citation }}</p>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  {%- include kspace/cv-section.html id="cv-awards" items=cv.awards title_en=t.sec_awards.en title_zh=t.sec_awards.zh -%}
+  {%- include kspace/cv-section.html id="cv-services" items=cv.services title_en=t.sec_services.en title_zh=t.sec_services.zh -%}
+
+  {%- if cv.skills and cv.skills.size > 0 -%}
+  <section class="k-cvsec" id="cv-skills">
+    <h2 class="k-cvsec__title">{%- include kspace/i18n.html en=t.sec_skills.en zh=t.sec_skills.zh -%}</h2>
+    {%- for g in cv.skills -%}
+    <div class="k-skillgroup">
+      <h4>{%- include kspace/i18n.html en=g.group.en zh=g.group.zh -%}</h4>
+      <div class="k-tags">
+        {%- for s in g.items -%}<span class="k-tag">{{ s }}</span>{%- endfor -%}
+      </div>
+    </div>
+    {%- endfor -%}
+  </section>
+  {%- endif -%}
+</div>

@@ -1,0 +1,14 @@
+{%- comment -%}
+  Publication status badge. Param: status
+{%- endcomment -%}
+{%- assign t = site.data.i18n -%}
+{%- case include.status -%}
+{%- when "published" -%}
+<span class="k-badge k-badge--ok">{%- include kspace/i18n.html en=t.lbl_status_published.en zh=t.lbl_status_published.zh -%}</span>
+{%- when "accepted" -%}
+<span class="k-badge k-badge--ok">{%- include kspace/i18n.html en=t.lbl_status_accepted.en zh=t.lbl_status_accepted.zh -%}</span>
+{%- when "review" -%}
+<span class="k-badge k-badge--warn">{%- include kspace/i18n.html en=t.lbl_status_review.en zh=t.lbl_status_review.zh -%}</span>
+{%- when "preprint" -%}
+<span class="k-badge k-badge--info">{%- include kspace/i18n.html en=t.lbl_status_preprint.en zh=t.lbl_status_preprint.zh -%}</span>
+{%- endcase -%}

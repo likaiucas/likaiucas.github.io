@@ -1,5 +1,6 @@
 ---
 layout: archive
+published: false   # legacy academicpages demo page - kept on disk, not built
 title: "Sitemap"
 permalink: /sitemap/
 author_profile: true

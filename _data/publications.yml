@@ -1,0 +1,446 @@
+# =============================================================================
+# PUBLICATIONS — single source of truth for the homepage, the /publications/
+# page and the CV publication list.
+#
+# HOW TO FILL IN THE MISSING PIECES
+#   1. teaser : put your figure at images/papers/<slug>.png  (16:9, ~1600px wide)
+#               then set  teaser: "/images/papers/<slug>.png"
+#               Leaving it empty renders a branded placeholder — never a 404.
+#   2. links  : put your PDF at  files/<slug>.pdf  then set  pdf: "/files/<slug>.pdf"
+#               Any empty link field simply hides its button.
+#   3. authors / venue / year / status : items marked "TODO" below are unknown to
+#               the template author — please replace them with the real values.
+#   4. status : published | accepted | review | preprint
+# =============================================================================
+
+# ---- Homepage "research line" flow ----------------------------------------
+flow:
+  - label:
+      en: "Concept"
+      zh: "概念提出"
+    desc:
+      en: "Offset Token enters the foundation-model view"
+      zh: "偏移量词元进入大模型视角"
+  - label:
+      en: "Application"
+      zh: "具象应用"
+    desc:
+      en: "Vector footprints &amp; historical-label alignment"
+      zh: "矢量化提取与历史标签对齐"
+  - label:
+      en: "Decoupling"
+      zh: "任务解耦"
+    desc:
+      en: "Offset learning becomes an independent task"
+      zh: "偏移量学习独立成任务"
+  - label:
+      en: "Reduction"
+      zh: "理论降维"
+    desc:
+      en: "7-DoF formulation, far cheaper inference"
+      zh: "7 维充分描述，大幅降低算力"
+
+# Short names shown as "selected papers" on the homepage
+featured: ["OBM", "PolyFootNet", "Scenix"]
+
+# =============================================================================
+parts:
+  # ---------------------------------------------------------------- PART I ---
+  - id: part-offset-token
+    numeral: "I"
+    accent: "cyan"
+    title:
+      en: "Building &amp; Spatial Structure Understanding with Offset Tokens"
+      zh: "基于偏移量词元的建筑与空间结构理解"
+    subtitle:
+      en: "PhD research main line"
+      zh: "博士生涯研究主线"
+    summary:
+      en: >-
+        My PhD research targets <strong>building extraction under off-nadir satellite
+        photography</strong>. I first proposed the concept of the <strong>Offset Token</strong>,
+        which brings off-nadir photography into the perceptual scope of large vision models.
+        Around this concept I built a complete loop — vectorised building extraction,
+        positional repair between historical vector maps and updated imagery, efficient
+        optimisation of the offset token, and full decoupling of offset learning.
+      zh: >-
+        博士期间的研究方向为<strong>遥感卫星偏移摄影视角下的建筑物提取</strong>。研究主体上，
+        首先提出了<strong>偏移量词元（Offset Token）</strong>的概念，将偏移摄影带入大模型的理解视角；
+        并围绕所提出的偏移量词元概念展开更加细腻的研究，实现了偏移摄影下矢量化的建筑物提取、
+        历史矢量地图与更新影像之间的位置修复、偏移量词元的高效优化计算、偏移量学习解耦等内容，
+        完成了「概念提出 → 具象化应用 → 任务解耦与独立 → 底层理论降维」的闭环。
+
+    chapters:
+      # ------------------------------------------------------------ Ch. 1 ---
+      - num: 1
+        anchor: "ch1-obm"
+        theme:
+          en: "Background &amp; the birth of the Offset Token"
+          zh: "背景与 Offset Token 概念的提出"
+        contribution:
+          en: "Extends what a ViT token can mean in vision, and introduces the Offset Token as the carrier of spatial displacement."
+          zh: "拓展 Transformer / ViT 词元在视觉中的内涵，首次引出偏移量词元作为空间位移的承载者。"
+        paper:
+          short_name: "OBM"
+          title: "Prompt-Driven Building Footprint Extraction in Aerial Images with Offset-Building Model"
+          authors: "Kai Li, et al."   # TODO: complete the full author list
+          me: "Kai Li"
+          venue:
+            en: "IEEE Transactions on Geoscience and Remote Sensing"
+            zh: "IEEE Transactions on Geoscience and Remote Sensing"
+          venue_short: "IEEE TGRS"
+          year: 2024
+          status: "published"
+          teaser: ""                 # -> images/papers/obm.png
+          abstract:
+            en: >-
+              In off-nadir aerial imagery a building roof is projected away from its real
+              footprint, so the footprint is frequently occluded and directly invisible.
+              OBM reformulates footprint extraction as a <em>promptable</em> task: alongside the
+              usual detection and segmentation queries, the Transformer decoder receives an
+              additional <strong>Offset Token</strong> that regresses the roof-to-footprint
+              displacement. This is the first work to bring off-nadir displacement modelling
+              into the promptable foundation-model paradigm.
+            zh: >-
+              在偏移摄影的航空影像中，建筑物屋顶被投影到真实足迹之外，足迹往往被遮挡、无法直接观测。
+              OBM 将足迹提取重构为<em>可提示（Promptable）</em>任务：在 Transformer 解码器中，
+              除常规的检测与分割查询之外，引入额外的<strong>偏移量词元（Offset Token）</strong>，
+              直接回归屋顶到足迹的位移。这是首次把偏移摄影的位移建模引入可提示大模型范式的工作。
+          highlights:
+            - en: "Proposes the Offset Token — a token type dedicated to spatial displacement, decoupled from appearance features."
+              zh: "提出偏移量词元：一种专门承载空间位移、与外观特征解耦的词元类型。"
+            - en: "Bridges classical building-extraction models and Transformer-based foundation models via prompting."
+              zh: "以提示机制打通传统建筑物提取模型与 Transformer 基础模型之间的鸿沟。"
+            - en: "Selected for the 3MT Final Round (Top 10) at IGARSS 2025."
+              zh: "入选 IGARSS 2025 三分钟论文竞赛决赛（Top 10）。"
+          links:
+            pdf: ""
+            arxiv: ""
+            code: ""
+            project: ""
+            doi: "https://ieeexplore.ieee.org/document/10737420"
+          bibtex: |
+            @article{li2024obm,
+              title   = {Prompt-Driven Building Footprint Extraction in Aerial Images
+                with Offset-Building Model},
+              author  = {Li, Kai and others},
+              journal = {IEEE Transactions on Geoscience and Remote Sensing},
+              year    = {2024},
+              doi     = {10.1109/TGRS.2024.3487652}
+            }
+
+      # ------------------------------------------------------------ Ch. 2 ---
+      - num: 2
+        anchor: "ch2-polyfootnet"
+        theme:
+          en: "First application: vector-level building extraction"
+          zh: "Offset Token 概念的初步应用：矢量级建筑物提取"
+        contribution:
+          en: "Applies the new token to polygonal footprint extraction, validating its power on complex 3D structures."
+          zh: "将新提出的词元概念应用于矢量级别的建筑物提取，验证其在复杂三维结构中的有效性与潜力。"
+        paper:
+          short_name: "PolyFootNet"
+          title: "PolyFootNet: Extracting Polygonal Building Footprints in Off-Nadir Remote Sensing Images"
+          authors: "Kai Li, et al."   # TODO: complete the full author list
+          me: "Kai Li"
+          venue:
+            en: "IEEE Transactions on Geoscience and Remote Sensing"
+            zh: "IEEE Transactions on Geoscience and Remote Sensing"
+          venue_short: "IEEE TGRS"
+          year: 2025
+          status: "published"
+          teaser: ""                 # -> images/papers/polyfootnet.png
+          abstract:
+            en: >-
+              Raster masks are not what GIS pipelines consume — maps are vectors. PolyFootNet
+              carries the Offset Token from pixel space into <strong>polygon space</strong>:
+              roof polygons are predicted and then translated by learned offsets into
+              footprint polygons, producing directly usable vector products without a
+              hand-crafted raster-to-vector post-processing chain.
+            zh: >-
+              栅格掩膜并非 GIS 生产流程真正需要的产物——地图本质上是矢量的。PolyFootNet
+              把偏移量词元从像素空间带入<strong>矢量多边形空间</strong>：先预测屋顶多边形，
+              再由学习到的偏移量整体平移得到足迹多边形，直接产出可用的矢量成果，
+              免去人工设计的栅格转矢量后处理链路。
+          highlights:
+            - en: "Predicts polygonal footprints end-to-end in off-nadir imagery, not raster masks."
+              zh: "在偏移摄影影像中端到端预测矢量足迹多边形，而非栅格掩膜。"
+            - en: "Demonstrates that the Offset Token generalises beyond dense prediction to structured vector output."
+              zh: "证明偏移量词元的适用性可从稠密预测扩展到结构化矢量输出。"
+            - en: "Delivers GIS-ready products that align with real mapping workflows."
+              zh: "产出与真实测绘生产流程对齐、可直接入库的成果。"
+          links:
+            pdf: ""
+            arxiv: ""
+            code: ""
+            project: ""
+            doi: ""                  # TODO: add the IEEE Xplore / DOI link
+          bibtex: |
+            @article{li2025polyfootnet,
+              title   = {PolyFootNet: Extracting Polygonal Building Footprints in
+                         Off-Nadir Remote Sensing Images},
+              author  = {Li, Kai and others},
+              journal = {IEEE Transactions on Geoscience and Remote Sensing},
+              year    = {2025}
+            }
+
+      # ------------------------------------------------------------ Ch. 3 ---
+      - num: 3
+        anchor: "ch3-dragosm"
+        theme:
+          en: "From Offset Token to Alignment Token: interactive alignment"
+          zh: "从 Offset Token 到 Alignment Token：具象化与交互对齐"
+        contribution:
+          en: "Instantiates the Offset Token as an Alignment Token, repairing the spatial gap between historical OSM labels and new imagery through an interactive drag mechanism."
+          zh: "将偏移量词元具象为对齐词元（Alignment Token），通过交互式「拖拽」机制修复历史 OSM 标签与更新影像之间的空间偏移。"
+        paper:
+          short_name: "DragOSM"
+          title: "DragOSM: Extract Building Roofs and Footprints from Aerial Images by Aligning Historical Labels"
+          authors: "Kai Li, et al."   # TODO: complete the full author list
+          me: "Kai Li"
+          venue:
+            en: ""                   # TODO: add the venue once decided
+            zh: ""
+          venue_short: ""
+          year: 2025
+          status: "preprint"
+          teaser: ""                 # -> images/papers/dragosm.png
+          abstract:
+            en: >-
+              Enormous amounts of historical vector labels (e.g. OpenStreetMap) already exist,
+              but they no longer line up with freshly captured off-nadir imagery. DragOSM
+              treats the stale label as a <em>prompt to be dragged</em>: an Alignment Token
+              learns where the historical polygon should move so that roof and footprint are
+              both recovered. Instead of re-annotating from scratch, existing map assets are
+              repaired and reused.
+            zh: >-
+              世界上已经积累了海量历史矢量标签（如 OpenStreetMap），但它们与新采集的偏移摄影影像
+              不再对齐。DragOSM 将过期标签视为<em>可被拖拽的提示</em>：由对齐词元
+              （Alignment Token）学习历史多边形应当移动到何处，从而同时恢复屋顶与足迹。
+              这使得已有地图资产可被修复复用，而无需从零重新标注。
+          highlights:
+            - en: "Reframes label updating as an interactive drag / alignment problem."
+              zh: "把标签更新问题重新表述为交互式拖拽与对齐问题。"
+            - en: "Turns outdated OSM annotations from a liability into a usable prior."
+              zh: "让过期的 OSM 标注从负担转变为可用的先验信息。"
+            - en: "Recovers both roof and footprint geometry in a single interaction."
+              zh: "在一次交互中同时恢复屋顶与足迹几何。"
+          links:
+            pdf: ""
+            arxiv: ""
+            code: ""
+            project: ""
+            doi: ""
+          bibtex: |
+            @article{li2025dragosm,
+              title  = {DragOSM: Extract Building Roofs and Footprints from Aerial Images
+                        by Aligning Historical Labels},
+              author = {Li, Kai and others},
+              year   = {2025}
+            }
+
+      # ------------------------------------------------------------ Ch. 4 ---
+      - num: 4
+        anchor: "ch4-oblicity"
+        theme:
+          en: "Decoupling offset learning &amp; building a benchmark"
+          zh: "偏移量学习的解耦、独立模块化与基准构建"
+        contribution:
+          en: "Strips offset learning out of semantic segmentation entirely, defines it as the standalone RFOV extraction task, and releases a benchmark plus baseline."
+          zh: "将偏移量学习从语义分割中彻底剥离，定义为独立的 RFOV 提取任务，并给出基准数据集与基线模型。"
+        paper:
+          short_name: "DragRoof"
+          title: "ObliCity: A Benchmark and Baseline for Roof-to-Ground Projection Displacement Correction"
+          authors: "Kai Li, et al."   # TODO: complete the full author list
+          me: "Kai Li"
+          venue:
+            en: ""                   # TODO
+            zh: ""
+          venue_short: ""
+          year: 2025
+          status: "preprint"
+          teaser: ""                 # -> images/papers/oblicity.png
+          abstract:
+            en: >-
+              Offset estimation had always ridden along with segmentation. This work makes it
+              first-class: the <strong>Roof-to-Footprint Offset Vector (RFOV)</strong> becomes
+              an independent extraction task, the dragging process is modelled as an
+              <strong>ordinary differential equation</strong>, and the community gets the
+              <strong>ObliCity</strong> benchmark together with the <strong>DragRoof</strong>
+              baseline model.
+            zh: >-
+              以往偏移量估计总是搭载在分割任务之上。本工作将其提升为一等问题：把
+              <strong>屋顶到足迹偏移向量（RFOV）</strong>定义为独立的提取任务，
+              以<strong>常微分方程（ODE）</strong>建模模拟拖拽过程，并构建了
+              <strong>ObliCity</strong> 基准数据集与 <strong>DragRoof</strong> 基线模型。
+          highlights:
+            - en: "Defines RFOV extraction as an independent, reusable module."
+              zh: "将 RFOV 提取定义为独立、可复用的模块。"
+            - en: "Models the drag trajectory with an ODE formulation."
+              zh: "以常微分方程建模拖拽轨迹。"
+            - en: "Releases the ObliCity benchmark and the DragRoof baseline."
+              zh: "发布 ObliCity 基准数据集与 DragRoof 基线模型。"
+          links:
+            pdf: ""
+            arxiv: ""
+            code: ""
+            project: ""
+            doi: ""
+          bibtex: |
+            @article{li2025oblicity,
+              title  = {ObliCity: A Benchmark and Baseline for Roof-to-Ground Projection
+                        Displacement Correction},
+              author = {Li, Kai and others},
+              year   = {2025}
+            }
+
+      # ------------------------------------------------------------ Ch. 5 ---
+      - num: 5
+        anchor: "ch5-lodeot"
+        theme:
+          en: "Low-dimensional, efficient Offset Tokens"
+          zh: "底层机制优化与降维推导：低维高效的偏移标识"
+        contribution:
+          en: "Derives the underlying mathematics from a 3D-vision standpoint: the ideal offset mapping is fully described by 7 variables, which collapses terminal compute cost."
+          zh: "从三维视觉（3DV）角度深入剖析偏移量词元的底层数学推导：理想的 offset 映射可由 7 维变量充分描述，从而大幅降低终端计算复杂度。"
+        paper:
+          short_name: "LODEOT"
+          title: "LODEOT: Low-Dimensional and Efficient Offset Tokens for Building Footprint Extraction from Off-Nadir Imagery"
+          authors: "Kai Li, et al."   # TODO: complete the full author list
+          me: "Kai Li"
+          venue:
+            en: ""                   # TODO
+            zh: ""
+          venue_short: ""
+          year: 2025
+          status: "preprint"
+          teaser: ""                 # -> images/papers/lodeot.png
+          abstract:
+            en: >-
+              Why should a displacement need a high-dimensional token at all? Viewed through
+              3D vision, the ideal roof-to-footprint mapping of a whole scene is sufficiently
+              described by only <strong>7 variables</strong>. LODEOT exploits this to pair
+              high-dimensional queries (detection / segmentation) with a
+              <strong>low-dimensional offset token</strong>, cutting inference cost on the
+              terminal side while keeping accuracy.
+            zh: >-
+              位移信息真的需要高维词元来承载吗？从三维视觉的角度看，整幅场景理想的
+              屋顶到足迹映射仅需<strong>7 个变量</strong> 即可充分描述。LODEOT 据此
+              将高维查询（检测 / 分割）与<strong>低维偏移标识</strong>高效结合，
+              在保持精度的同时显著降低终端推理开销。
+          highlights:
+            - en: "Gives a 3D-vision derivation showing 7 degrees of freedom suffice."
+              zh: "给出三维视觉推导，证明 7 个自由度已足够。"
+            - en: "Pairs high-dimensional queries with a low-dimensional offset representation."
+              zh: "实现高维查询与低维偏移标识的高效结合。"
+            - en: "Substantially reduces terminal-side computational complexity."
+              zh: "大幅降低终端侧计算复杂度。"
+          links:
+            pdf: ""
+            arxiv: ""
+            code: ""
+            project: ""
+            doi: ""
+          bibtex: |
+            @article{li2025lodeot,
+              title  = {LODEOT: Low-Dimensional and Efficient Offset Tokens for Building
+                        Footprint Extraction from Off-Nadir Imagery},
+              author = {Li, Kai and others},
+              year   = {2025}
+            }
+
+  # --------------------------------------------------------------- PART II ---
+  - id: part-vlm-3d
+    numeral: "II"
+    accent: "violet"
+    title:
+      en: "Frontier: Sparse-View 3D Scene Generation with Vision-Language Models"
+      zh: "前沿探索：基于大视觉语言模型的稀疏图像 3D 场景生成"
+    subtitle:
+      en: "Independent exploration"
+      zh: "独立探索篇章"
+    summary:
+      en: >-
+        After accumulating substantial experience in 3D spatial understanding, this line
+        extends my work towards today's frontier: letting large multimodal models reason
+        about 3D structure directly, without camera calibration or dense views.
+      zh: >-
+        在积累了丰富的三维空间理解经验之后，这一部分把工作拓展到当下最前沿的大模型领域：
+        让多模态大模型在没有相机参数、没有密集视图的条件下，直接推理三维结构。
+
+    chapters:
+      # ------------------------------------------------------------ Ch. 6 ---
+      - num: 6
+        anchor: "ch6-scenix"
+        theme:
+          en: "Sparse-view 3D reconstruction via executable scene programs"
+          zh: "基于可执行场景程序的稀疏视图 3D 场景重建"
+        contribution:
+          en: "Drops the reliance on camera parameters and dense views: a VLM infers an executable scene program straight from sparse RGB observations."
+          zh: "摆脱对相机参数与密集视图的依赖：由视觉语言大模型直接从稀疏 RGB 观测推导可执行的场景程序。"
+        paper:
+          short_name: "Scenix"
+          title: "Scenix: Sparse-View 3D Scene Reconstruction via Executable Scene Programs"
+          authors: "Kai Li, et al."   # TODO: complete the full author list
+          me: "Kai Li"
+          venue:
+            en: ""                   # TODO
+            zh: ""
+          venue_short: ""
+          year: 2026
+          status: "preprint"
+          teaser: ""                 # -> images/papers/scenix.png
+          abstract:
+            en: >-
+              Classical reconstruction wants calibrated cameras and many views. Scenix instead
+              asks a vision-language model (LayoutVLM) to read a handful of RGB images and
+              emit an <strong>executable scene program</strong> — jointly predicting room
+              layout, object attributes and semantic descriptions, which are then instantiated
+              into a fully <strong>editable 3D scene</strong>.
+            zh: >-
+              传统重建依赖标定过的相机与密集视图。Scenix 转而让视觉语言大模型（LayoutVLM）
+              读取少量 RGB 图像，直接输出<strong>可执行的场景程序（Scene Program）</strong>——
+              联合预测房间结构、物体属性与语义描述，并最终实例化为完全<strong>可编辑的
+              三维场景</strong>。
+          highlights:
+            - en: "No camera intrinsics/extrinsics and no dense view coverage required."
+              zh: "无需相机内外参，也无需密集视角覆盖。"
+            - en: "Joint prediction of room structure, object attributes and semantics."
+              zh: "联合预测房间结构、物体属性与语义描述。"
+            - en: "Outputs a program, so the resulting 3D scene stays editable and re-runnable."
+              zh: "输出的是程序，因此生成的三维场景可编辑、可复现执行。"
+          links:
+            pdf: ""
+            arxiv: ""
+            code: ""
+            project: ""
+            doi: ""
+          bibtex: |
+            @article{li2026scenix,
+              title  = {Scenix: Sparse-View 3D Scene Reconstruction via Executable
+                        Scene Programs},
+              author = {Li, Kai and others},
+              year   = {2026}
+            }
+
+# =============================================================================
+# Other collaborative publications (migrated from the old _publications/ files)
+# =============================================================================
+others:
+  - title: "SAMPolyBuild: Adapting the Segment Anything Model for polygonal building extraction"
+    citation: "Wang C, Chen J, Meng Y, et al. ISPRS Journal of Photogrammetry and Remote Sensing, 2024, 218: 707-720."
+    venue_short: "ISPRS J. P&amp;RS"
+    year: 2024
+    url: "https://www.sciencedirect.com/science/article/pii/S0924271624003563"
+
+  - title: "A Wordnet-Based Geospatial Web Services Search Method Supporting Quality of Service Constraints"
+    citation: "L. Jiang, K. Li, D. Liu, Y. Zhou, Z. Zheng and F. Huang. IGARSS 2019, Yokohama, Japan, pp. 863-866."
+    venue_short: "IGARSS"
+    year: 2019
+    url: "https://ieeexplore.ieee.org/abstract/document/8899334/"
+
+  - title: "Urban Functional Regions Discovering Based on Deep Learning"
+    citation: "Mou F, Kong R, Li K, et al. IGARSS 2019, pp. 9462-9465."
+    venue_short: "IGARSS"
+    year: 2019
+    url: "https://ieeexplore.ieee.org/abstract/document/8899333/"

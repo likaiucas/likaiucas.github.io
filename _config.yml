@@ -3,32 +3,37 @@
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
+# `jekyll serve -l -H localhost`. If you change this file, please restart the
 # server process.
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "LI Kai / Kspace"
-title_separator          : "-"
+title                    : "LI Kai · Kspace"
+title_separator          : "·"
 name                     : &name "LI Kai (李锴)"
-description              : &description "A liberal. 一个不曾悔改的自由主义者。"
+description              : &description "PhD candidate at UCAS and City University of Hong Kong. Building extraction from off-nadir remote sensing imagery, the Offset Token concept, and 3D scene understanding with vision-language models."
 url                      : https://likaiucas.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "likaiucas/likaiucas.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
+# ---------------------------------------------------------------------------
+# KSPACE design-system settings (used by _layouts/kspace.html and _includes/kspace/*)
+# ---------------------------------------------------------------------------
+kspace:
+  default_lang           : "en"    # "en" | "zh" — initial language before localStorage kicks in
+  default_theme          : "dark"  # "dark" | "light"
+
+# Site Author - drives the social links in the footer / contact block.
 author:
   # Biographic information
   avatar           : "mybib.jpg"
   name             : "LI Kai"
-  pronouns         : # example: "she/her"  
-  bio              : "A liberal. 一个不曾悔改的自由主义者"
+  pronouns         : # example: "she/her"
+  bio              : "Off-nadir remote sensing · Offset Token · 3D scene understanding"
   location         : "Beijing/Hong Kong"
   employer         : "UCAS/CityUHK"
   uri              : # URL
-  email            : "likai211@mails.ucas.ac.cn" 
+  email            : "likai211@mails.ucas.ac.cn"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -45,8 +50,8 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "likaiucas"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  kaggle           : # Username
+  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
   # Social media
   bluesky          : # "bsky.app" # Replace this with you Bluesky username
@@ -75,15 +80,6 @@ author:
   zhihu            : # Username
   wechat           : kaili37
 
-# Publication Category - The following the list of publication categories and their headings
-publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
-
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
@@ -111,14 +107,14 @@ staticman:
   path                   : "_data/comments/{options.slug}"
   requiredFields         : ['name', 'email', 'message']
   transforms:
-    email                : "md5"
+    email: "md5"
   generatedFields:
     date:
       type               : "date"
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true      # the redesigned site does not surface a blog feed
   path                   : # blank (default) uses feed.xml
 
 
@@ -131,12 +127,12 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username: &twitter
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "/images/og-cover.png"  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -184,6 +180,11 @@ exclude:
   - README
   - tmp
   - vendor
+  # --- legacy academicpages material, kept on disk but not published --------
+  - markdown_generator
+  - talkmap
+  - talkmap.py
+  - talkmap.ipynb
 keep_files:
   - .git
   - .svn
@@ -211,77 +212,35 @@ kramdown:
   enable_coderay: false
 
 
-# These settings control the types of collections used by the template
-collections:
-  teaching:
-    output: false
-    permalink: /:collection/:path/
-  publications:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: false
-    permalink: /:collection/:path/
-  talks:
-    output: false
-    permalink: /:collection/:path/
+# Collections
+# The redesigned site sources every publication from _data/publications.yml,
+# so the old academicpages collections are no longer generated. The folders
+# (_publications, _talks, _teaching, _portfolio) stay on disk for reference.
+collections: {}
 
 
 # These settings control how pages and collections are included in the site
+#
+# NOTE — Jekyll's `Publisher` reads `published` with `Hash#fetch`, which bypasses
+# front-matter defaults for *pages*. So the legacy academicpages demo pages
+# (about.md, cv.md, talks.html, teaching.html, markdown.md, terms.md, the
+# *-archive pages, …) each carry an explicit `published: false` in their own
+# front matter. They stay in the repository for reference but are never built.
+# Only index.html, publications.html, cv.html and 404.html are live.
 defaults:
-  # _posts
+  # _posts — legacy demo posts. For documents (unlike pages) defaults are merged
+  # eagerly, so `published: false` here is enough to keep them out of the build.
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
+      published: false
+  # _pages — every new page gets the kspace design system by default
   - scope:
       path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
-  # _teaching
-  #- scope:
-  #    path: ""
-  #    type: teaching
-  #  values:
-  #    layout: single
-  #    author_profile: false
-  #    share: false
-  #    comments: false
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  #- scope:
-  #    path: ""
-  #    type: portfolio
-  #  values:
-  #    layout: single
-  #    author_profile: true
-  #    share: true
-  #    comment: true
-  # _talks
-  #- scope:
-  #    path: ""
-  #    type: talks
-  #  values:
-  #    layout: talk
-  #    author_profile: true
-  #    share: true
+      layout: kspace-page
 
 
 # Sass/SCSS
@@ -292,8 +251,6 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
 timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -315,32 +272,12 @@ whitelist:
 
 
 # Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
 
 # HTML Compression

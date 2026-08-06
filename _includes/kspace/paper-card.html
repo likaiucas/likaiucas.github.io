@@ -1,0 +1,86 @@
+{%- comment -%}
+  Paper card.
+  Params: paper (required), chapter (optional, supplies the one-line contribution
+          and the deep-link anchor), variant ("compact" | "full"), uid
+{%- endcomment -%}
+{%- assign p = include.paper -%}
+{%- assign ch = include.chapter -%}
+{%- assign t = site.data.i18n -%}
+{%- assign uid = include.uid | default: p.short_name | downcase -%}
+
+{%- if include.variant == "compact" -%}
+{%- comment -%} ---------------------------------------------- COMPACT ---- {%- endcomment -%}
+{%- if ch.anchor -%}
+  {%- capture _href -%}{{ '/publications/' | relative_url }}#{{ ch.anchor }}{%- endcapture -%}
+{%- else -%}
+  {%- capture _href -%}{{ '/publications/' | relative_url }}{%- endcapture -%}
+{%- endif -%}
+
+<article class="k-card k-paper k-reveal">
+  {%- include kspace/teaser.html paper=p -%}
+  <div class="k-paper__body">
+    <div class="k-paper__meta">
+      {%- if p.venue_short and p.venue_short != "" -%}
+      <span class="k-badge k-badge--venue">{{ p.venue_short }}{% if p.year %} {{ p.year }}{% endif %}</span>
+      {%- else -%}
+      <span class="k-badge">{{ p.year }}</span>
+      {%- endif -%}
+      {%- include kspace/status-badge.html status=p.status -%}
+    </div>
+
+    <h3 class="k-paper__title"><a href="{{ _href }}">{{ p.title }}</a></h3>
+
+    {%- if ch.contribution -%}
+    <p class="k-paper__note">{%- include kspace/i18n.html en=ch.contribution.en zh=ch.contribution.zh -%}</p>
+    {%- endif -%}
+
+    <div class="k-paper__links">
+      {%- include kspace/link-btn.html url=p.links.pdf icon="file" label_en=t.btn_pdf.en label_zh=t.btn_pdf.zh -%}
+      {%- include kspace/link-btn.html url=p.links.doi icon="link" label_en=t.btn_doi.en label_zh=t.btn_doi.zh -%}
+      {%- include kspace/link-btn.html url=p.links.code icon="code" label_en=t.btn_code.en label_zh=t.btn_code.zh -%}
+    </div>
+  </div>
+</article>
+
+{%- else -%}
+{%- comment -%} ------------------------------------------------- FULL ---- {%- endcomment -%}
+<div class="k-chapter__figure">
+  {%- include kspace/teaser.html paper=p -%}
+</div>
+
+<div class="k-detail">
+  <div class="k-detail__main">
+    <h3 class="k-detail__title">{{ p.title }}</h3>
+
+    {%- if p.authors and p.authors != "" -%}
+    {%- capture _me_html -%}<span class="is-me">{{ p.me }}</span>{%- endcapture -%}
+    <p class="k-detail__authors">
+      {%- if p.me and p.me != "" -%}{{ p.authors | replace: p.me, _me_html }}{%- else -%}{{ p.authors }}{%- endif -%}
+    </p>
+    {%- endif -%}
+
+    <div class="k-detail__badges">
+      {%- if p.venue.en and p.venue.en != "" -%}
+      <span class="k-badge k-badge--venue">{%- include kspace/i18n.html en=p.venue.en zh=p.venue.zh -%}</span>
+      {%- endif -%}
+      {%- if p.year -%}<span class="k-badge">{{ p.year }}</span>{%- endif -%}
+      {%- include kspace/status-badge.html status=p.status -%}
+    </div>
+
+    <p class="k-detail__abstract">{%- include kspace/i18n.html en=p.abstract.en zh=p.abstract.zh -%}</p>
+  </div>
+
+  {%- if p.highlights and p.highlights.size > 0 -%}
+  <aside class="k-highlights">
+    <h4>{%- include kspace/i18n.html en=t.lbl_highlights.en zh=t.lbl_highlights.zh -%}</h4>
+    <ul>
+      {%- for h in p.highlights -%}
+      <li>{%- include kspace/i18n.html en=h.en zh=h.zh -%}</li>
+      {%- endfor -%}
+    </ul>
+  </aside>
+  {%- endif -%}
+</div>
+
+{%- include kspace/paper-links.html paper=p uid=uid -%}
+{%- endif -%}

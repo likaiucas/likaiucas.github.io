@@ -1,0 +1,20 @@
+---
+layout: kspace
+---
+
+<section class="k-pagehead">
+  <div class="k-wrap">
+    {%- if page.eyebrow_en -%}
+    <p class="k-eyebrow">{%- include kspace/i18n.html en=page.eyebrow_en zh=page.eyebrow_zh -%}</p>
+    {%- endif -%}
+    <h1>{%- include kspace/i18n.html en=page.heading_en zh=page.heading_zh -%}</h1>
+    {%- if page.subtitle_en -%}
+    <p class="k-pagehead__sub">{%- include kspace/i18n.html en=page.subtitle_en zh=page.subtitle_zh -%}</p>
+    {%- endif -%}
+    {%- if page.head_actions -%}
+    <div class="k-btn-row k-mt-5 k-no-print">{{ page.head_actions }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{{ content }}

@@ -1,0 +1,16 @@
+{%- assign _year = site.time | date: "%Y" -%}
+{%- capture _foot_en -%}
+&copy; 2024&ndash;{{ _year }} LI Kai &middot; Built with Jekyll, hosted on GitHub Pages.
+{%- endcapture -%}
+{%- capture _foot_zh -%}
+&copy; 2024&ndash;{{ _year }} 李锴 &middot; 基于 Jekyll 构建，托管于 GitHub Pages。
+{%- endcapture -%}
+
+<footer class="k-footer">
+  <div class="k-wrap k-footer__inner">
+    <p class="k-footer__meta k-mb-0">
+      {%- include kspace/i18n.html en=_foot_en zh=_foot_zh -%}
+    </p>
+    {%- include kspace/social.html -%}
+  </div>
+</footer>

@@ -1,36 +1,70 @@
 ---
-layout: archive
-title: "Publications"
+layout: kspace-page
+published: true
 permalink: /publications/
-author_profile: true
+title: "Research"
+description: "Chapter-by-chapter overview of LI Kai's research: the Offset Token line for off-nadir building extraction (OBM, PolyFootNet, DragOSM, ObliCity/DragRoof, LODEOT) and sparse-view 3D scene generation with vision-language models (Scenix)."
+eyebrow_en: "Research &amp; Publications"
+eyebrow_zh: "研究与论文"
+heading_en: "Six chapters, one thread"
+heading_zh: "六个章节，一条主线"
+subtitle_en: "My work is organised as a narrative rather than a flat list: Part I builds the Offset Token system for off-nadir building extraction; Part II extends 3D spatial understanding to vision-language models. Expand any chapter for the figure, abstract, highlights and resources."
+subtitle_zh: "我把研究成果组织成一条叙事线索，而不是一份平铺的清单：第一部分构建偏移摄影下建筑物提取的偏移量词元体系；第二部分把三维空间理解拓展到视觉语言大模型。展开任一章节即可查看示意图、摘要、研究亮点与资源链接。"
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+{%- assign pubs = site.data.publications -%}
+{%- assign t = site.data.i18n -%}
 
-{% include base_path %}
+<div class="k-wrap k-section k-section--tight">
+  <div class="k-btn-row k-no-print">
+    {%- if site.author.googlescholar -%}
+    <a class="k-btn k-btn--sm k-btn--primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">
+      {%- include kspace/icon.html name="scholar" -%}
+      {%- include kspace/i18n.html en=t.scholar.en zh=t.scholar.zh -%}
+    </a>
+    {%- endif -%}
+    <button type="button" class="k-btn k-btn--sm" data-chapters-toggle="open">
+      {%- include kspace/i18n.html en=t.expand_all.en zh=t.expand_all.zh -%}
+    </button>
+    <button type="button" class="k-btn k-btn--sm k-btn--ghost" data-chapters-toggle="close">
+      {%- include kspace/i18n.html en=t.collapse_all.en zh=t.collapse_all.zh -%}
+    </button>
+  </div>
+</div>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<div class="k-wrap">
+  <div class="k-with-toc">
+    <aside class="k-toc k-no-print">
+      <p class="k-toc__title">{%- include kspace/i18n.html en=t.lbl_contents.en zh=t.lbl_contents.zh -%}</p>
+      {%- for part in pubs.parts -%}
+      <p class="k-toc__group">
+        {%- include kspace/i18n.html en=part.subtitle.en zh=part.subtitle.zh -%}
+      </p>
+      <ul>
+        {%- for ch in part.chapters -%}
+        <li>
+          <a class="k-toc__link" href="#{{ ch.anchor }}">
+            <b>{{ ch.num }}.</b> {{ ch.paper.short_name }}
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+      {%- endfor -%}
+      <ul>
+        <li>
+          <a class="k-toc__link" href="#other-publications">
+            {%- include kspace/i18n.html en=t.lbl_other_pubs.en zh=t.lbl_other_pubs.zh -%}
+          </a>
+        </li>
+      </ul>
+    </aside>
 
+    <div class="k-pubs">
+      {%- for part in pubs.parts -%}
+        {%- include kspace/part-section.html part=part -%}
+      {%- endfor -%}
 
-
+      {%- include kspace/other-publications.html -%}
+    </div>
+  </div>
+</div>

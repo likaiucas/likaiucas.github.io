@@ -1,4 +1,5 @@
 ---
+published: false   # superseded by _pages/index.html + _data/profile.yml + _data/news.yml
 permalink: /
 title: "About me"
 author_profile: true

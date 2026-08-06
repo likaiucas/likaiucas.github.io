@@ -1,4 +1,5 @@
 ---
+published: false   # legacy academicpages demo page - kept on disk, not built
 permalink: /markdown/
 title: "Markdown"
 author_profile: true

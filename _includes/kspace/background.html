@@ -1,0 +1,45 @@
+{%- assign t = site.data.i18n -%}
+{%- assign cv = site.data.cv -%}
+
+<section class="k-section" id="background">
+  <div class="k-wrap">
+    <div class="k-section-head k-reveal">
+      <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_background.en zh=t.sec_background.zh -%}</p>
+      <h2 class="k-mb-0">{%- include kspace/i18n.html en="Where I come from" zh="教育与研究经历" -%}</h2>
+    </div>
+
+    <div class="k-grid k-grid--2 k-reveal">
+      <div>
+        <h3 class="k-cvsec__title">{%- include kspace/i18n.html en=t.sec_education.en zh=t.sec_education.zh -%}</h3>
+        <ul class="k-tl">
+          {%- for it in cv.education -%}
+          <li class="k-tl__item">
+            <span class="k-tl__when">{{ it.when }}</span>
+            <p class="k-tl__what">{%- include kspace/i18n.html en=it.what.en zh=it.what.zh -%}</p>
+            <p class="k-tl__where">{%- include kspace/i18n.html en=it.where.en zh=it.where.zh -%}</p>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="k-cvsec__title">{%- include kspace/i18n.html en=t.sec_experience.en zh=t.sec_experience.zh -%}</h3>
+        <ul class="k-tl">
+          {%- for it in cv.experience -%}
+          <li class="k-tl__item">
+            <span class="k-tl__when">{{ it.when }}</span>
+            <p class="k-tl__what">{%- include kspace/i18n.html en=it.what.en zh=it.what.zh -%}</p>
+            <p class="k-tl__where">{%- include kspace/i18n.html en=it.where.en zh=it.where.zh -%}</p>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+
+    <div class="k-btn-row k-mt-6 k-reveal">
+      <a class="k-btn k-btn--sm" href="{{ '/cv/' | relative_url }}">
+        {%- include kspace/i18n.html en="Full CV, awards &amp; services" zh="完整简历、获奖与学术服务" -%}
+      </a>
+    </div>
+  </div>
+</section>

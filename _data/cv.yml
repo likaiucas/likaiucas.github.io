@@ -1,0 +1,118 @@
+# =============================================================================
+# CV data (bilingual). Sections with an empty list are hidden automatically.
+# Facts here are taken from the previous about.md / _config.yml only.
+# Items marked TODO need your confirmation before you publish.
+# =============================================================================
+
+education:
+  - when: "2021 &ndash; Present"
+    what:
+      en: "Ph.D. Candidate (direct entry), Cartography &amp; Geographic Information Engineering"
+      zh: "博士研究生（本科直博）"
+    where:
+      en: "University of Chinese Academy of Sciences (UCAS) &middot; Aerospace Information Research Institute"
+      zh: "中国科学院大学（UCAS）&middot; 空天信息创新研究院"
+    notes:
+      - en: "Supervised by Prof. Zhongming Zhao and Prof. Yu Meng."
+        zh: "导师：赵忠明 教授、孟瑜 教授。"
+      - en: "Joint PhD project at City University of Hong Kong (CityU), Applied Machine Learning Lab, supervised by Prof. Xiangyu Zhao."
+        zh: "香港城市大学（CityU）应用机器学习实验室（AML）联合培养，导师：赵向宇 教授。"
+
+  - when: "Until 2021"
+    what:
+      en: "B.Eng. in Space Information and Digital Technology"
+      zh: "工学学士，空间信息与数字技术"
+    where:
+      en: "University of Electronic Science and Technology of China (UESTC)"
+      zh: "电子科技大学（UESTC）"
+    notes:
+      - en: "Ranked 2nd in the major; recommended for direct PhD admission to UCAS."
+        zh: "专业排名第 2；获推荐免试直接攻读博士学位（直博）。"
+
+experience:
+  # TODO: confirm your exact role title / duration at Tencent.
+  - when: "2025.10 &ndash; Present"
+    what:
+      en: "Research Intern, Omni Research Team"
+      zh: "研究实习生，Omni 研究团队"
+    where:
+      en: "Tencent"
+      zh: "腾讯"
+    notes:
+      - en: "Second collaboration with the team; research on multimodal large models."
+        zh: "第二次加入该团队，从事多模态大模型相关研究。"
+
+  - when: "2021 &ndash; Present"
+    what:
+      en: "Research Assistant, Off-Nadir Remote Sensing Group"
+      zh: "研究助理，偏移摄影遥感方向"
+    where:
+      en: "Aerospace Information Research Institute, Chinese Academy of Sciences"
+      zh: "中国科学院空天信息创新研究院"
+    notes:
+      - en: "Built the Offset Token research line: OBM, PolyFootNet, DragOSM, ObliCity/DragRoof, LODEOT."
+        zh: "构建偏移量词元研究主线：OBM、PolyFootNet、DragOSM、ObliCity/DragRoof、LODEOT。"
+
+awards:
+  - when: "2025"
+    what:
+      en: "Nominee, IEEE Excellence in Technical Communication Student Prize Award"
+      zh: "IEEE Excellence in Technical Communication Student Prize Award 提名"
+    where:
+      en: "IEEE Geoscience and Remote Sensing Society (GRSS) &mdash; the only Chinese nominee of the year"
+      zh: "IEEE 地球科学与遥感学会（GRSS）&mdash; 年度唯一华人被提名者"
+
+  - when: "2025"
+    what:
+      en: "3MT Competition Final Round (Top 10) with OBM"
+      zh: "三分钟论文竞赛（3MT）决赛 Top 10（OBM）"
+    where:
+      en: "IGARSS 2025, Brisbane"
+      zh: "IGARSS 2025，布里斯班"
+
+  - when: "2025"
+    what:
+      en: "IGARSS 2025 Travel Grant"
+      zh: "IGARSS 2025 Travel Grant 资助"
+    where:
+      en: "IEEE GRSS"
+      zh: "IEEE GRSS"
+
+  - when: "2021"
+    what:
+      en: "Recommended for direct PhD admission (major rank 2/-)"
+      zh: "获推荐免试直博（专业排名第 2）"
+    where:
+      en: "University of Electronic Science and Technology of China"
+      zh: "电子科技大学"
+
+# TODO: add journal / conference review service here once you want to list it.
+services: []
+
+skills:
+  # TODO: adjust this list to match how you want to present yourself.
+  - group:
+      en: "Research areas"
+      zh: "研究方向"
+    items:
+      - "Off-Nadir Remote Sensing"
+      - "Building Footprint Extraction"
+      - "Promptable Segmentation"
+      - "Vision Transformers"
+      - "3D Scene Understanding"
+      - "Vision-Language Models"
+  - group:
+      en: "Engineering"
+      zh: "工程能力"
+    items:
+      - "Python"
+      - "PyTorch"
+      - "Distributed Training"
+      - "Geospatial Vector Data / GIS"
+      - "Benchmark &amp; Dataset Construction"
+  - group:
+      en: "Languages"
+      zh: "语言"
+    items:
+      - "Chinese (native)"
+      - "English (academic writing &amp; presentation)"

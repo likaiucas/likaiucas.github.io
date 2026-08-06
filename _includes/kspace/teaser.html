@@ -1,0 +1,19 @@
+{%- comment -%}
+  Teaser figure with graceful degradation.
+  Params: paper (object), class (optional extra classes on wrapper)
+  - No teaser configured -> branded placeholder, zero network requests.
+  - Teaser configured but missing on disk -> onerror falls back to placeholder.
+{%- endcomment -%}
+{%- assign _t = include.paper.teaser | strip -%}
+<div class="k-teaser {{ include.class }}{% if _t == '' %} k-teaser--ph{% endif %}">
+  <span class="k-teaser__ph-text">
+    <span class="k-teaser__ph-name">{{ include.paper.short_name }}</span>
+    <span class="k-teaser__ph-hint">{%- include kspace/i18n.html en=site.data.i18n.lbl_teaser_soon.en zh=site.data.i18n.lbl_teaser_soon.zh -%}</span>
+  </span>
+  {%- if _t != "" -%}
+  <img src="{{ _t | relative_url }}"
+       alt="{{ include.paper.short_name }} — method overview"
+       loading="lazy" decoding="async"
+       onerror="this.closest('.k-teaser').classList.add('k-teaser--ph');this.remove();">
+  {%- endif -%}
+</div>

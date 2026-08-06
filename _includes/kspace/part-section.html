@@ -1,0 +1,30 @@
+{%- comment -%}
+  One research part (板块): heading, one-line summary, expand/collapse controls
+  and the list of chapter accordions. Param: part
+{%- endcomment -%}
+{%- assign part = include.part -%}
+{%- assign t = site.data.i18n -%}
+
+<section class="k-part" id="{{ part.id }}">
+  <div class="k-part__head k-reveal">
+    <span class="k-part__numeral" aria-hidden="true">{{ part.numeral }}</span>
+    <p class="k-eyebrow">{%- include kspace/i18n.html en=part.subtitle.en zh=part.subtitle.zh -%}</p>
+    <h2 class="k-part__title">{%- include kspace/i18n.html en=part.title.en zh=part.title.zh -%}</h2>
+    <p class="k-part__summary">{%- include kspace/i18n.html en=part.summary.en zh=part.summary.zh -%}</p>
+
+    <div class="k-part__tools">
+      <button type="button" class="k-btn k-btn--sm k-btn--ghost" data-chapters-toggle="open" data-scope="#{{ part.id }}">
+        {%- include kspace/i18n.html en=t.expand_all.en zh=t.expand_all.zh -%}
+      </button>
+      <button type="button" class="k-btn k-btn--sm k-btn--ghost" data-chapters-toggle="close" data-scope="#{{ part.id }}">
+        {%- include kspace/i18n.html en=t.collapse_all.en zh=t.collapse_all.zh -%}
+      </button>
+    </div>
+  </div>
+
+  <div class="k-chapters">
+    {%- for ch in part.chapters -%}
+      {%- include kspace/chapter-accordion.html chapter=ch accent=part.accent -%}
+    {%- endfor -%}
+  </div>
+</section>

@@ -1,0 +1,28 @@
+{%- assign t = site.data.i18n -%}
+{%- assign news = site.data.news -%}
+
+<section class="k-section k-section--alt" id="news">
+  <div class="k-wrap">
+    <div class="k-section-head k-reveal">
+      <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_news.en zh=t.sec_news.zh -%}</p>
+      <h2 class="k-mb-0">{%- include kspace/i18n.html en="Recent updates" zh="近期动态" -%}</h2>
+    </div>
+
+    <div class="k-news k-reveal">
+      <ul class="k-news__list">
+        {%- for item in news -%}
+        <li class="k-news__item{% if forloop.index > 6 %} is-hidden{% endif %}" data-type="{{ item.type }}">
+          <span class="k-news__date">{{ item.date }}</span>
+          <span class="k-news__text">{%- include kspace/i18n.html en=item.text.en zh=item.text.zh -%}</span>
+        </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if news.size > 6 -%}
+      <button type="button" class="k-btn k-btn--sm k-btn--ghost k-mt-4" data-news-more>
+        {%- include kspace/i18n.html en=t.show_more.en zh=t.show_more.zh -%}
+      </button>
+      {%- endif -%}
+    </div>
+  </div>
+</section>

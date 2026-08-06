@@ -1,0 +1,22 @@
+{%- assign t = site.data.i18n -%}
+{%- assign others = site.data.publications.others -%}
+
+{%- if others and others.size > 0 -%}
+<section class="k-part" id="other-publications">
+  <div class="k-part__head k-reveal">
+    <h2 class="k-part__title">{%- include kspace/i18n.html en=t.lbl_other_pubs.en zh=t.lbl_other_pubs.zh -%}</h2>
+  </div>
+
+  <div class="k-other">
+    {%- for o in others -%}
+    <a class="k-other__item" href="{{ o.url }}" target="_blank" rel="noopener">
+      <span class="k-other__year">{{ o.year }}</span>
+      <span class="k-other__body">
+        <span class="k-other__title">{{ o.title }}</span>
+        <span class="k-other__cite">{{ o.citation }}{% if o.venue_short %} &middot; {{ o.venue_short }}{% endif %}</span>
+      </span>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}

@@ -1,0 +1,69 @@
+{%- assign pf = site.data.profile -%}
+{%- assign t = site.data.i18n -%}
+{%- assign mail = pf.email_user | append: "@" | append: pf.email_domain -%}
+
+<section class="k-hero">
+  <div class="k-wrap">
+    <div class="k-hero__inner">
+      <div class="k-hero__text">
+        <span class="k-hero__tag">{%- include kspace/i18n.html en=pf.tag.en zh=pf.tag.zh -%}</span>
+
+        <h1 class="k-hero__name">
+          {%- include kspace/i18n.html en=pf.name_en zh=pf.name_zh -%}
+        </h1>
+        <span class="k-hero__name-zh">
+          {%- include kspace/i18n.html en=pf.name_zh zh=pf.name_en -%}
+        </span>
+
+        <p class="k-hero__role">{%- include kspace/i18n.html en=pf.role.en zh=pf.role.zh -%}</p>
+        <p class="k-hero__pitch">{%- include kspace/i18n.html en=pf.pitch.en zh=pf.pitch.zh -%}</p>
+
+        <div class="k-btn-row">
+          {%- if site.author.googlescholar -%}
+          <a class="k-btn k-btn--primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">
+            {%- include kspace/icon.html name="scholar" -%}
+            {%- include kspace/i18n.html en=t.scholar.en zh=t.scholar.zh -%}
+          </a>
+          {%- endif -%}
+          <a class="k-btn" href="{{ '/publications/' | relative_url }}">
+            {%- include kspace/icon.html name="file" -%}
+            {%- include kspace/i18n.html en=t.view_all_papers.en zh=t.view_all_papers.zh -%}
+          </a>
+          <a class="k-btn" href="{{ '/cv/' | relative_url }}">
+            {%- include kspace/icon.html name="building" -%}
+            {%- include kspace/i18n.html en="CV" zh="简历" -%}
+          </a>
+          <a class="k-btn" href="mailto:{{ mail }}">
+            {%- include kspace/icon.html name="mail" -%}
+            {%- include kspace/i18n.html en=t.email_me.en zh=t.email_me.zh -%}
+          </a>
+        </div>
+      </div>
+
+      <div class="k-hero__media">
+        <div class="k-portrait">
+          <span class="k-portrait__ring" aria-hidden="true"></span>
+          <span class="k-portrait__ring k-portrait__ring--2" aria-hidden="true"></span>
+          <span class="k-portrait__dot" aria-hidden="true"></span>
+          <span class="k-portrait__dot" aria-hidden="true"></span>
+          <span class="k-portrait__dot" aria-hidden="true"></span>
+          <div class="k-portrait__mask">
+            <img src="{{ pf.avatar | relative_url }}" alt="{{ pf.name_en }}" width="320" height="320">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="k-metrics">
+      {%- for m in pf.metrics -%}
+      {%- assign v = m.value | strip -%}
+      {%- if v != "" -%}
+      <div class="k-metric k-reveal">
+        <div class="k-metric__num" data-count="{{ v }}">{{ v }}</div>
+        <div class="k-metric__label">{%- include kspace/i18n.html en=m.label.en zh=m.label.zh -%}</div>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

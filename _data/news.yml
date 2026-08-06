@@ -1,0 +1,70 @@
+# =============================================================================
+# News timeline — migrated verbatim (facts) from the previous about.md
+# type: accept | award | join   (drives the timeline dot colour)
+# =============================================================================
+
+- date: "2025.10"
+  type: accept
+  text:
+    en: "🎉 One paper accepted by <b>IEEE JSTARS</b>."
+    zh: "🎉 一篇论文被 <b>IEEE JSTARS</b> 接收。"
+
+- date: "2025.10"
+  type: join
+  text:
+    en: "👍 Honoured to join the <b>Tencent Omni Research Team</b> again."
+    zh: "👍 很荣幸再次加入<b>腾讯 Omni 研究团队</b>。"
+
+- date: "2025.09"
+  type: accept
+  text:
+    en: "🎉 One paper accepted by <b>IEEE TGRS</b>."
+    zh: "🎉 一篇论文被 <b>IEEE TGRS</b> 接收。"
+
+- date: "2025.08"
+  type: accept
+  text:
+    en: "🎉 One paper accepted by <b>IEEE TGRS</b>."
+    zh: "🎉 一篇论文被 <b>IEEE TGRS</b> 接收。"
+
+- date: "2025.08"
+  type: award
+  text:
+    en: "👏 Nominated for the <b>IEEE Excellence in Technical Communication Student Prize Award</b> by IEEE GRSS in 2025 — the only Chinese nominee of the year."
+    zh: "👏 获 IEEE GRSS 提名 2025 年度 <b>IEEE Excellence in Technical Communication Student Prize Award</b>（年度唯一华人）。"
+
+- date: "2025.07"
+  type: award
+  text:
+    en: "👏 <b>OBM</b> was selected for the 3MT Final Round (Top 10) at IGARSS 2025."
+    zh: "👏 <b>OBM</b> 入选 IGARSS 2025 三分钟论文竞赛决赛（Top 10）。"
+
+- date: "2025.07"
+  type: accept
+  text:
+    en: "🎉 Our <b>PolyFootNet</b> is accepted by <b>IEEE TGRS</b>."
+    zh: "🎉 我们的 <b>PolyFootNet</b> 被 <b>IEEE TGRS</b> 接收。"
+
+- date: "2025.04"
+  type: accept
+  text:
+    en: "🎉 One paper accepted by <b>WWW Companion</b>."
+    zh: "🎉 一篇论文被 <b>WWW Companion</b> 接收。"
+
+- date: "2025.04"
+  type: award
+  text:
+    en: "👏 Granted an <b>IGARSS 2025 Travel Grant</b>. See you in Brisbane!"
+    zh: "👏 获得 <b>IGARSS 2025 Travel Grant</b> 资助，布里斯班见！"
+
+- date: "2024.10"
+  type: accept
+  text:
+    en: "🎉 Our <b>OBM</b> is accepted by <b>IEEE TGRS</b>."
+    zh: "🎉 我们的 <b>OBM</b> 被 <b>IEEE TGRS</b> 接收。"
+
+- date: "2024.09"
+  type: accept
+  text:
+    en: "🎉 One paper accepted by <b>ISPRS Journal of Photogrammetry and Remote Sensing</b>."
+    zh: "🎉 一篇论文被 <b>ISPRS Journal of Photogrammetry and Remote Sensing</b> 接收。"

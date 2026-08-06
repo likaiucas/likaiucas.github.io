@@ -1,0 +1,131 @@
+/* ==========================================================================
+   KSPACE · Design Tokens
+   Dark-first academic homepage design system for LI Kai
+   ========================================================================== */
+
+:root {
+  /* ---- Brand / accent ---- */
+  --k-cyan: #22d3ee;
+  --k-indigo: #6366f1;
+  --k-violet: #a855f7;
+
+  --k-accent: var(--k-cyan);
+  --k-accent-2: var(--k-indigo);
+  --k-accent-3: var(--k-violet);
+
+  --k-grad: linear-gradient(112deg, #22d3ee 0%, #6366f1 52%, #a855f7 100%);
+  --k-grad-soft: linear-gradient(112deg, rgba(34, 211, 238, .16) 0%, rgba(99, 102, 241, .16) 52%, rgba(168, 85, 247, .16) 100%);
+  --k-grad-line: linear-gradient(90deg, transparent, rgba(34, 211, 238, .55), rgba(168, 85, 247, .55), transparent);
+
+  /* ---- Functional ---- */
+  --k-ok: #10b981;
+  --k-warn: #f59e0b;
+  --k-danger: #ef4444;
+  --k-info: #38bdf8;
+
+  /* ---- Surfaces (dark default) ---- */
+  --k-bg: #070b14;
+  --k-bg-2: #0b111d;
+  --k-surface: #0f1522;
+  --k-surface-2: #1a2233;
+  --k-surface-glass: rgba(20, 28, 44, .58);
+  --k-surface-glass-2: rgba(26, 34, 51, .72);
+  --k-border: rgba(148, 163, 184, .16);
+  --k-border-strong: rgba(148, 163, 184, .28);
+
+  /* ---- Text ---- */
+  --k-text: #f1f5f9;
+  --k-text-dim: #94a3b8;
+  --k-text-faint: #64748b;
+  --k-text-invert: #0b1220;
+
+  /* ---- Effects ---- */
+  --k-shadow-sm: 0 2px 8px rgba(2, 6, 16, .35);
+  --k-shadow: 0 12px 32px -12px rgba(2, 6, 16, .7);
+  --k-shadow-lg: 0 28px 70px -24px rgba(2, 6, 16, .85);
+  --k-glow: 0 0 0 1px rgba(34, 211, 238, .35), 0 12px 44px -14px rgba(34, 211, 238, .45);
+  --k-glow-violet: 0 0 0 1px rgba(168, 85, 247, .32), 0 12px 44px -14px rgba(168, 85, 247, .4);
+  --k-grid-line: rgba(148, 163, 184, .07);
+  --k-hero-halo-1: rgba(34, 211, 238, .18);
+  --k-hero-halo-2: rgba(168, 85, 247, .18);
+  --k-code-bg: rgba(3, 8, 18, .72);
+
+  /* ---- Type ---- */
+  --k-font-display: "Poppins", "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --k-font-body: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --k-font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --k-fs-hero: clamp(2.5rem, 6.4vw, 3.5rem);
+  --k-fs-h1: clamp(2rem, 4.6vw, 2.75rem);
+  --k-fs-h2: clamp(1.5rem, 3.2vw, 2rem);
+  --k-fs-h3: 1.375rem;
+  --k-fs-lead: 1.0625rem;
+  --k-fs-body: 1rem;
+  --k-fs-sm: .875rem;
+  --k-fs-xs: .75rem;
+
+  /* ---- Space / radius ---- */
+  --k-sp-1: .25rem;
+  --k-sp-2: .5rem;
+  --k-sp-3: .75rem;
+  --k-sp-4: 1rem;
+  --k-sp-5: 1.5rem;
+  --k-sp-6: 2rem;
+  --k-sp-7: 3rem;
+  --k-sp-8: 4rem;
+  --k-sp-9: 6rem;
+
+  --k-r-sm: 8px;
+  --k-r: 12px;
+  --k-r-lg: 16px;
+  --k-r-xl: 22px;
+  --k-r-pill: 999px;
+
+  /* ---- Motion ---- */
+  --k-ease: cubic-bezier(.2, .8, .2, 1);
+  --k-t-fast: .16s;
+  --k-t: .24s;
+  --k-t-slow: .34s;
+
+  /* ---- Layout ---- */
+  --k-max: 1180px;
+  --k-nav-h: 68px;
+  --k-nav-h-sm: 56px;
+}
+
+/* ==========================================================================
+   Light theme overrides
+   ========================================================================== */
+
+[data-theme="light"] {
+  --k-bg: #f7f9fc;
+  --k-bg-2: #eef2f8;
+  --k-surface: #ffffff;
+  --k-surface-2: #f2f5fa;
+  --k-surface-glass: rgba(255, 255, 255, .74);
+  --k-surface-glass-2: rgba(255, 255, 255, .88);
+  --k-border: rgba(11, 18, 32, .1);
+  --k-border-strong: rgba(11, 18, 32, .18);
+
+  --k-text: #0b1220;
+  --k-text-dim: #475569;
+  --k-text-faint: #64748b;
+  --k-text-invert: #ffffff;
+
+  --k-accent: #0891b2;
+  --k-grad: linear-gradient(112deg, #0891b2 0%, #4f46e5 52%, #9333ea 100%);
+  --k-grad-soft: linear-gradient(112deg, rgba(8, 145, 178, .1) 0%, rgba(79, 70, 229, .1) 52%, rgba(147, 51, 234, .1) 100%);
+  --k-grad-line: linear-gradient(90deg, transparent, rgba(8, 145, 178, .4), rgba(147, 51, 234, .4), transparent);
+
+  --k-shadow-sm: 0 1px 3px rgba(11, 18, 32, .07);
+  --k-shadow: 0 10px 28px -14px rgba(11, 18, 32, .18);
+  --k-shadow-lg: 0 26px 60px -26px rgba(11, 18, 32, .24);
+  --k-glow: 0 0 0 1px rgba(8, 145, 178, .3), 0 12px 34px -16px rgba(8, 145, 178, .35);
+  --k-glow-violet: 0 0 0 1px rgba(147, 51, 234, .26), 0 12px 34px -16px rgba(147, 51, 234, .3);
+  --k-grid-line: rgba(11, 18, 32, .05);
+  --k-hero-halo-1: rgba(8, 145, 178, .12);
+  --k-hero-halo-2: rgba(147, 51, 234, .1);
+  --k-code-bg: rgba(11, 18, 32, .04);
+}

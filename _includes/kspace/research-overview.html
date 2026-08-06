@@ -1,0 +1,36 @@
+{%- assign pubs = site.data.publications -%}
+{%- assign t = site.data.i18n -%}
+{%- assign part1 = pubs.parts | first -%}
+
+<section class="k-section k-section--alt" id="research">
+  <div class="k-wrap">
+    <div class="k-section-head k-reveal">
+      <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_research_line.en zh=t.sec_research_line.zh -%}</p>
+      <h2>{%- include kspace/i18n.html en="Offset Token: from a concept to a system" zh="偏移量词元：从一个概念到一套体系" -%}</h2>
+    </div>
+
+    <blockquote class="k-quote k-reveal">
+      {%- include kspace/i18n.html en=part1.summary.en zh=part1.summary.zh -%}
+    </blockquote>
+
+    <div class="k-flow k-reveal">
+      {%- for step in pubs.flow -%}
+      <div class="k-flow__step">
+        <p class="k-flow__label">{%- include kspace/i18n.html en=step.label.en zh=step.label.zh -%}</p>
+        <p class="k-flow__desc">{%- include kspace/i18n.html en=step.desc.en zh=step.desc.zh -%}</p>
+      </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="k-pills k-reveal">
+      {%- for part in pubs.parts -%}
+        {%- for ch in part.chapters -%}
+        <a class="k-pill" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">
+          <span class="k-pill__name">{{ ch.paper.short_name }}</span>
+          <span class="k-pill__note">{%- include kspace/i18n.html en=ch.theme.en zh=ch.theme.zh -%}</span>
+        </a>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

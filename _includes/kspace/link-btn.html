@@ -1,0 +1,12 @@
+{%- comment -%}
+  Single link button. Hidden entirely when url is blank.
+  Params: url, icon, label_en, label_zh, class
+{%- endcomment -%}
+{%- assign _u = include.url | default: "" | strip -%}
+{%- if _u != "" -%}
+{%- unless _u contains "://" or _u contains "mailto:" -%}{%- assign _u = _u | relative_url -%}{%- endunless -%}
+<a class="k-btn k-btn--sm {{ include.class }}" href="{{ _u }}"{% if include.url contains "://" %} target="_blank" rel="noopener"{% endif %}>
+  {%- include kspace/icon.html name=include.icon -%}
+  {%- include kspace/i18n.html en=include.label_en zh=include.label_zh -%}
+</a>
+{%- endif -%}

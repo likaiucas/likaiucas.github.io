@@ -1,5 +1,6 @@
 ---
 layout: archive
+published: false   # superseded by _pages/cv.html + _data/cv.yml
 title: "CV"
 permalink: /cv/
 author_profile: true

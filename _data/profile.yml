@@ -1,0 +1,93 @@
+# =============================================================================
+# Personal profile — single source of truth for the hero, contact block and CV.
+# All facts below come from the previous about.md / _config.yml. Do not invent.
+# =============================================================================
+
+name_en: "LI Kai"
+name_zh: "李锴"
+
+# Small pill above the hero name
+tag:
+  en: "PhD Candidate · UCAS &times; CityU Hong Kong"
+  zh: "中国科学院大学 &times; 香港城市大学 联合培养博士生"
+
+role:
+  en: "Computer Vision &middot; Remote Sensing &middot; Vision-Language Models"
+  zh: "计算机视觉 &middot; 遥感影像理解 &middot; 视觉语言大模型"
+
+# One-sentence research positioning (HTML allowed)
+pitch:
+  en: "I work on building extraction from <strong>off-nadir</strong> remote sensing imagery. I proposed the concept of the <strong>Offset Token</strong>, which brings off-nadir photogrammetry into the perceptual scope of vision foundation models, and I am now extending 3D spatial understanding to <strong>vision-language models</strong>."
+  zh: "我的研究聚焦<strong>偏移摄影（Off-Nadir）</strong>视角下的遥感建筑物提取。我提出了<strong>偏移量词元（Offset Token）</strong>的概念，将偏移摄影带入视觉大模型的理解视角；目前正把三维空间理解能力拓展到<strong>视觉语言大模型</strong>方向。"
+
+avatar: "/images/mybib.jpg"
+
+# Long-form intro used on the CV page (HTML allowed)
+bio:
+  en: >-
+    I am a PhD student at the University of Chinese Academy of Sciences
+    (<a href="https://english.ucas.ac.cn/" target="_blank" rel="noopener">UCAS</a>),
+    currently on a joint PhD project at City University of Hong Kong
+    (<a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener">CityU</a>).
+    At UCAS I am supervised by
+    <a href="http://www.aircas.cas.cn/ykjs/lrld/202505/t20250521_7789207.html" target="_blank" rel="noopener">Prof. Zhongming Zhao</a>
+    and <a href="https://people.ucas.ac.cn/~0010249" target="_blank" rel="noopener">Prof. Yu Meng</a>;
+    at CityU I am supervised by
+    <a href="https://zhaoxyai.github.io/" target="_blank" rel="noopener">Prof. Xiangyu Zhao</a>
+    in the Applied Machine Learning Lab
+    (<a href="https://aml-cityu.github.io/" target="_blank" rel="noopener">AML</a>).
+    In 2021 I received my bachelor's degree in Space Information and Digital Technology from the
+    University of Electronic Science and Technology of China
+    (<a href="https://en.uestc.edu.cn/" target="_blank" rel="noopener">UESTC</a>),
+    ranked 2nd in my major, and was recommended for direct PhD admission to UCAS.
+  zh: >-
+    我是中国科学院大学（<a href="https://english.ucas.ac.cn/" target="_blank" rel="noopener">UCAS</a>）博士研究生，
+    目前在香港城市大学（<a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener">CityU</a>）联合培养。
+    在中国科学院大学，我的导师是
+    <a href="http://www.aircas.cas.cn/ykjs/lrld/202505/t20250521_7789207.html" target="_blank" rel="noopener">赵忠明教授</a>
+    与 <a href="https://people.ucas.ac.cn/~0010249" target="_blank" rel="noopener">孟瑜 教授</a>；
+    在香港城市大学，我在应用机器学习实验室（<a href="https://aml-cityu.github.io/" target="_blank" rel="noopener">AML</a>）
+    由 <a href="https://zhaoxyai.github.io/" target="_blank" rel="noopener">赵向宇 教授</a> 指导。
+    2021 年，我以专业第 2 名的成绩获得电子科技大学（<a href="https://en.uestc.edu.cn/" target="_blank" rel="noopener">UESTC</a>）
+    空间信息与数字技术专业学士学位，并获推荐直接攻读博士学位。
+
+# ---- Contact ---------------------------------------------------------------
+# Email is assembled in the template from user + domain to deter scrapers.
+email_user: "likai211"
+email_domain: "mails.ucas.ac.cn"
+wechat: "kaili37"
+location:
+  en: "Beijing, China / Hong Kong SAR"
+  zh: "中国北京 / 中国香港"
+affiliation:
+  en: "UCAS &middot; AIRCAS &middot; CityU AML Lab"
+  zh: "中国科学院大学 &middot; 空天信息创新研究院 &middot; 香港城市大学 AML 实验室"
+
+# Path to the PDF résumé. Drop the file at files/cv.pdf to activate the button.
+cv_pdf: "/files/cv.pdf"
+
+# ---- Hero metrics ----------------------------------------------------------
+# Leave `value` empty to hide a card (e.g. until you fill in your citation count).
+metrics:
+  - value: "9"
+    label:
+      en: "Publications"
+      zh: "发表论文"
+  - value: "4"
+    label:
+      en: "IEEE TGRS Papers"
+      zh: "IEEE TGRS 论文"
+  - value: "3"
+    label:
+      en: "Awards &amp; Nominations"
+      zh: "获奖与提名"
+  # TODO: fill in your Google Scholar citation count, then this card appears.
+  - value: ""
+    label:
+      en: "Citations"
+      zh: "论文引用"
+
+# ---- Hero call-to-action ---------------------------------------------------
+open_to:
+  en: "Open to research scientist / algorithm engineer roles from 2026."
+  zh: "2026 年起开放研究科学家 / 算法工程师岗位机会。"

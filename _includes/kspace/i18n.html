@@ -1,0 +1,10 @@
+{%- comment -%}
+  Bilingual text atom. Renders both languages; CSS shows exactly one.
+  Params: en (required), zh (falls back to en), tag (default "span"), class
+{%- endcomment -%}
+{%- assign _tag = include.tag | default: "span" -%}
+{%- assign _cls = include.class -%}
+{%- assign _zh = include.zh | default: include.en -%}
+{%- if include.en and include.en != "" -%}
+<{{ _tag }} class="i18n {{ _cls }}" lang="en">{{ include.en }}</{{ _tag }}><{{ _tag }} class="i18n {{ _cls }}" lang="zh">{{ _zh }}</{{ _tag }}>
+{%- endif -%}

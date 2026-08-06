@@ -1,4 +1,5 @@
 ---
+published: false   # legacy academicpages demo page - kept on disk, not built
 permalink: /terms/
 title: "Terms and Privacy Policy"
 modified: 2016-06-06

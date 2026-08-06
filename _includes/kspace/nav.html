@@ -1,0 +1,39 @@
+<header class="k-nav" id="k-nav">
+  <div class="k-nav__inner">
+    <a class="k-brand" href="{{ '/' | relative_url }}">
+      <span class="k-brand__mark" aria-hidden="true">K</span>
+      <span>LI&nbsp;Kai</span>
+      <span class="k-brand__sub">Kspace</span>
+    </a>
+
+    <ul class="k-nav__menu" id="k-nav-menu">
+      {%- for item in site.data.navigation.main %}
+      {%- assign is_active = false -%}
+      {%- if item.url == "/" and page.url == "/" -%}{%- assign is_active = true -%}{%- endif -%}
+      {%- if item.url != "/" and page.url contains item.url -%}{%- assign is_active = true -%}{%- endif -%}
+      <li>
+        <a class="k-nav__link{% if is_active %} is-active{% endif %}" href="{{ item.url | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>
+          {%- include kspace/i18n.html en=item.title.en zh=item.title.zh -%}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <div class="k-nav__tools">
+      <div class="k-lang" role="group" aria-label="Language">
+        <span class="k-lang__slider" aria-hidden="true"></span>
+        <button type="button" class="k-lang__btn" data-lang-set="en" aria-pressed="true">EN</button>
+        <button type="button" class="k-lang__btn" data-lang-set="zh" aria-pressed="false">中</button>
+      </div>
+
+      <button type="button" class="k-icon-btn" data-theme-toggle aria-label="Toggle colour theme">
+        {%- include kspace/icon.html name="moon" -%}
+        {%- include kspace/icon.html name="sun" -%}
+      </button>
+
+      <button type="button" class="k-icon-btn k-nav__burger" data-nav-toggle aria-controls="k-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        {%- include kspace/icon.html name="menu" -%}
+      </button>
+    </div>
+  </div>
+</header>

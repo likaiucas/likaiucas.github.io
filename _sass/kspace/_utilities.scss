@@ -1,0 +1,80 @@
+/* ==========================================================================
+   KSPACE · Utilities
+   ========================================================================== */
+
+.k-gradient-text {
+  background: var(--k-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.k-accent { color: var(--k-accent); }
+.k-dim { color: var(--k-text-dim); }
+.k-faint { color: var(--k-text-faint); }
+
+.k-mono { font-family: var(--k-font-mono); }
+
+.k-mt-0 { margin-top: 0 !important; }
+.k-mb-0 { margin-bottom: 0 !important; }
+.k-mt-4 { margin-top: var(--k-sp-4); }
+.k-mt-5 { margin-top: var(--k-sp-5); }
+.k-mt-6 { margin-top: var(--k-sp-6); }
+
+.k-center { text-align: center; }
+
+.k-sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.k-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.k-prose {
+  max-width: 72ch;
+  color: var(--k-text-dim);
+}
+
+.k-prose a { border-bottom: 1px solid rgba(34, 211, 238, .35); }
+.k-prose a:hover { border-bottom-color: var(--k-accent-3); }
+
+.k-empty {
+  padding: var(--k-sp-6);
+  text-align: center;
+  border-radius: var(--k-r-lg);
+  border: 1px dashed var(--k-border-strong);
+  color: var(--k-text-faint);
+  font-size: var(--k-fs-sm);
+}
+
+/* Big404 / message block */
+.k-msg {
+  min-height: 48vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.k-msg__code {
+  font-family: var(--k-font-display);
+  font-size: clamp(5rem, 18vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.04em;
+  background: var(--k-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

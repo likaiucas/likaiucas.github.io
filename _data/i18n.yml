@@ -1,0 +1,123 @@
+# =============================================================================
+# UI micro-copy, bilingual. Referenced as site.data.i18n.<key>.en / .zh
+# =============================================================================
+
+# ---- generic actions -------------------------------------------------------
+btn_pdf:
+  en: "PDF"
+  zh: "论文 PDF"
+btn_arxiv:
+  en: "arXiv"
+  zh: "arXiv"
+btn_code:
+  en: "Code"
+  zh: "代码"
+btn_project:
+  en: "Project Page"
+  zh: "项目主页"
+btn_doi:
+  en: "Publisher"
+  zh: "期刊页面"
+btn_bibtex:
+  en: "BibTeX"
+  zh: "BibTeX"
+btn_copy:
+  en: "Copy"
+  zh: "复制"
+copy_done:
+  en: "BibTeX copied"
+  zh: "BibTeX 已复制"
+copy_fail:
+  en: "Copy failed"
+  zh: "复制失败"
+expand_all:
+  en: "Expand all"
+  zh: "全部展开"
+collapse_all:
+  en: "Collapse all"
+  zh: "全部折叠"
+show_more:
+  en: "Show earlier news"
+  zh: "查看更早消息"
+back_home:
+  en: "Back to home"
+  zh: "返回首页"
+download_cv:
+  en: "Download CV (PDF)"
+  zh: "下载简历 (PDF)"
+print_cv:
+  en: "Print"
+  zh: "打印"
+scholar:
+  en: "Google Scholar"
+  zh: "Google Scholar"
+email_me:
+  en: "Email me"
+  zh: "发送邮件"
+view_all_papers:
+  en: "All research"
+  zh: "全部研究成果"
+
+# ---- labels ----------------------------------------------------------------
+lbl_highlights:
+  en: "Highlights"
+  zh: "研究亮点"
+lbl_chapter:
+  en: "CHAPTER"
+  zh: "章节"
+lbl_contents:
+  en: "Contents"
+  zh: "目录"
+lbl_other_pubs:
+  en: "Other Collaborative Publications"
+  zh: "其他合作论文"
+lbl_teaser_soon:
+  en: "Figure coming soon"
+  zh: "示意图待补充"
+lbl_status_published:
+  en: "Published"
+  zh: "已发表"
+lbl_status_accepted:
+  en: "Accepted"
+  zh: "已录用"
+lbl_status_review:
+  en: "Under Review"
+  zh: "在审"
+lbl_status_preprint:
+  en: "Preprint"
+  zh: "预印本"
+
+# ---- section headings ------------------------------------------------------
+sec_research_line:
+  en: "Research Line"
+  zh: "研究主线"
+sec_selected:
+  en: "Selected Papers"
+  zh: "代表性论文"
+sec_news:
+  en: "News"
+  zh: "近期动态"
+sec_background:
+  en: "Background"
+  zh: "教育与经历"
+sec_education:
+  en: "Education"
+  zh: "教育背景"
+sec_experience:
+  en: "Experience"
+  zh: "研究与实习经历"
+sec_awards:
+  en: "Awards & Honours"
+  zh: "获奖与荣誉"
+sec_services:
+  en: "Academic Services"
+  zh: "学术服务"
+sec_skills:
+  en: "Skills"
+  zh: "技能"
+sec_publications:
+  en: "Publications"
+  zh: "发表论文"
+sec_contact:
+  en: "Get in touch"
+  zh: "联系我"

@@ -1,4 +1,5 @@
 ---
+published: false   # legacy academicpages demo page - kept on disk, not built
 title: "Archive Layout with Content"
 layout: archive
 permalink: /archive-layout-with-content/

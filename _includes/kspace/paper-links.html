@@ -1,0 +1,34 @@
+{%- comment -%}
+  Row of resource buttons for one paper. Params: paper, uid
+{%- endcomment -%}
+{%- assign p = include.paper -%}
+{%- assign t = site.data.i18n -%}
+
+<div class="k-links">
+  {%- include kspace/link-btn.html url=p.links.pdf icon="file" label_en=t.btn_pdf.en label_zh=t.btn_pdf.zh class="k-btn--primary" -%}
+  {%- include kspace/link-btn.html url=p.links.arxiv icon="arxiv" label_en=t.btn_arxiv.en label_zh=t.btn_arxiv.zh -%}
+  {%- include kspace/link-btn.html url=p.links.code icon="code" label_en=t.btn_code.en label_zh=t.btn_code.zh -%}
+  {%- include kspace/link-btn.html url=p.links.project icon="globe" label_en=t.btn_project.en label_zh=t.btn_project.zh -%}
+  {%- include kspace/link-btn.html url=p.links.doi icon="link" label_en=t.btn_doi.en label_zh=t.btn_doi.zh -%}
+
+  {%- if p.bibtex and p.bibtex != "" -%}
+  <details class="k-bib">
+    <summary class="k-btn k-btn--sm k-btn--ghost">
+      {%- include kspace/icon.html name="quote" -%}
+      {%- include kspace/i18n.html en=t.btn_bibtex.en zh=t.btn_bibtex.zh -%}
+    </summary>
+    <div class="k-bib__box">
+      <button type="button" class="k-btn k-btn--sm k-bib__copy"
+              data-copy-target="bib-{{ include.uid }}"
+              data-copy-done="{{ t.copy_done.en }}"
+              data-copy-done-zh="{{ t.copy_done.zh }}"
+              data-copy-fail="{{ t.copy_fail.en }}"
+              data-copy-fail-zh="{{ t.copy_fail.zh }}">
+        {%- include kspace/icon.html name="copy" -%}
+        {%- include kspace/i18n.html en=t.btn_copy.en zh=t.btn_copy.zh -%}
+      </button>
+      <pre id="bib-{{ include.uid }}">{{ p.bibtex | strip }}</pre>
+    </div>
+  </details>
+  {%- endif -%}
+</div>

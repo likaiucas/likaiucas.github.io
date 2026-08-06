@@ -1,0 +1,39 @@
+{%- assign pf = site.data.profile -%}
+{%- assign t = site.data.i18n -%}
+{%- assign mail = pf.email_user | append: "@" | append: pf.email_domain -%}
+
+<section class="k-section k-section--tight" id="contact">
+  <div class="k-wrap">
+    <div class="k-contact k-reveal">
+      <p class="k-eyebrow" style="justify-content:center">{%- include kspace/i18n.html en=t.sec_contact.en zh=t.sec_contact.zh -%}</p>
+      <h2>{%- include kspace/i18n.html en="Let's talk about off-nadir vision and 3D scenes" zh="欢迎交流偏移摄影与三维场景理解" -%}</h2>
+      <p class="k-contact__lead">{%- include kspace/i18n.html en=pf.open_to.en zh=pf.open_to.zh -%}</p>
+
+      <div class="k-btn-row">
+        <a class="k-btn k-btn--primary" href="mailto:{{ mail }}">
+          {%- include kspace/icon.html name="mail" -%}
+          {{ mail }}
+        </a>
+        {%- if site.author.googlescholar -%}
+        <a class="k-btn" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">
+          {%- include kspace/icon.html name="scholar" -%}
+          {%- include kspace/i18n.html en=t.scholar.en zh=t.scholar.zh -%}
+        </a>
+        {%- endif -%}
+        {%- if site.author.github -%}
+        <a class="k-btn" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">
+          {%- include kspace/icon.html name="github" -%}GitHub
+        </a>
+        {%- endif -%}
+      </div>
+
+      <div class="k-contact__facts">
+        <span>{%- include kspace/icon.html name="pin" -%}{%- include kspace/i18n.html en=pf.location.en zh=pf.location.zh -%}</span>
+        <span>{%- include kspace/icon.html name="building" -%}{%- include kspace/i18n.html en=pf.affiliation.en zh=pf.affiliation.zh -%}</span>
+        {%- if pf.wechat -%}
+        <span>{%- include kspace/icon.html name="chat" -%}WeChat: {{ pf.wechat }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>

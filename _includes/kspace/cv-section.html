@@ -1,0 +1,28 @@
+{%- comment -%}
+  Generic CV timeline block.
+  Params: id, title_en, title_zh, items (list of {when, what, where, notes})
+{%- endcomment -%}
+{%- if include.items and include.items.size > 0 -%}
+<section class="k-cvsec" id="{{ include.id }}">
+  <h2 class="k-cvsec__title">{%- include kspace/i18n.html en=include.title_en zh=include.title_zh -%}</h2>
+
+  <ul class="k-tl">
+    {%- for it in include.items -%}
+    <li class="k-tl__item">
+      <span class="k-tl__when">{{ it.when }}</span>
+      <p class="k-tl__what">{%- include kspace/i18n.html en=it.what.en zh=it.what.zh -%}</p>
+      {%- if it.where -%}
+      <p class="k-tl__where">{%- include kspace/i18n.html en=it.where.en zh=it.where.zh -%}</p>
+      {%- endif -%}
+      {%- if it.notes and it.notes.size > 0 -%}
+      <ul class="k-tl__notes">
+        {%- for n in it.notes -%}
+        <li>{%- include kspace/i18n.html en=n.en zh=n.zh -%}</li>
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}

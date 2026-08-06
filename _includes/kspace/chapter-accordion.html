@@ -1,0 +1,36 @@
+{%- comment -%}
+  One collapsible chapter. Params: chapter, accent ("cyan" | "violet")
+  Uses native <details> so it works without JS and stays keyboard accessible.
+{%- endcomment -%}
+{%- assign ch = include.chapter -%}
+{%- assign p = ch.paper -%}
+{%- assign t = site.data.i18n -%}
+{%- assign nn = ch.num | prepend: "0" | slice: -2, 2 -%}
+
+<details class="k-chapter{% if include.accent == 'violet' %} k-chapter--violet{% endif %}" id="{{ ch.anchor }}">
+  <summary class="k-chapter__summary">
+    <span class="k-chapter__no">
+      <span>{%- include kspace/i18n.html en=t.lbl_chapter.en zh=t.lbl_chapter.zh -%}</span>
+      <b>{{ nn }}</b>
+    </span>
+
+    <span class="k-chapter__head">
+      <span class="k-chapter__theme">{%- include kspace/i18n.html en=ch.theme.en zh=ch.theme.zh -%}</span>
+      <span class="k-chapter__tagline">{%- include kspace/i18n.html en=ch.contribution.en zh=ch.contribution.zh -%}</span>
+    </span>
+
+    <span class="k-chapter__aside">
+      <span class="k-chapter__short">{{ p.short_name }}</span>
+      {%- if p.venue_short and p.venue_short != "" -%}
+      <span class="k-badge k-badge--venue">{{ p.venue_short }}{% if p.year %} {{ p.year }}{% endif %}</span>
+      {%- else -%}
+      {%- include kspace/status-badge.html status=p.status -%}
+      {%- endif -%}
+      <span class="k-chapter__caret" aria-hidden="true">{%- include kspace/icon.html name="chevron-down" -%}</span>
+    </span>
+  </summary>
+
+  <div class="k-chapter__panel">
+    {%- include kspace/paper-card.html paper=p chapter=ch variant="full" uid=ch.anchor -%}
+  </div>
+</details>
