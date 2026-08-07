@@ -6,19 +6,32 @@
 
 education:
 
+  - when: "2024 &ndash; Present"
+    what:
+      en: "Ph.D. Candidate in Data Science"
+      zh: "博士研究生，数据科学"
+    where:
+      en: "City University of Hong Kong (CityU) &middot; School of Data Science"
+      zh: "香港城市大学（CityU）&middot; 数据科学学院"
+    notes:
+      - en: "Supervised by Prof. Xiangyu Zhao, Applied Machine Learning Lab (AML)."
+        zh: "导师：赵翔宇 教授，应用机器学习实验室（AML）。"
+      - en: "Research on vision-language models and 3D scene understanding."
+        zh: "研究方向：视觉语言大模型与三维场景理解。"
 
+  # TODO: confirm the Chinese wording of the UCAS degree programme.
   - when: "2021 &ndash; Present"
     what:
-      en: "Ph.D. Candidate (direct entry), Cartography &amp; Signal & Information Processing
-      zh: "博士研究生（本科直博）"
+      en: "Ph.D. Candidate (direct entry), Cartography &amp; Signal and Information Processing"
+      zh: "博士研究生（本科直博），地图学与信号与信息处理"
     where:
       en: "University of Chinese Academy of Sciences (UCAS) &middot; Aerospace Information Research Institute"
       zh: "中国科学院大学（UCAS）&middot; 空天信息创新研究院"
     notes:
       - en: "Supervised by Prof. Zhongming Zhao and Prof. Yu Meng."
         zh: "导师：赵忠明 教授、孟瑜 教授。"
-      - en: "Joint PhD project at City University of Hong Kong (CityU), Applied Machine Learning Lab, supervised by Prof. Xiangyu Zhao."
-        zh: "香港城市大学（CityU）应用机器学习实验室（AML）联合培养，导师：赵翔宇 教授。"
+      - en: "Research on building extraction from off-nadir remote sensing imagery."
+        zh: "研究方向：偏移摄影视角下的遥感建筑物提取。"
 
   - when: "Until 2021"
     what:

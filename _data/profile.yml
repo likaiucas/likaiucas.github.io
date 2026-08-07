@@ -31,9 +31,10 @@ avatar: "/images/mybib.jpg"
 # Long-form intro used on the CV page (HTML allowed)
 bio:
   en: >-
-    I am a PhD student at the University of Chinese Academy of Sciences
+    I am a PhD candidate at the University of Chinese Academy of Sciences
     (<a href="https://english.ucas.ac.cn/" target="_blank" rel="noopener">UCAS</a>),
-    currently on a joint PhD project at City University of Hong Kong
+    Aerospace Information Research Institute, and since 2024 also a PhD candidate in Data Science
+    at City University of Hong Kong
     (<a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener">CityU</a>).
     At UCAS I am supervised by
     <a href="http://www.aircas.cas.cn/ykjs/lrld/202505/t20250521_7789207.html" target="_blank" rel="noopener">Prof. Zhongming Zhao</a>
@@ -47,13 +48,13 @@ bio:
     (<a href="https://en.uestc.edu.cn/" target="_blank" rel="noopener">UESTC</a>),
     ranked 2nd in my major, and was recommended for direct PhD admission to UCAS.
   zh: >-
-    我是中国科学院大学（<a href="https://english.ucas.ac.cn/" target="_blank" rel="noopener">UCAS</a>）博士研究生，
-    目前在香港城市大学（<a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener">CityU</a>）联合培养。
+    我是中国科学院大学（<a href="https://english.ucas.ac.cn/" target="_blank" rel="noopener">UCAS</a>）空天信息创新研究院博士研究生，
+    并自 2024 年起同时为香港城市大学（<a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener">CityU</a>）数据科学专业博士研究生。
     在中国科学院大学，我的导师是
-    <a href="http://www.aircas.cas.cn/ykjs/lrld/202505/t20250521_7789207.html" target="_blank" rel="noopener">赵忠明教授</a>
+    <a href="http://www.aircas.cas.cn/ykjs/lrld/202505/t20250521_7789207.html" target="_blank" rel="noopener">赵忠明 教授</a>
     与 <a href="https://people.ucas.ac.cn/~0010249" target="_blank" rel="noopener">孟瑜 教授</a>；
     在香港城市大学，我在应用机器学习实验室（<a href="https://aml-cityu.github.io/" target="_blank" rel="noopener">AML</a>）
-    由 <a href="https://zhaoxyai.github.io/" target="_blank" rel="noopener">赵翔宇   教授</a> 指导。
+    由 <a href="https://zhaoxyai.github.io/" target="_blank" rel="noopener">赵翔宇 教授</a> 指导。
     2021 年，我以专业第 2 名的成绩获得电子科技大学（<a href="https://en.uestc.edu.cn/" target="_blank" rel="noopener">UESTC</a>）
     空间信息与数字技术专业学士学位，并获推荐直接攻读博士学位。
 
