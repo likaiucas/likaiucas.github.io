@@ -185,6 +185,17 @@ exclude:
   - talkmap
   - talkmap.py
   - talkmap.ipynb
+  # --- legacy minimal-mistakes stylesheet, NOT compiled ----------------------
+  # main.scss pulls in Susy and the full Font Awesome SCSS (164 KB + 69 KB of
+  # variables/shims). Those two are by far the slowest part of a Jekyll build
+  # and were pushing the GitHub Pages build over its time limit. The kspace
+  # design system only needs assets/css/site.scss, so main.scss is excluded
+  # instead of compiled. The file itself stays on disk for reference.
+  - assets/css/main.scss
+  - assets/css/academicons.css
+  - assets/css/academicons.min.css
+  - assets/css/collapse.css
+  - assets/js/collapse.js
 keep_files:
   - .git
   - .svn
@@ -255,20 +266,15 @@ timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
+# The redesigned site has no blog, no gists and no pagination, so those plugins
+# were dropped — every plugin adds work to each build. Emoji in _data/news.yml
+# are literal Unicode characters, so jemoji is not needed either.
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
-  - jemoji
 
 # Mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
-  - jemoji
 
 
 # Archives
