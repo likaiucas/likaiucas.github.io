@@ -5,9 +5,11 @@
 # =============================================================================
 
 education:
+
+
   - when: "2021 &ndash; Present"
     what:
-      en: "Ph.D. Candidate (direct entry), Cartography &amp; Geographic Information Engineering"
+      en: "Ph.D. Candidate (direct entry), Cartography &amp; Signal & Information Processing
       zh: "博士研究生（本科直博）"
     where:
       en: "University of Chinese Academy of Sciences (UCAS) &middot; Aerospace Information Research Institute"
@@ -16,7 +18,7 @@ education:
       - en: "Supervised by Prof. Zhongming Zhao and Prof. Yu Meng."
         zh: "导师：赵忠明 教授、孟瑜 教授。"
       - en: "Joint PhD project at City University of Hong Kong (CityU), Applied Machine Learning Lab, supervised by Prof. Xiangyu Zhao."
-        zh: "香港城市大学（CityU）应用机器学习实验室（AML）联合培养，导师：赵向宇 教授。"
+        zh: "香港城市大学（CityU）应用机器学习实验室（AML）联合培养，导师：赵翔宇 教授。"
 
   - when: "Until 2021"
     what:

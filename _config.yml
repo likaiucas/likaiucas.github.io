@@ -180,11 +180,6 @@ exclude:
   - README
   - tmp
   - vendor
-  # --- legacy academicpages material, kept on disk but not published --------
-  - markdown_generator
-  - talkmap
-  - talkmap.py
-  - talkmap.ipynb
   # --- legacy minimal-mistakes stylesheet, NOT compiled ----------------------
   # main.scss pulls in Susy and the full Font Awesome SCSS (164 KB + 69 KB of
   # variables/shims). Those two are by far the slowest part of a Jekyll build
@@ -224,29 +219,13 @@ kramdown:
 
 
 # Collections
-# The redesigned site sources every publication from _data/publications.yml,
-# so the old academicpages collections are no longer generated. The folders
-# (_publications, _talks, _teaching, _portfolio) stay on disk for reference.
+# Every publication comes from _data/publications.yml, so no collections exist.
 collections: {}
 
 
-# These settings control how pages and collections are included in the site
-#
-# NOTE — Jekyll's `Publisher` reads `published` with `Hash#fetch`, which bypasses
-# front-matter defaults for *pages*. So the legacy academicpages demo pages
-# (about.md, cv.md, talks.html, teaching.html, markdown.md, terms.md, the
-# *-archive pages, …) each carry an explicit `published: false` in their own
-# front matter. They stay in the repository for reference but are never built.
-# Only index.html, publications.html, cv.html and 404.html are live.
+# These settings control how pages are built.
+# Live pages: index.html, publications.html, cv.html, 404.html — all in _pages.
 defaults:
-  # _posts — legacy demo posts. For documents (unlike pages) defaults are merged
-  # eagerly, so `published: false` here is enough to keep them out of the build.
-  - scope:
-      path: ""
-      type: posts
-    values:
-      published: false
-  # _pages — every new page gets the kspace design system by default
   - scope:
       path: ""
       type: pages
