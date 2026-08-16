@@ -9,7 +9,9 @@
   <ul class="k-tl">
     {%- for it in include.items -%}
     <li class="k-tl__item">
+      {%- if it.when and it.when != "" -%}
       <span class="k-tl__when">{{ it.when }}</span>
+      {%- endif -%}
       <p class="k-tl__what">{%- include kspace/i18n.html en=it.what.en zh=it.what.zh -%}</p>
       {%- if it.where -%}
       <p class="k-tl__where">{%- include kspace/i18n.html en=it.where.en zh=it.where.zh -%}</p>

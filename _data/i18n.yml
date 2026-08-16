@@ -103,6 +103,12 @@ sec_education:
 sec_experience:
   en: "Experience"
   zh: "研究与实习经历"
+sec_mentorship:
+  en: "Mentorship"
+  zh: "研究生指导"
+sec_teaching:
+  en: "Teaching"
+  zh: "教学经历"
 sec_awards:
   en: "Awards & Honours"
   zh: "获奖与荣誉"
