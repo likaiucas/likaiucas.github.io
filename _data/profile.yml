@@ -23,8 +23,8 @@ role:
 
 # One-sentence research positioning (HTML allowed)
 pitch:
-  en: "I work on building extraction from <strong>off-nadir</strong> remote sensing imagery. I proposed the concept of the <strong>Offset Token</strong>, which brings off-nadir photogrammetry into the perceptual scope of vision foundation models, and I am now extending 3D spatial understanding to <strong>vision-language models</strong>."
-  zh: "我的研究聚焦<strong>偏移摄影（Off-Nadir）</strong>视角下的遥感建筑物提取。我提出了<strong>偏移量词元（Offset Token）</strong>的概念，将偏移摄影带入视觉大模型的理解视角；目前正把三维空间理解能力拓展到<strong>视觉语言大模型</strong>方向。"
+  en: "I work on building extraction from <strong>off-nadir</strong> remote sensing imagery. I proposed the concept of the <strong>Offset Token</strong>, which brings off-nadir photogrammetry into the perceptual scope of vision foundation models, and I am now extending 3D spatial understanding to <strong>vision-language models</strong>, combined with <strong>reinforcement learning</strong>."
+  zh: "我的研究聚焦<strong>偏移摄影（Off-Nadir）</strong>视角下的遥感建筑物提取。我提出了<strong>偏移量词元（Offset Token）</strong>的概念，将偏移摄影带入视觉大模型的理解视角；目前正把三维空间理解能力，结合<strong>强化学习</strong>拓展到<strong>视觉语言大模型</strong>方向。"
 
 avatar: "/images/mybib.jpg"
 
