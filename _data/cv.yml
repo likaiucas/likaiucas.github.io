@@ -68,14 +68,16 @@ experience:
       - en: "Built the Offset Token research line: OBM, PolyFootNet, DragOSM, ObliCity/DragRoof, LODEOT."
         zh: "构建偏移量词元研究主线：OBM、PolyFootNet、DragOSM、ObliCity/DragRoof、LODEOT。"
 
-  - when: "2021.03 &ndash; 2021.08"
+  - when: "2021.05 &ndash; 2021.09"
     what:
-      en: "Computer Vision Algorithm Researcher"
-      zh: "计算机视觉算法研究员"
+      en: "Computer Vision Algorithm Intern"
+      zh: "计算机视觉算法实习生"
     where:
       en: "Tencent"
       zh: "腾讯"
-    notes: []
+    notes:
+      - en: "Surveyed 3D object detection and 3D reconstruction algorithms."
+        zh: "调研 3D 目标检测与 3D 重建相关算法。"
 
 # Master's students co-mentored alongside Prof. Xiangyu Zhao (CityU, AML Lab).
 mentorship:
