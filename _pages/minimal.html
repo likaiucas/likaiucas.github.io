@@ -1,0 +1,200 @@
+---
+layout: plain
+published: true
+title: "LI Kai — Minimal"
+description: "Plain-text CV / publication list for LI Kai (PhD Candidate, UCAS x CityU)."
+permalink: /minimal/
+---
+{%- assign pf = site.data.profile -%}
+{%- assign pubs = site.data.publications -%}
+{%- assign cv = site.data.cv -%}
+{%- assign t = site.data.i18n -%}
+{%- assign mail = pf.email_user | append: "@" | append: pf.email_domain -%}
+
+<header>
+  <h1>
+    {%- include kspace/i18n.html en=pf.name_en zh=pf.name_zh -%}
+    <small>{%- include kspace/i18n.html en=pf.tag.en zh=pf.tag.zh -%}</small>
+  </h1>
+  <p class="plain__role">{%- include kspace/i18n.html en=pf.role.en zh=pf.role.zh -%}</p>
+
+  <p class="plain__links">
+    <a href="mailto:{{ mail }}">{{ mail }}</a>
+    {%- if site.author.googlescholar -%}<span class="sep">&middot;</span><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">Google Scholar</a>{%- endif -%}
+    {%- if site.author.github -%}<span class="sep">&middot;</span><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>{%- endif -%}
+    {%- if site.author.orcid -%}<span class="sep">&middot;</span><a href="{{ site.author.orcid }}" target="_blank" rel="noopener">ORCID</a>{%- endif -%}
+    {%- if site.author.linkedin -%}<span class="sep">&middot;</span><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{%- endif -%}
+    {%- assign cvpdf = pf.cv_pdf | default: "" | strip -%}
+    {%- if cvpdf != "" -%}<span class="sep">&middot;</span><a href="{{ cvpdf | relative_url }}">{%- include kspace/i18n.html en=t.download_cv.en zh=t.download_cv.zh -%}</a>{%- endif -%}
+  </p>
+
+  <p>{%- include kspace/i18n.html en=pf.pitch.en zh=pf.pitch.zh -%}</p>
+</header>
+
+<!-- ============================================================= Publications -->
+<section id="publications">
+  <h2>{%- include kspace/i18n.html en=t.sec_publications.en zh=t.sec_publications.zh -%}</h2>
+
+  {%- assign n = 0 -%}
+  {%- for part in pubs.parts -%}
+  <h3>{%- include kspace/i18n.html en=part.title.en zh=part.title.zh -%}</h3>
+  {%- for ch in part.chapters -%}
+    {%- assign n = n | plus: 1 -%}
+    {%- assign p = ch.paper -%}
+    {%- assign href = p.links.pdf | default: "" | strip -%}
+    {%- if href == "" -%}{%- assign href = p.links.arxiv | default: "" | strip -%}{%- endif -%}
+    {%- if href == "" -%}{%- assign href = p.links.doi | default: "" | strip -%}{%- endif -%}
+    {%- if href == "" -%}{%- assign href = p.links.project | default: "" | strip -%}{%- endif -%}
+    {%- if href == "" -%}{%- assign href = p.links.code | default: "" | strip -%}{%- endif -%}
+    {%- assign is_external = false -%}
+    {%- if href contains "://" -%}{%- assign is_external = true -%}{%- endif -%}
+    {%- if href != "" and is_external == false -%}{%- assign href = href | relative_url -%}{%- endif -%}
+  <p class="plain__pub">
+    <span class="plain__pub-index">[{{ n }}]</span>
+    <span class="plain__pub-title">
+      {%- if href != "" -%}
+      <a href="{{ href }}"{% if is_external %} target="_blank" rel="noopener"{% endif %}>{{ p.title }}</a>
+      {%- else -%}
+      {{ p.title }}
+      {%- endif -%}
+    </span>
+    <span class="plain__pub-meta">
+      {%- if p.me and p.me != "" -%}
+        {%- capture me_html -%}<strong>{{ p.me }}</strong>{%- endcapture -%}
+        {{ p.authors | replace: p.me, me_html }}
+      {%- else -%}{{ p.authors }}{%- endif -%}
+      &middot; {{ p.venue_short }}{% if p.venue_short and p.venue_short != "" and p.year %}, {% endif %}{{ p.year }}
+    </span>
+  </p>
+  {%- endfor -%}
+  {%- for item in part.working -%}
+  <p class="plain__pub">
+    <span class="plain__pub-index">&middot;</span>
+    <span class="plain__pub-title">{%- include kspace/i18n.html en=item.title.en zh=item.title.zh -%}</span>
+    <span class="plain__pub-meta">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</span>
+  </p>
+  {%- endfor -%}
+  {%- endfor -%}
+
+  {%- if pubs.others and pubs.others.size > 0 -%}
+  <h3>{%- include kspace/i18n.html en=t.lbl_other_pubs.en zh=t.lbl_other_pubs.zh -%}</h3>
+  {%- for o in pubs.others -%}
+  {%- assign n = n | plus: 1 -%}
+  <p class="plain__pub">
+    <span class="plain__pub-index">[{{ n }}]</span>
+    <span class="plain__pub-title">
+      {%- assign ourl = o.url | default: "" | strip -%}
+      {%- if ourl != "" -%}<a href="{{ ourl }}" target="_blank" rel="noopener">{{ o.title }}</a>{%- else -%}{{ o.title }}{%- endif -%}
+    </span>
+    <span class="plain__pub-meta">{{ o.citation }}</span>
+  </p>
+  {%- endfor -%}
+  {%- endif -%}
+</section>
+
+<!-- ================================================================= Education -->
+<section id="education">
+  <h2>{%- include kspace/i18n.html en=t.sec_education.en zh=t.sec_education.zh -%}</h2>
+  <ul class="plain__list">
+    {%- for e in cv.education -%}
+    <li>
+      <span class="when">{{ e.when }}</span>
+      <span class="what">{%- include kspace/i18n.html en=e.what.en zh=e.what.zh -%}</span>
+      &mdash; <span class="where">{%- include kspace/i18n.html en=e.where.en zh=e.where.zh -%}</span>
+      {%- for note in e.notes -%}
+      <span class="note">{%- include kspace/i18n.html en=note.en zh=note.zh -%}</span>
+      {%- endfor -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+<!-- ================================================================ Experience -->
+<section id="experience">
+  <h2>{%- include kspace/i18n.html en=t.sec_experience.en zh=t.sec_experience.zh -%}</h2>
+  <ul class="plain__list">
+    {%- for e in cv.experience -%}
+    <li>
+      <span class="when">{{ e.when }}</span>
+      <span class="what">{%- include kspace/i18n.html en=e.what.en zh=e.what.zh -%}</span>
+      &mdash; <span class="where">{%- include kspace/i18n.html en=e.where.en zh=e.where.zh -%}</span>
+      {%- for note in e.notes -%}
+      <span class="note">{%- include kspace/i18n.html en=note.en zh=note.zh -%}</span>
+      {%- endfor -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{%- if cv.mentorship and cv.mentorship.size > 0 -%}
+<!-- =============================================================== Mentorship -->
+<section id="mentorship">
+  <h2>{%- include kspace/i18n.html en=t.sec_mentorship.en zh=t.sec_mentorship.zh -%}</h2>
+  <ul class="plain__list">
+    {%- for m in cv.mentorship -%}
+    <li>
+      <span class="what">{%- include kspace/i18n.html en=m.what.en zh=m.what.zh -%}</span>
+      &mdash; <span class="where">{%- include kspace/i18n.html en=m.where.en zh=m.where.zh -%}</span>
+      {%- for note in m.notes -%}
+      <span class="note">{%- include kspace/i18n.html en=note.en zh=note.zh -%}</span>
+      {%- endfor -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
+{%- if cv.teaching and cv.teaching.size > 0 -%}
+<!-- ================================================================= Teaching -->
+<section id="teaching">
+  <h2>{%- include kspace/i18n.html en=t.sec_teaching.en zh=t.sec_teaching.zh -%}</h2>
+  <ul class="plain__list">
+    {%- for e in cv.teaching -%}
+    <li>
+      <span class="what">{%- include kspace/i18n.html en=e.what.en zh=e.what.zh -%}</span>
+      &mdash; <span class="where">{%- include kspace/i18n.html en=e.where.en zh=e.where.zh -%}</span>
+      {%- for note in e.notes -%}
+      <span class="note">{%- include kspace/i18n.html en=note.en zh=note.zh -%}</span>
+      {%- endfor -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
+<!-- ==================================================================== Awards -->
+<section id="awards">
+  <h2>{%- include kspace/i18n.html en=t.sec_awards.en zh=t.sec_awards.zh -%}</h2>
+  {%- for stage in cv.awards -%}
+  <h3>{%- include kspace/i18n.html en=stage.stage.en zh=stage.stage.zh -%}</h3>
+  <ul class="plain__list">
+    {%- for aw in stage.items -%}
+    <li>
+      <span class="what">{%- include kspace/i18n.html en=aw.what.en zh=aw.what.zh -%}</span>
+      {%- if aw.where.en and aw.where.en != "" -%}
+      &mdash; <span class="where">{%- include kspace/i18n.html en=aw.where.en zh=aw.where.zh -%}</span>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+    {%- for aw in stage.honors -%}
+    <li>
+      <span class="what">{%- include kspace/i18n.html en=aw.what.en zh=aw.what.zh -%}</span>
+      {%- if aw.where.en and aw.where.en != "" -%}
+      &mdash; <span class="where">{%- include kspace/i18n.html en=aw.where.en zh=aw.where.zh -%}</span>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endfor -%}
+</section>
+
+<!-- =================================================================== Contact -->
+<section id="contact">
+  <h2>{%- include kspace/i18n.html en=t.sec_contact.en zh=t.sec_contact.zh -%}</h2>
+  <p>
+    {%- include kspace/i18n.html en=pf.affiliation.en zh=pf.affiliation.zh -%}<br>
+    {%- include kspace/i18n.html en=pf.location.en zh=pf.location.zh -%}<br>
+    <a href="mailto:{{ mail }}">{{ mail }}</a>
+    {%- if pf.wechat and pf.wechat != "" -%}<br>WeChat: {{ pf.wechat }}{%- endif -%}
+  </p>
+</section>

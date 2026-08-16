@@ -1,0 +1,224 @@
+/* =============================================================================
+   PLAIN — a deliberately minimal, black-on-white, "old-school academic
+   homepage" stylesheet. Fully self-contained: no CSS variables shared with
+   the kspace design system, no dark mode, no accent colours beyond black,
+   white and grey. Used only by /minimal/.
+   ============================================================================= */
+
+* { box-sizing: border-box; }
+
+/* Bilingual atom: both languages are rendered, exactly one is shown.
+   Mirrors the rule in _sass/kspace/_base.scss but duplicated here so this
+   page never has to load the full (dark-themed) site stylesheet. */
+html[data-lang="en"] .i18n[lang="zh"],
+html[data-lang="zh"] .i18n[lang="en"] { display: none !important; }
+
+html {
+  background: #fff;
+  color-scheme: light;
+}
+
+body.plain {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.plain__wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ---- top bar --------------------------------------------------------- */
+.plain__bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem;
+  padding-bottom: .9rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #111;
+  font-size: .85rem;
+}
+
+.plain__bar a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+}
+
+.plain__bar a:hover { color: #555; border-color: #555; }
+
+.plain__lang button {
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 600;
+  padding: .15rem .5rem;
+  margin-left: .3rem;
+  cursor: pointer;
+}
+
+.plain__lang button[aria-pressed="true"] { background: #111; color: #fff; }
+
+/* ---- typography -------------------------------------------------------- */
+.plain h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0 0 .2rem;
+  letter-spacing: -.01em;
+}
+
+.plain h1 small {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin-top: .15rem;
+}
+
+.plain__role {
+  font-size: .95rem;
+  color: #444;
+  margin: .35rem 0 0;
+}
+
+.plain__tagline {
+  font-size: .85rem;
+  color: #777;
+  letter-spacing: .01em;
+  margin: .15rem 0 0;
+}
+
+.plain__links {
+  margin: 1.1rem 0 0;
+  font-size: .92rem;
+  line-height: 1.9;
+}
+
+.plain__links a { color: #111; text-decoration: underline; }
+.plain__links a:hover { color: #555; }
+
+.plain__links .sep { color: #bbb; padding: 0 .5rem; }
+
+.plain p { margin: 0 0 1rem; }
+
+.plain a { color: #111; text-decoration: underline; text-decoration-color: #999; }
+.plain a:hover { color: #000; text-decoration-color: #000; }
+
+.plain strong { color: #000; }
+
+/* ---- section rhythm ----------------------------------------------------- */
+.plain section {
+  margin-top: 2.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid #111;
+}
+
+.plain h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin: 0 0 1rem;
+}
+
+.plain h3 {
+  font-size: .95rem;
+  font-weight: 700;
+  margin: 1.3rem 0 .5rem;
+}
+
+.plain h3:first-child { margin-top: 0; }
+
+/* ---- publication list --------------------------------------------------- */
+.plain__pub {
+  margin: 0 0 1rem;
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+.plain__pub-index {
+  position: absolute;
+  left: 0;
+  color: #999;
+  font-size: .85rem;
+}
+
+.plain__pub-title { font-weight: 600; }
+.plain__pub-title a { text-decoration: underline; }
+
+.plain__pub-meta {
+  display: block;
+  font-size: .85rem;
+  color: #555;
+  margin-top: .15rem;
+}
+
+.plain__pub-note {
+  display: block;
+  font-size: .85rem;
+  color: #777;
+  margin-top: .15rem;
+}
+
+/* ---- plain list (education / experience / awards / etc.) --------------- */
+.plain__list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.plain__list li {
+  padding: .5rem 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.plain__list li:last-child { border-bottom: 0; }
+
+.plain__list .when {
+  display: inline-block;
+  min-width: 8.5em;
+  color: #777;
+  font-size: .85rem;
+  vertical-align: top;
+}
+
+.plain__list .what { font-weight: 600; }
+.plain__list .where { color: #444; }
+
+.plain__list .note {
+  display: block;
+  font-size: .88rem;
+  color: #666;
+  margin-top: .15rem;
+  padding-left: 8.5em;
+}
+
+@media (max-width: 480px) {
+  .plain__list .when { display: block; min-width: 0; margin-bottom: .1rem; }
+  .plain__list .note { padding-left: 0; }
+}
+
+/* ---- footer -------------------------------------------------------------- */
+.plain__footer {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #111;
+  font-size: .82rem;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.plain__footer a { color: #111; }

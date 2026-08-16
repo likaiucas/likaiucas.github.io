@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_newlines | truncate: 180 }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="stylesheet" href="{{ '/assets/css/plain.css' | relative_url }}">
+  <!-- Share the language preference with the main site; this page never
+       reads the theme preference, since it is always black-on-white. -->
+  <script>
+  (function () {
+    try {
+      var l = localStorage.getItem('kspace-lang');
+      if (l === 'zh' || l === 'en') {
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
+      }
+    } catch (e) {}
+  })();
+  </script>
+</head>
+<body class="plain">
+  <div class="plain__wrap">
+
+    <div class="plain__bar">
+      <a href="{{ '/' | relative_url }}">&larr; {%- include kspace/i18n.html en=site.data.i18n.minimal_full_site.en zh=site.data.i18n.minimal_full_site.zh -%}</a>
+      <div class="plain__lang" role="group" aria-label="Language">
+        <button type="button" data-plain-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-plain-lang="zh" aria-pressed="false">中</button>
+      </div>
+    </div>
+
+    {{ content }}
+
+    <div class="plain__footer">
+      <span>&copy; {{ site.time | date: '%Y' }} LI Kai</span>
+      <a href="{{ '/' | relative_url }}">&larr; {%- include kspace/i18n.html en=site.data.i18n.minimal_full_site.en zh=site.data.i18n.minimal_full_site.zh -%}</a>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    var root = document.documentElement;
+    var btns = document.querySelectorAll('[data-plain-lang]');
+    function sync() {
+      var lang = root.getAttribute('data-lang') || 'en';
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-plain-lang') === lang ? 'true' : 'false');
+      });
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var lang = b.getAttribute('data-plain-lang');
+        root.setAttribute('data-lang', lang);
+        root.setAttribute('lang', lang === 'zh' ? 'zh-CN' : 'en');
+        try { localStorage.setItem('kspace-lang', lang); } catch (e) {}
+        sync();
+      });
+    });
+    sync();
+  })();
+  </script>
+</body>
+</html>

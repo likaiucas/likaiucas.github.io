@@ -141,3 +141,17 @@ sec_publications:
 sec_contact:
   en: "Get in touch"
   zh: "联系我"
+
+# ---- minimal / plain-text page ---------------------------------------------
+nav_minimal:
+  en: "Minimal"
+  zh: "极简版"
+minimal_note:
+  en: "A plain, text-only version of this page for quick scanning or printing."
+  zh: "本页的纯文本极简版本，方便快速浏览或打印。"
+minimal_full_site:
+  en: "Full interactive site"
+  zh: "完整互动版网站"
+lbl_supervisors:
+  en: "Advisors"
+  zh: "导师"

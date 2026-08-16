@@ -74,6 +74,36 @@
   text-transform: uppercase;
 }
 
+/* ---- Minimal-page entry point ----
+   Deliberately the odd one out: white bg / black text / a hairline border,
+   so it reads as "leave the dark theme, enter the plain page" at a glance. */
+.k-nav__plain {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  padding: .34rem .8rem;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #0a0a0a;
+  font-family: var(--k-font-display);
+  font-size: var(--k-fs-xs);
+  font-weight: 700;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  transition: transform var(--k-t) var(--k-ease), box-shadow var(--k-t) var(--k-ease);
+}
+
+.k-nav__plain:hover {
+  color: #0a0a0a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -10px rgba(255, 255, 255, .35);
+}
+
+@media (max-width: 640px) {
+  .k-nav__plain { padding: .3rem .55rem; font-size: .68rem; }
+}
+
 /* ---- Menu ---- */
 .k-nav__menu {
   display: flex;

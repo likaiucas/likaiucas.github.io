@@ -1,9 +1,14 @@
 <header class="k-nav" id="k-nav">
+  {%- assign t = site.data.i18n -%}
   <div class="k-nav__inner">
     <a class="k-brand" href="{{ '/' | relative_url }}">
       <span class="k-brand__mark" aria-hidden="true">K</span>
       <span>LI&nbsp;Kai</span>
       <span class="k-brand__sub">Kspace</span>
+    </a>
+
+    <a class="k-nav__plain" href="{{ '/minimal/' | relative_url }}" title="Plain-text version">
+      {%- include kspace/i18n.html en=t.nav_minimal.en zh=t.nav_minimal.zh -%}
     </a>
 
     <ul class="k-nav__menu" id="k-nav-menu">
