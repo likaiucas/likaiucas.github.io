@@ -70,8 +70,10 @@ affiliation:
   en: "UCAS &middot; AIRCAS &middot; CityU AML Lab"
   zh: "中国科学院大学 &middot; 空天信息创新研究院 &middot; 香港城市大学 AML 实验室"
 
-# Path to the PDF résumé. Drop the file at files/cv.pdf to activate the button.
-cv_pdf: "/files/cv.pdf"
+# PDF résumés, built from the LaTeX sources (see files/README.md).
+# Leave a value empty to hide the corresponding download button.
+cv_pdf_en: "/files/cv-en.pdf"
+cv_pdf_zh: "/files/cv-zh.pdf"
 
 # ---- Hero metrics ----------------------------------------------------------
 # Leave `value` empty to hide a card.

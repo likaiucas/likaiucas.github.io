@@ -20,8 +20,16 @@ empty value simply hides its button, so there are never dead links on the page.
 External URLs are used verbatim; paths starting with `/` are resolved against
 the site root.
 
-## Résumé
+## Résumés
 
-The CV page's "Download CV (PDF)" button points at `files/cv.pdf`
-(configured via `cv_pdf` in `_data/profile.yml`). Drop your résumé there to
-activate it.
+Two PDFs, built from the LaTeX sources kept outside this repository
+(`LI_KAI_中文简历/` and `LI_KAI_English_CV/`, both compiled with XeLaTeX):
+
+| Language | File              | `_data/profile.yml` key |
+| -------- | ----------------- | ----------------------- |
+| English  | `files/cv-en.pdf` | `cv_pdf_en`             |
+| Chinese  | `files/cv-zh.pdf` | `cv_pdf_zh`             |
+
+Both are offered on `/cv/` and `/minimal/`; emptying a key hides that button.
+After editing a LaTeX source, recompile and copy the resulting `resume.pdf`
+over the file above — keep the two language editions in sync.

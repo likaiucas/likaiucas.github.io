@@ -24,8 +24,10 @@ permalink: /minimal/
     {%- if site.author.github -%}<span class="sep">&middot;</span><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>{%- endif -%}
     {%- if site.author.orcid -%}<span class="sep">&middot;</span><a href="{{ site.author.orcid }}" target="_blank" rel="noopener">ORCID</a>{%- endif -%}
     {%- if site.author.linkedin -%}<span class="sep">&middot;</span><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{%- endif -%}
-    {%- assign cvpdf = pf.cv_pdf | default: "" | strip -%}
-    {%- if cvpdf != "" -%}<span class="sep">&middot;</span><a href="{{ cvpdf | relative_url }}">{%- include kspace/i18n.html en=t.download_cv.en zh=t.download_cv.zh -%}</a>{%- endif -%}
+    {%- assign cv_en = pf.cv_pdf_en | default: "" | strip -%}
+    {%- if cv_en != "" -%}<span class="sep">&middot;</span><a href="{{ cv_en | relative_url }}">{%- include kspace/i18n.html en=t.download_cv_en.en zh=t.download_cv_en.zh -%}</a>{%- endif -%}
+    {%- assign cv_zh = pf.cv_pdf_zh | default: "" | strip -%}
+    {%- if cv_zh != "" -%}<span class="sep">&middot;</span><a href="{{ cv_zh | relative_url }}">{%- include kspace/i18n.html en=t.download_cv_zh.en zh=t.download_cv_zh.zh -%}</a>{%- endif -%}
   </p>
 
   <p>{%- include kspace/i18n.html en=pf.pitch.en zh=pf.pitch.zh -%}</p>

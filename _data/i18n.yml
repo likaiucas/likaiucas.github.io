@@ -45,6 +45,12 @@ back_home:
 download_cv:
   en: "Download CV (PDF)"
   zh: "下载简历 (PDF)"
+download_cv_en:
+  en: "CV in English (PDF)"
+  zh: "英文简历 (PDF)"
+download_cv_zh:
+  en: "CV in Chinese (PDF)"
+  zh: "中文简历 (PDF)"
 print_cv:
   en: "Print"
   zh: "打印"

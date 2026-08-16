@@ -30,10 +30,20 @@ redirect_from:
   {%- endif -%}
 
   <div class="k-btn-row k-no-print">
-    <a class="k-btn k-btn--primary" href="{{ pf.cv_pdf | relative_url }}">
+    {%- assign cv_en = pf.cv_pdf_en | default: "" | strip -%}
+    {%- assign cv_zh = pf.cv_pdf_zh | default: "" | strip -%}
+    {%- if cv_en != "" -%}
+    <a class="k-btn k-btn--primary" href="{{ cv_en | relative_url }}">
       {%- include kspace/icon.html name="download" -%}
-      {%- include kspace/i18n.html en=t.download_cv.en zh=t.download_cv.zh -%}
+      {%- include kspace/i18n.html en=t.download_cv_en.en zh=t.download_cv_en.zh -%}
     </a>
+    {%- endif -%}
+    {%- if cv_zh != "" -%}
+    <a class="k-btn" href="{{ cv_zh | relative_url }}">
+      {%- include kspace/icon.html name="download" -%}
+      {%- include kspace/i18n.html en=t.download_cv_zh.en zh=t.download_cv_zh.zh -%}
+    </a>
+    {%- endif -%}
     <button type="button" class="k-btn" onclick="window.print()">
       {%- include kspace/icon.html name="printer" -%}
       {%- include kspace/i18n.html en=t.print_cv.en zh=t.print_cv.zh -%}
