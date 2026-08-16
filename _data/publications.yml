@@ -368,12 +368,11 @@ parts:
         extends my work towards today's frontier: letting large multimodal models reason
         about 3D structure directly, without camera calibration or dense views — and, building
         on that foundation, using <strong>reinforcement learning</strong> to keep sparse-view
-        indoor reconstruction consistent enough for embodied and interactive use.
+        indoor reconstruction consistent across viewpoints.
       zh: >-
         在积累了丰富的三维空间理解经验之后，这一部分把工作拓展到当下最前沿的方向：
         让多模态大模型在没有相机参数、没有密集视图的条件下直接推理三维结构；并在此基础上，
-        尝试用<strong>强化学习</strong>让稀疏视角下的室内场景重建保持跨视角一致，
-        以支撑具身智能与交互场景。
+        尝试用<strong>强化学习</strong>让稀疏视角下的室内场景重建保持跨视角一致。
 
     chapters:
       # ------------------------------------------------------------ Ch. 6 ---
@@ -447,11 +446,11 @@ parts:
             Early-stage project building on the Scene-Program idea behind Scenix: using
             <strong>reinforcement learning</strong> objectives so that indoor reconstructions
             from sparse, uncalibrated views stay geometrically and semantically consistent
-            across viewpoints, moving towards embodied and interactive use.
+            across viewpoints.
           zh: >-
             早期阶段项目，延续 Scenix 中场景程序（Scene Program）的思路：引入
             <strong>强化学习</strong>目标，使稀疏、无标定视角下的室内场景重建在几何与语义上
-            保持跨视角一致，朝具身智能与交互场景迈进。
+            保持跨视角一致。
         status: "wip"
 
 # =============================================================================
