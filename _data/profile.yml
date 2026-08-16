@@ -74,25 +74,27 @@ affiliation:
 cv_pdf: "/files/cv.pdf"
 
 # ---- Hero metrics ----------------------------------------------------------
-# Leave `value` empty to hide a card (e.g. until you fill in your citation count).
+# Leave `value` empty to hide a card.
+# Citations / h-index come from Google Scholar (32Zu9-8AAAAJ) and are a manual
+# snapshot — refresh them whenever you update the publication list.
+# Last synced with Scholar: 2026-08.
 metrics:
-  - value: "9"
+  - value: "18"
     label:
       en: "Publications"
       zh: "发表论文"
+  - value: "140"
+    label:
+      en: "Citations"
+      zh: "论文引用"
+  - value: "7"
+    label:
+      en: "h-index"
+      zh: "h 指数"
   - value: "4"
     label:
       en: "IEEE TGRS Papers"
       zh: "IEEE TGRS 论文"
-  - value: "3"
-    label:
-      en: "Awards &amp; Nominations"
-      zh: "获奖与提名"
-  # TODO: fill in your Google Scholar citation count, then this card appears.
-  - value: ""
-    label:
-      en: "Citations"
-      zh: "论文引用"
 
 # ---- Contact call-to-action (rendered in the Contact section) --------------
 open_to:

@@ -83,8 +83,8 @@ parts:
         paper:
           short_name: "OBM"
           title: "Prompt-Driven Building Footprint Extraction in Aerial Images with Offset-Building Model"
-          authors: "Kai Li, et al."   # TODO: complete the full author list
-          me: "Kai Li"
+          authors: "K. Li, Y. Deng, Y. Kong, D. Liu, J. Chen, Y. Meng, J. Ma, C. Wang"
+          me: "K. Li"
           venue:
             en: "IEEE Transactions on Geoscience and Remote Sensing"
             zh: "IEEE Transactions on Geoscience and Remote Sensing"
@@ -141,8 +141,8 @@ parts:
         paper:
           short_name: "PolyFootNet"
           title: "PolyFootNet: Extracting Polygonal Building Footprints in Off-Nadir Remote Sensing Images"
-          authors: "Kai Li, et al."   # TODO: complete the full author list
-          me: "Kai Li"
+          authors: "K. Li, Y. Deng, J. Chen, Y. Meng, Z. Xi, J. Ma, C. Wang, M. Wang, X. Zhao"
+          me: "K. Li"
           venue:
             en: "IEEE Transactions on Geoscience and Remote Sensing"
             zh: "IEEE Transactions on Geoscience and Remote Sensing"
@@ -196,12 +196,12 @@ parts:
         paper:
           short_name: "DragOSM"
           title: "DragOSM: Extract Building Roofs and Footprints from Aerial Images by Aligning Historical Labels"
-          authors: "Kai Li, et al."   # TODO: complete the full author list
-          me: "Kai Li"
+          authors: "K. Li, X. Weng, Y. Deng, Y. Meng, C. Pang, G.-S. Xia, X. Zhao"
+          me: "K. Li"
           venue:
-            en: ""                   # TODO: add the venue once decided
-            zh: ""
-          venue_short: ""
+            en: "arXiv preprint arXiv:2509.17951"
+            zh: "arXiv 预印本 arXiv:2509.17951"
+          venue_short: "arXiv"
           year: 2025
           status: "preprint"
           teaser: "/images/papers/dragosm.png"
@@ -227,7 +227,7 @@ parts:
               zh: "在一次交互中同时恢复屋顶与足迹几何。"
           links:
             pdf: "/files/dragosm.pdf"
-            arxiv: ""
+            arxiv: "https://arxiv.org/abs/2509.17951"
             code: ""
             project: ""
             doi: ""
@@ -235,7 +235,9 @@ parts:
             @article{li2025dragosm,
               title  = {DragOSM: Extract Building Roofs and Footprints from Aerial Images
                         by Aligning Historical Labels},
-              author = {Li, Kai and others},
+              author = {Li, Kai and Weng, X. and Deng, Yupeng and Meng, Yu and Pang, C.
+                        and Xia, Gui-Song and Zhao, Xiangyu},
+              journal = {arXiv preprint arXiv:2509.17951},
               year   = {2025}
             }
 
@@ -251,13 +253,13 @@ parts:
         paper:
           short_name: "DragRoof"
           title: "ObliCity: A Benchmark and Baseline for Roof-to-Ground Projection Displacement Correction"
-          authors: "Kai Li, et al."   # TODO: complete the full author list
-          me: "Kai Li"
+          authors: "K. Li, Y. Deng, L. Deng, Z. Xi, C. Wang, J. Zhang, Y. Ji, Y. Meng, X. Zhao"
+          me: "K. Li"
           venue:
-            en: ""                   # TODO
-            zh: ""
-          venue_short: ""
-          year: 2025
+            en: "arXiv preprint arXiv:2607.25210"
+            zh: "arXiv 预印本 arXiv:2607.25210"
+          venue_short: "arXiv"
+          year: 2026
           status: "preprint"
           teaser: "/images/papers/oblicity.png"
           abstract:
@@ -282,16 +284,18 @@ parts:
               zh: "发布 ObliCity 基准数据集与 DragRoof 基线模型。"
           links:
             pdf: "/files/oblicity.pdf"
-            arxiv: ""
+            arxiv: "https://arxiv.org/abs/2607.25210"
             code: ""
             project: ""
             doi: ""
           bibtex: |
-            @article{li2025oblicity,
+            @article{li2026oblicity,
               title  = {ObliCity: A Benchmark and Baseline for Roof-to-Ground Projection
                         Displacement Correction},
-              author = {Li, Kai and others},
-              year   = {2025}
+              author = {Li, Kai and Deng, Yupeng and Deng, L. and Xi, Z. and Wang, C.
+                        and Zhang, J. and Ji, Y. and Meng, Yu and Zhao, Xiangyu},
+              journal = {arXiv preprint arXiv:2607.25210},
+              year   = {2026}
             }
 
       # ------------------------------------------------------------ Ch. 5 ---
@@ -306,10 +310,11 @@ parts:
         paper:
           short_name: "LODEOT"
           title: "LODEOT: Low-Dimensional and Efficient Offset Tokens for Building Footprint Extraction from Off-Nadir Imagery"
-          authors: "Kai Li, et al."   # TODO: complete the full author list
-          me: "Kai Li"
+          # TODO: not yet indexed on Google Scholar — fill in the author list and venue.
+          authors: "K. Li, et al."
+          me: "K. Li"
           venue:
-            en: ""                   # TODO
+            en: ""
             zh: ""
           venue_short: ""
           year: 2025
@@ -381,12 +386,12 @@ parts:
         paper:
           short_name: "Scenix"
           title: "Scenix: Sparse-View 3D Scene Reconstruction via Executable Scene Programs"
-          authors: "Kai Li, et al."   # TODO: complete the full author list
-          me: "Kai Li"
+          authors: "K. Li, L. Jiang, Z. Li, J. Dong, J. Zhang, Y. Yin, R. Zhang, K. Yan, X. Huang, et al."
+          me: "K. Li"
           venue:
-            en: ""                   # TODO
-            zh: ""
-          venue_short: ""
+            en: "arXiv preprint arXiv:2608.07012"
+            zh: "arXiv 预印本 arXiv:2608.07012"
+          venue_short: "arXiv"
           year: 2026
           status: "preprint"
           teaser: "/images/papers/scenix.png"
@@ -411,7 +416,7 @@ parts:
               zh: "输出的是程序，因此生成的三维场景可编辑、可复现执行。"
           links:
             pdf: "/files/scenix.pdf"
-            arxiv: ""
+            arxiv: "https://arxiv.org/abs/2608.07012"
             code: ""
             project: ""
             doi: ""
@@ -419,28 +424,87 @@ parts:
             @article{li2026scenix,
               title  = {Scenix: Sparse-View 3D Scene Reconstruction via Executable
                         Scene Programs},
-              author = {Li, Kai and others},
+              author = {Li, Kai and Jiang, L. and Li, Zhenyang and Dong, J. and Zhang, J.
+                        and Yin, Y. and Zhang, Runze and Yan, K. and Huang, X. and others},
+              journal = {arXiv preprint arXiv:2608.07012},
               year   = {2026}
             }
 
 # =============================================================================
-# Other collaborative publications (migrated from the old _publications/ files)
+# Other publications (co-authored work outside the two research lines).
+#
+# Source: Google Scholar profile 32Zu9-8AAAAJ, ordered newest first.
+# Keep this list in sync with Scholar; "citation" is rendered verbatim.
 # =============================================================================
 others:
+  - title: "ConsistNav: Closing the Action Consistency Gap in Zero-Shot Object Navigation with Semantic Executive Control"
+    citation: "H. Wang, Z. Li, Y. Zhang, Z. He, L. Jiang, K. Li, Y. Zhao, L. Fan, W. Hou, T. Liang, et al. arXiv preprint arXiv:2605.09869, 2026."
+    venue_short: "arXiv"
+    year: 2026
+    url: "https://arxiv.org/abs/2605.09869"
+
+  - title: "DGTRSD and DGTRSCLIP: A Dual-Granularity Remote Sensing Image-Text Dataset and Vision-Language Foundation Model for Alignment"
+    citation: "W. Chen, Y. Deng, W. Jin, J. Chen, J. Chen, Y. Feng, Z. Xi, D. Liu, K. Li, Y. Meng. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS), 2025."
+    venue_short: "IEEE JSTARS"
+    year: 2025
+    url: "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=DGTRSD"
+
+  - title: "IRSAMap: Towards Large-Scale, High-Resolution Land Cover Map Vectorization"
+    citation: "Y. Meng, L. Deng, Z. Xi, J. Chen, J. Chen, A. Yue, D. Liu, K. Li, C. Wang, K. Li, et al. IEEE Transactions on Geoscience and Remote Sensing, 2025."
+    venue_short: "IEEE TGRS"
+    year: 2025
+    url: "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=IRSAMap"
+
+  - title: "PCP: A Prompt-Based Cartographic-Level Polygonal Vector Extraction Framework for Remote Sensing Images"
+    citation: "C. Wang, Z. Xi, D. Liu, Y. Feng, Y. Deng, K. Li, J. Chen, J. Chen, Y. Meng. IEEE Transactions on Geoscience and Remote Sensing, 2025."
+    venue_short: "IEEE TGRS"
+    year: 2025
+    url: "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=PCP%20polygonal%20vector%20extraction"
+
+  - title: "LRSCLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text"
+    citation: "W. Chen, J. Chen, Y. Deng, J. Chen, Y. Feng, Z. Xi, D. Liu, K. Li, Y. Meng. arXiv preprint arXiv:2503.19311, 2025."
+    venue_short: "arXiv"
+    year: 2025
+    url: "https://arxiv.org/abs/2503.19311"
+
+  - title: "SayAnything: Audio-Driven Lip Synchronization with Conditional Video Diffusion"
+    citation: "J. Ma, S. Wang, J. Yang, J. Hu, J. Liang, G. Lin, K. Li, Y. Meng. arXiv preprint arXiv:2502.11515, 2025."
+    venue_short: "arXiv"
+    year: 2025
+    url: "https://arxiv.org/abs/2502.11515"
+
+  - title: "CusMer: Multimodal Intent Recognition in Customer Service via Data Augment and LLM Merge"
+    citation: "Z. Li, B. Wu, Y. Zhang, X. Li, K. Li, W. Chen. Companion Proceedings of the ACM Web Conference (WWW Companion), 2025, pp. 3058-3062."
+    venue_short: "WWW Companion"
+    year: 2025
+    url: "https://dl.acm.org/doi/10.1145/3701716.3717855"
+
   - title: "SAMPolyBuild: Adapting the Segment Anything Model for polygonal building extraction"
-    citation: "Wang C, Chen J, Meng Y, et al. ISPRS Journal of Photogrammetry and Remote Sensing, 2024, 218: 707-720."
+    citation: "C. Wang, J. Chen, Y. Meng, Y. Deng, K. Li, Y. Kong. ISPRS Journal of Photogrammetry and Remote Sensing, 2024, 218: 707-720."
     venue_short: "ISPRS J. P&amp;RS"
     year: 2024
     url: "https://www.sciencedirect.com/science/article/pii/S0924271624003563"
 
-  - title: "A Wordnet-Based Geospatial Web Services Search Method Supporting Quality of Service Constraints"
-    citation: "L. Jiang, K. Li, D. Liu, Y. Zhou, Z. Zheng and F. Huang. IGARSS 2019, Yokohama, Japan, pp. 863-866."
+  - title: "基于边界曲线的多因素机场出租车管理系统模型"
+    citation: "程荟璇, 贺益鑫, 李锴, 覃思义. 实验科学与技术, 2022, 20(5): 40-44."
+    venue_short: "实验科学与技术"
+    year: 2022
+    url: ""
+
+  - title: "Land Price Assessment Based on Deep Neural Network"
+    citation: "A. Hou, J. Liu, Y. Tao, S. Jiang, K. Li, Z. Zheng, J. Xia, Y. He, M. Zhu, G. Zhou, et al. IGARSS 2019, Yokohama, Japan."
     venue_short: "IGARSS"
     year: 2019
-    url: "https://ieeexplore.ieee.org/abstract/document/8899334/"
+    url: "https://ieeexplore.ieee.org/document/8900616"
 
   - title: "Urban Functional Regions Discovering Based on Deep Learning"
-    citation: "Mou F, Kong R, Li K, et al. IGARSS 2019, pp. 9462-9465."
+    citation: "F. Mou, R. Kong, K. Li, Z. Zheng, J. Xia, Y. He, M. Zhu, G. Zhou, H. Zhang, Z. Liu, et al. IGARSS 2019, Yokohama, Japan, pp. 9462-9465."
     venue_short: "IGARSS"
     year: 2019
     url: "https://ieeexplore.ieee.org/abstract/document/8899333/"
+
+  - title: "A WordNet-Based Geospatial Web Services Search Method Supporting Quality of Service Constraints"
+    citation: "L. Jiang, K. Li, D. Liu, Y. Zhou, Z. Zheng, F. Huang. IGARSS 2019, Yokohama, Japan, pp. 863-866."
+    venue_short: "IGARSS"
+    year: 2019
+    url: "https://ieeexplore.ieee.org/abstract/document/8899334/"
