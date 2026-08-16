@@ -56,6 +56,9 @@ redirect_from:
           {%- for ch in part.chapters -%}
           <a class="k-tag" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">{{ ch.paper.short_name }}</a>
           {%- endfor -%}
+          {%- for item in part.working -%}
+          <a class="k-tag" href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</a>
+          {%- endfor -%}
         {%- endfor -%}
       </div>
     </div>
@@ -92,6 +95,16 @@ redirect_from:
         </li>
         {%- endfor -%}
       {%- endfor -%}
+      {%- for part in pubs.parts -%}
+        {%- for item in part.working -%}
+        <li class="k-cv__pub">
+          <p class="k-cv__pub-title">
+            <a href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">{%- include kspace/i18n.html en=item.title.en zh=item.title.zh -%}</a>
+          </p>
+          <p class="k-cv__pub-meta">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</p>
+        </li>
+        {%- endfor -%}
+      {%- endfor -%}
       {%- for o in pubs.others -%}
       <li class="k-cv__pub">
         <p class="k-cv__pub-title"><a href="{{ o.url }}" target="_blank" rel="noopener">{{ o.title }}</a></p>
@@ -101,7 +114,7 @@ redirect_from:
     </ul>
   </section>
 
-  {%- include kspace/cv-section.html id="cv-awards" items=cv.awards title_en=t.sec_awards.en title_zh=t.sec_awards.zh -%}
+  {%- include kspace/awards-section.html id="cv-awards" items=cv.awards title_en=t.sec_awards.en title_zh=t.sec_awards.zh -%}
   {%- include kspace/cv-section.html id="cv-services" items=cv.services title_en=t.sec_services.en title_zh=t.sec_services.zh -%}
 
   {%- if cv.skills and cv.skills.size > 0 -%}

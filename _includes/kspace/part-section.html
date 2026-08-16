@@ -26,5 +26,8 @@
     {%- for ch in part.chapters -%}
       {%- include kspace/chapter-accordion.html chapter=ch accent=part.accent -%}
     {%- endfor -%}
+    {%- for item in part.working -%}
+      {%- include kspace/working-item.html item=item accent=part.accent -%}
+    {%- endfor -%}
   </div>
 </section>

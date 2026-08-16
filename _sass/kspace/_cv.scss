@@ -191,6 +191,82 @@ html[data-lang="zh"] .k-cv__ovcard h3 { letter-spacing: .06em; text-transform: n
 
 .k-plain-list b { color: var(--k-text); font-weight: 600; }
 
+/* ---- Awards & honours, grouped by career stage ---- */
+.k-awardstage { margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+.k-awardstage:last-child { margin-bottom: 0; }
+
+.k-awardstage__title {
+  font-family: var(--k-font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--k-accent);
+  margin: 0 0 var(--k-sp-3);
+}
+
+.k-awardstage__sublabel {
+  font-size: var(--k-fs-xs);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--k-text-faint);
+  margin: var(--k-sp-4) 0 var(--k-sp-2);
+}
+
+html[data-lang="zh"] .k-awardstage__sublabel { letter-spacing: .02em; text-transform: none; }
+
+.k-awardlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--k-sp-2);
+}
+
+.k-awardlist__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--k-sp-2) var(--k-sp-3);
+  position: relative;
+  padding: .5rem 0 .5rem 1.15rem;
+  border-bottom: 1px dashed var(--k-border);
+}
+
+.k-awardlist--sub .k-awardlist__item { padding-block: .4rem; }
+
+.k-awardlist__item:last-child { border-bottom: 0; }
+
+.k-awardlist__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--k-grad);
+  transform: rotate(45deg);
+}
+
+.k-awardlist__line {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--k-fs-sm);
+  color: var(--k-text-dim);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.k-awardlist__line strong { color: var(--k-text); font-weight: 600; }
+
+.k-awardlist__proof {
+  flex: none;
+  padding: .18rem .6rem;
+  font-size: var(--k-fs-xs);
+}
+
 @media (max-width: 900px) {
   .k-cv__overview { grid-template-columns: minmax(0, 1fr); }
 }
@@ -213,6 +289,7 @@ html[data-lang="zh"] .k-cv__ovcard h3 { letter-spacing: .06em; text-transform: n
   .k-totop,
   .k-toc,
   .k-no-print,
+  .k-awardlist__proof,
   .k-part__tools { display: none !important; }
 
   .k-with-toc { display: block !important; }

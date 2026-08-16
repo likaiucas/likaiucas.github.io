@@ -357,8 +357,8 @@ parts:
     numeral: "II"
     accent: "violet"
     title:
-      en: "Frontier: Sparse-View 3D Scene Generation with Vision-Language Models"
-      zh: "前沿探索：基于大视觉语言模型的稀疏图像 3D 场景生成"
+      en: "Frontier: Reinforcement Learning &amp; 3D Indoor Scene Understanding with Vision-Language Models"
+      zh: "前沿探索：强化学习与视觉语言大模型驱动的 3D 室内场景理解"
     subtitle:
       en: "Independent exploration"
       zh: "独立探索篇章"
@@ -366,10 +366,14 @@ parts:
       en: >-
         After accumulating substantial experience in 3D spatial understanding, this line
         extends my work towards today's frontier: letting large multimodal models reason
-        about 3D structure directly, without camera calibration or dense views.
+        about 3D structure directly, without camera calibration or dense views — and, building
+        on that foundation, using <strong>reinforcement learning</strong> to keep sparse-view
+        indoor reconstruction consistent enough for embodied and interactive use.
       zh: >-
-        在积累了丰富的三维空间理解经验之后，这一部分把工作拓展到当下最前沿的大模型领域：
-        让多模态大模型在没有相机参数、没有密集视图的条件下，直接推理三维结构。
+        在积累了丰富的三维空间理解经验之后，这一部分把工作拓展到当下最前沿的方向：
+        让多模态大模型在没有相机参数、没有密集视图的条件下直接推理三维结构；并在此基础上，
+        尝试用<strong>强化学习</strong>让稀疏视角下的室内场景重建保持跨视角一致，
+        以支撑具身智能与交互场景。
 
     chapters:
       # ------------------------------------------------------------ Ch. 6 ---
@@ -427,6 +431,28 @@ parts:
               journal = {arXiv preprint arXiv:2608.07012},
               year   = {2026}
             }
+
+    # Early-stage work with no paper yet — rendered as a lightweight
+    # "On Working" card instead of a full chapter accordion.
+    working:
+      - anchor: "wip-rl-indoor"
+        theme:
+          en: "Extending Scene Programs with reinforcement learning for cross-view consistency"
+          zh: "在场景程序基础上引入强化学习，实现稀疏视角下的一致性重建"
+        title:
+          en: "Reinforcement-Learning-Driven, Sparse-View-Consistent Indoor Scene Reconstruction"
+          zh: "基于强化学习的稀疏视角一致性室内场景重建"
+        note:
+          en: >-
+            Early-stage project building on the Scene-Program idea behind Scenix: using
+            <strong>reinforcement learning</strong> objectives so that indoor reconstructions
+            from sparse, uncalibrated views stay geometrically and semantically consistent
+            across viewpoints, moving towards embodied and interactive use.
+          zh: >-
+            早期阶段项目，延续 Scenix 中场景程序（Scene Program）的思路：引入
+            <strong>强化学习</strong>目标，使稀疏、无标定视角下的室内场景重建在几何与语义上
+            保持跨视角一致，朝具身智能与交互场景迈进。
+        status: "wip"
 
 # =============================================================================
 # Other publications (co-authored work outside the two research lines).

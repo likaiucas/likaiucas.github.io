@@ -1,0 +1,54 @@
+{%- comment -%}
+  CV awards & honours, grouped by career stage.
+  Param: items = cv.awards, a list of
+    {stage:{en,zh}, items:[{what,where,pdf}], honors:[{what,where,pdf}]}
+  title_en / title_zh / id follow the same convention as cv-section.html.
+{%- endcomment -%}
+{%- assign t = site.data.i18n -%}
+{%- assign groups = include.items -%}
+{%- if groups and groups.size > 0 -%}
+<section class="k-cvsec" id="{{ include.id }}">
+  <h2 class="k-cvsec__title">{%- include kspace/i18n.html en=include.title_en zh=include.title_zh -%}</h2>
+
+  {%- for stage in groups -%}
+  <div class="k-awardstage">
+    <h3 class="k-awardstage__title">{%- include kspace/i18n.html en=stage.stage.en zh=stage.stage.zh -%}</h3>
+
+    {%- if stage.items and stage.items.size > 0 -%}
+    <ul class="k-awardlist">
+      {%- for aw in stage.items -%}
+      {%- assign where_en = aw.where.en | default: "" -%}
+      {%- assign where_zh = aw.where.zh | default: "" -%}
+      {%- assign line_en = "<strong>" | append: aw.what.en | append: "</strong>" -%}
+      {%- assign line_zh = "<strong>" | append: aw.what.zh | append: "</strong>" -%}
+      {%- if where_en != "" -%}{%- assign line_en = line_en | append: ": " | append: where_en -%}{%- endif -%}
+      {%- if where_zh != "" -%}{%- assign line_zh = line_zh | append: "：" | append: where_zh -%}{%- endif -%}
+      <li class="k-awardlist__item">
+        <p class="k-awardlist__line">{%- include kspace/i18n.html en=line_en zh=line_zh -%}</p>
+        {%- include kspace/link-btn.html url=aw.pdf icon="file" label_en=t.btn_pdf.en label_zh=t.btn_pdf.zh class="k-awardlist__proof" -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+
+    {%- if stage.honors and stage.honors.size > 0 -%}
+    <p class="k-awardstage__sublabel">{%- include kspace/i18n.html en=t.lbl_other_honors.en zh=t.lbl_other_honors.zh -%}</p>
+    <ul class="k-awardlist k-awardlist--sub">
+      {%- for aw in stage.honors -%}
+      {%- assign where_en = aw.where.en | default: "" -%}
+      {%- assign where_zh = aw.where.zh | default: "" -%}
+      {%- assign line_en = aw.what.en -%}
+      {%- assign line_zh = aw.what.zh -%}
+      {%- if where_en != "" -%}{%- assign line_en = line_en | append: " &middot; " | append: where_en -%}{%- endif -%}
+      {%- if where_zh != "" -%}{%- assign line_zh = line_zh | append: " &middot; " | append: where_zh -%}{%- endif -%}
+      <li class="k-awardlist__item">
+        <p class="k-awardlist__line">{%- include kspace/i18n.html en=line_en zh=line_zh -%}</p>
+        {%- include kspace/link-btn.html url=aw.pdf icon="file" label_en=t.btn_pdf.en label_zh=t.btn_pdf.zh class="k-awardlist__proof" -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
+  {%- endfor -%}
+</section>
+{%- endif -%}

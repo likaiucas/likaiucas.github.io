@@ -133,6 +133,28 @@
     window.addEventListener("hashchange", openFromHash);
   }
 
+  /* ---------------------------------------------------------- direction tabs */
+  function initDirectionTabs() {
+    var tabs = document.querySelectorAll("[data-direction-tab]");
+    if (!tabs.length) return;
+    var panels = document.querySelectorAll("[data-direction-panel]");
+
+    function activate(name) {
+      tabs.forEach(function (btn) {
+        btn.classList.toggle("is-active", btn.getAttribute("data-direction-tab") === name);
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle("is-active", p.getAttribute("data-direction-panel") === name);
+      });
+    }
+
+    tabs.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        activate(btn.getAttribute("data-direction-tab"));
+      });
+    });
+  }
+
   /* ------------------------------------------------------------ copy bibtex */
   function showToast(message) {
     var toast = document.querySelector("[data-toast]");
@@ -292,6 +314,7 @@
     initNav();
     initToTop();
     initChapters();
+    initDirectionTabs();
     initCopy();
     initReveal();
     initCounters();

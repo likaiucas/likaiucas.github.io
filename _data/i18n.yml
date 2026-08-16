@@ -86,6 +86,23 @@ lbl_status_review:
 lbl_status_preprint:
   en: "Preprint"
   zh: "预印本"
+lbl_on_working:
+  en: "On Working"
+  zh: "研究中"
+lbl_other_honors:
+  en: "Other Honours"
+  zh: "其他荣誉"
+
+# ---- homepage research-direction tabs ---------------------------------------
+lbl_directions:
+  en: "Browse my two research directions"
+  zh: "浏览我的两条研究方向"
+direction_offset:
+  en: "PhD Research Line (Off-Nadir)"
+  zh: "博士研究主线（偏移摄影）"
+direction_rl3d:
+  en: "RL &amp; 3D Indoor Reconstruction"
+  zh: "强化学习与 3D 室内重建"
 
 # ---- section headings ------------------------------------------------------
 sec_research_line:

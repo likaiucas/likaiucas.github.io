@@ -124,38 +124,123 @@ teaching:
       zh: "James 教授 &middot; 中国科学院大学"
     notes: []
 
+# Grouped by career stage. Each stage has headline competition results
+# ("items") and smaller honours/scholarships ("honors"). "pdf" is optional on
+# every entry; leave it blank to hide the proof-of-award button.
 awards:
-  - when: "2025"
-    what:
-      en: "Nominee, IEEE Excellence in Technical Communication Student Prize Award"
-      zh: "IEEE Excellence in Technical Communication Student Prize Award 提名"
-    where:
-      en: "IEEE Geoscience and Remote Sensing Society (GRSS) &mdash; the only Chinese nominee of the year"
-      zh: "IEEE 地球科学与遥感学会（GRSS）&mdash; 年度唯一华人被提名者"
+  - stage:
+      en: "PhD Studies"
+      zh: "博士阶段"
+    items:
+      - what:
+          en: "WWW 2025 (CCF-A) Multimodal Dialogue Intent Recognition Challenge"
+          zh: "WWW 2025（CCF-A）多模态对话系统意图识别挑战赛"
+        where:
+          en: "Champion (1st Place), Final Round"
+          zh: "决赛第一名"
+        pdf: ""
+      - what:
+          en: "Tianzhi Cup 2023, Change Detection Track"
+          zh: "天智杯 2023 变化检测赛道"
+        where:
+          en: "Runner-up (2nd Place), Final Round"
+          zh: "决赛第二名"
+        pdf: ""
+      - what:
+          en: "PIESAT Cup (Aerospace Hongtu Cup) 2022, Road Intersection &amp; Road Extraction Track"
+          zh: "PIESAT 杯（航天宏图杯）2022 道路交叉口及道路提取赛道"
+        where:
+          en: "3rd Prize, Final Round"
+          zh: "决赛三等奖"
+        pdf: ""
+      - what:
+          en: "3MT Competition with OBM"
+          zh: "三分钟论文竞赛（3MT，OBM）"
+        where:
+          en: "Final Round, Top 10 &middot; IGARSS 2025, Brisbane"
+          zh: "决赛 Top 10 &middot; IGARSS 2025，布里斯班"
+        pdf: ""
+    honors:
+      - what:
+          en: "&ldquo;Three-Good&rdquo; Outstanding Student Award"
+          zh: "2025 年三好学生"
+        pdf: ""
+      - what:
+          en: "Corporate-Sponsored Scholarship"
+          zh: "企业奖学金"
+        where:
+          en: "2 recipients"
+          zh: "共 2 名"
+        pdf: ""
+      - what:
+          en: "Full Scholarship"
+          zh: "全额奖学金"
+        where:
+          en: "City University of Hong Kong"
+          zh: "香港城市大学"
+        pdf: ""
+      - what:
+          en: "IEEE GRSS Chapter Excellence in Technical Communication Award, Nominee"
+          zh: "IEEE GRSS 分会年度优秀交流奖提名"
+        where:
+          en: "10 nominees, only Chinese nominee of the year"
+          zh: "共 10 人，唯一华人"
+        pdf: ""
+      - what:
+          en: "IGARSS 2025 Travel Grant"
+          zh: "IGARSS 2025 Travel Grant 资助"
+        where:
+          en: "IEEE GRSS"
+          zh: "IEEE GRSS"
+        pdf: ""
 
-  - when: "2025"
-    what:
-      en: "3MT Competition Final Round (Top 10) with OBM"
-      zh: "三分钟论文竞赛（3MT）决赛 Top 10（OBM）"
-    where:
-      en: "IGARSS 2025, Brisbane"
-      zh: "IGARSS 2025，布里斯班"
-
-  - when: "2025"
-    what:
-      en: "IGARSS 2025 Travel Grant"
-      zh: "IGARSS 2025 Travel Grant 资助"
-    where:
-      en: "IEEE GRSS"
-      zh: "IEEE GRSS"
-
-  - when: "2021"
-    what:
-      en: "Recommended for direct PhD admission (major rank 2/-)"
-      zh: "获推荐免试直博（专业排名第 2）"
-    where:
-      en: "University of Electronic Science and Technology of China"
-      zh: "电子科技大学"
+  - stage:
+      en: "Undergraduate Studies"
+      zh: "本科阶段"
+    items:
+      - what:
+          en: "China Undergraduate Mathematical Contest in Modeling (CUMCM)"
+          zh: "全国大学生数学建模大赛"
+        where:
+          en: "National Second Prize"
+          zh: "国家二等奖"
+        pdf: ""
+      - what:
+          en: "Campus Academic Competitions"
+          zh: "校内奖项"
+        where:
+          en: "3rd prize or above, 12 times"
+          zh: "获得学术类比赛三等奖以上 12 次"
+        pdf: ""
+    honors:
+      - what:
+          en: "National Scholarship"
+          zh: "国家级奖学金"
+        where:
+          en: "1&times;"
+          zh: "1 次"
+        pdf: ""
+      - what:
+          en: "Outstanding Student Scholarship"
+          zh: "优秀学生奖学金"
+        where:
+          en: "3&times;"
+          zh: "3 次"
+        pdf: ""
+      - what:
+          en: "&ldquo;UESTC Elite for Overseas Study&rdquo;"
+          zh: "获评「成电留学精英」"
+        where:
+          en: "10 students campus-wide per year"
+          zh: "每年全校仅 10 人"
+        pdf: ""
+      - what:
+          en: "Recommended for Direct PhD Admission (Rank 2nd in Major)"
+          zh: "获推荐免试直博（专业排名第 2）"
+        where:
+          en: "University of Electronic Science and Technology of China"
+          zh: "电子科技大学"
+        pdf: ""
 
 # TODO: add journal / conference review service here once you want to list it.
 services: []

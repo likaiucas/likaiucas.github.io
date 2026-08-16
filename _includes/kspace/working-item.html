@@ -1,0 +1,30 @@
+{%- comment -%}
+  A lightweight "in-progress" research card for work that has no paper yet.
+  Reuses the .k-chapter shell so it sits naturally next to full chapters, but
+  the panel only holds a short note instead of a full paper-card.
+  Params: item, accent ("cyan" | "violet")
+{%- endcomment -%}
+{%- assign item = include.item -%}
+{%- assign t = site.data.i18n -%}
+
+<details class="k-chapter k-chapter--working{% if include.accent == 'violet' %} k-chapter--violet{% endif %}" id="{{ item.anchor }}">
+  <summary class="k-chapter__summary">
+    <span class="k-chapter__no k-chapter__no--wip" aria-hidden="true">
+      {%- include kspace/icon.html name="spark" -%}
+    </span>
+
+    <span class="k-chapter__head">
+      <span class="k-chapter__theme">{%- include kspace/i18n.html en=item.title.en zh=item.title.zh -%}</span>
+      <span class="k-chapter__tagline">{%- include kspace/i18n.html en=item.theme.en zh=item.theme.zh -%}</span>
+    </span>
+
+    <span class="k-chapter__aside">
+      {%- include kspace/status-badge.html status=item.status -%}
+      <span class="k-chapter__caret" aria-hidden="true">{%- include kspace/icon.html name="chevron-down" -%}</span>
+    </span>
+  </summary>
+
+  <div class="k-chapter__panel">
+    <div class="k-prose k-mt-4">{%- include kspace/i18n.html en=item.note.en zh=item.note.zh tag="p" -%}</div>
+  </div>
+</details>

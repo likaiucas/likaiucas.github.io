@@ -154,6 +154,13 @@
   max-width: 30ch;
 }
 
+/* ---- Direction panels (homepage "研究主线" section) ---- */
+.k-direction-panel { display: none; }
+.k-direction-panel.is-active { display: block; }
+
+.k-pill--wip { border-style: dashed; }
+.k-pill--wip .k-badge { margin-bottom: .3rem; }
+
 /* ==========================================================================
    Part sections (publications page)
    ========================================================================== */
