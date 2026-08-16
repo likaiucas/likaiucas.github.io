@@ -91,10 +91,6 @@ metrics:
     label:
       en: "h-index"
       zh: "h 指数"
-  - value: "4"
-    label:
-      en: "IEEE TGRS Papers"
-      zh: "IEEE TGRS 论文"
 
 # ---- Contact call-to-action (rendered in the Contact section) --------------
 open_to:

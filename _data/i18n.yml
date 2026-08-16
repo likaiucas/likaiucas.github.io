@@ -91,9 +91,6 @@ lbl_status_preprint:
 sec_research_line:
   en: "Research Line"
   zh: "研究主线"
-sec_selected:
-  en: "Selected Papers"
-  zh: "代表性论文"
 sec_news:
   en: "News"
   zh: "近期动态"

@@ -40,8 +40,6 @@ flow:
       en: "7-DoF formulation, far cheaper inference"
       zh: "7 维充分描述，大幅降低算力"
 
-# Short names shown as "selected papers" on the homepage
-featured: ["OBM", "PolyFootNet", "Scenix"]
 
 # =============================================================================
 parts:
