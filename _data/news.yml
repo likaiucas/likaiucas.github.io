@@ -3,6 +3,18 @@
 # type: accept | award | join   (drives the timeline dot colour)
 # =============================================================================
 
+- date: "2026.08"
+  type: join
+  text:
+    en: "🚀 Started working on <b>memory mechanisms for video world models</b> at the Tencent Omni Research Team."
+    zh: "🚀 开始在腾讯 Omni 研究团队从事<b>视频世界模型记忆机制</b>的研究。"
+
+- date: "2026.08"
+  type: accept
+  text:
+    en: "📄 <b>Remote-Sensing City Layout Extraction with MLLM</b> is on arXiv — first-authored by Zigan Zhou, the master's student I mentor."
+    zh: "📄 <b>Remote-Sensing City Layout Extraction with MLLM</b> 已挂 arXiv —— 由我指导的硕士生 Zigan Zhou 担任第一作者。"
+
 - date: "2025.10"
   type: accept
   text:

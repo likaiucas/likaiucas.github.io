@@ -101,16 +101,22 @@ lbl_other_honors:
 
 # ---- homepage research-direction tabs ---------------------------------------
 lbl_directions:
-  en: "Browse my two research directions"
-  zh: "浏览我的两条研究方向"
+  en: "Browse my research directions"
+  zh: "浏览我的研究方向"
+direction_vwm:
+  en: "Video World Model Memory"
+  zh: "视频世界模型记忆"
+direction_rl3d:
+  en: "MLLM &amp; 3D Scenes"
+  zh: "多模态大模型与 3D 场景"
 direction_offset:
   en: "PhD Research Line (Off-Nadir)"
   zh: "博士研究主线（偏移摄影）"
-direction_rl3d:
-  en: "RL &amp; 3D Indoor Reconstruction"
-  zh: "强化学习与 3D 室内重建"
 
 # ---- section headings ------------------------------------------------------
+sec_current_focus:
+  en: "Current Focus"
+  zh: "当前重心"
 sec_research_line:
   en: "Research Line"
   zh: "研究主线"

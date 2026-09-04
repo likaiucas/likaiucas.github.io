@@ -18,13 +18,13 @@ seeking:
   zh: "2026 求职中"
 
 role:
-  en: "Computer Vision &middot; Remote Sensing &middot; Vision-Language Models"
-  zh: "计算机视觉 &middot; 遥感影像理解 &middot; 视觉语言大模型"
+  en: "Multimodal LLMs &middot; Video World Models &middot; 3D Spatial Understanding"
+  zh: "多模态大模型 &middot; 视频世界模型 &middot; 三维空间理解"
 
 # One-sentence research positioning (HTML allowed)
 pitch:
-  en: "I work on building extraction from <strong>off-nadir</strong> remote sensing imagery. I proposed the concept of the <strong>Offset Token</strong>, which brings off-nadir photogrammetry into the perceptual scope of vision foundation models, and I am now extending 3D spatial understanding to <strong>vision-language models</strong>, combined with <strong>reinforcement learning</strong>."
-  zh: "我的研究聚焦<strong>偏移摄影（Off-Nadir）</strong>视角下的遥感建筑物提取。我提出了<strong>偏移量词元（Offset Token）</strong>的概念，将偏移摄影带入视觉大模型的理解视角；目前正把三维空间理解能力，结合<strong>强化学习</strong>拓展到<strong>视觉语言大模型</strong>方向。"
+  en: "My research centres on <strong>large multimodal models</strong> and how they acquire spatial and temporal understanding. I am currently working on <strong>memory in video world models</strong>, alongside reinforcement learning for sparse-view 3D scene reconstruction. Earlier, during my PhD, I proposed the <strong>Offset Token</strong>, which brought off-nadir photogrammetry into the perceptual scope of vision foundation models."
+  zh: "我的研究以<strong>多模态大模型</strong>为核心，关注模型如何获得空间与时间层面的理解能力。目前正在研究<strong>视频世界模型（Video World Model）中的记忆机制</strong>，并同时探索用强化学习实现稀疏视角三维场景重建。博士期间，我提出了<strong>偏移量词元（Offset Token）</strong>的概念，将偏移摄影带入视觉大模型的理解视角。"
 
 avatar: "/images/mybib.jpg"
 
@@ -79,13 +79,13 @@ cv_pdf_zh: "/files/cv-zh.pdf"
 # Leave `value` empty to hide a card.
 # Citations / h-index come from Google Scholar (32Zu9-8AAAAJ) and are a manual
 # snapshot — refresh them whenever you update the publication list.
-# Last synced with Scholar: 2026-08.
+# Last synced with Scholar: 2026-09.
 metrics:
-  - value: "18"
+  - value: "19"
     label:
       en: "Publications"
       zh: "发表论文"
-  - value: "140"
+  - value: "152"
     label:
       en: "Citations"
       zh: "论文引用"

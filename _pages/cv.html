@@ -67,7 +67,7 @@ redirect_from:
           <a class="k-tag" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">{{ ch.paper.short_name }}</a>
           {%- endfor -%}
           {%- for item in part.working -%}
-          <a class="k-tag" href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</a>
+          <a class="k-tag" href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">{%- include kspace/i18n.html en=item.short_name_en zh=item.short_name_zh -%}</a>
           {%- endfor -%}
         {%- endfor -%}
       </div>

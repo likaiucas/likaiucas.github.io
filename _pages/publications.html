@@ -51,7 +51,7 @@ subtitle_zh: "我把研究成果组织成一条叙事线索，而不是一份平
         {%- for item in part.working -%}
         <li>
           <a class="k-toc__link" href="#{{ item.anchor }}">
-            <b>&middot;</b> {%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}
+            <b>&middot;</b> {%- include kspace/i18n.html en=item.short_name_en zh=item.short_name_zh -%}
           </a>
         </li>
         {%- endfor -%}

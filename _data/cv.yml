@@ -45,7 +45,6 @@ education:
         zh: "专业排名第 2；获推荐免试直接攻读博士学位（直博）。"
 
 experience:
-  # TODO: confirm your exact role title / duration at Tencent.
   - when: "2025.10 &ndash; Present"
     what:
       en: "Research Intern, Omni Research Team"
@@ -54,8 +53,12 @@ experience:
       en: "Tencent"
       zh: "腾讯"
     notes:
-      - en: "Second collaboration with the team; research on multimodal large models."
-        zh: "第二次加入该团队，从事多模态大模型相关研究。"
+      - en: "Memory mechanisms for video world models — current focus."
+        zh: "视频世界模型（Video World Model）的记忆机制研究 —— 当前重心。"
+      - en: "Reinforcement learning for sparse-view-consistent 3D indoor scene reconstruction; Scenix."
+        zh: "基于强化学习的稀疏视角一致性三维室内场景重建；Scenix。"
+      - en: "Second collaboration with the team."
+        zh: "第二次加入该团队。"
 
   - when: "2021 &ndash; Present"
     what:

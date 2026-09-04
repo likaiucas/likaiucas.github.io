@@ -1,20 +1,79 @@
+{%- comment -%}
+  Homepage research overview. One panel per direction, switched by the tabs in
+  the hero (see initDirectionTabs in assets/js/kspace.js).
+  Parts are looked up by id, so adding a part to publications.yml never
+  silently reshuffles the panels.
+{%- endcomment -%}
 {%- assign pubs = site.data.publications -%}
 {%- assign t = site.data.i18n -%}
-{%- assign part1 = pubs.parts | first -%}
-{%- assign part2 = pubs.parts | last -%}
+{%- assign part_offset = pubs.parts | where: "id", "part-offset-token" | first -%}
+{%- assign part_3d = pubs.parts | where: "id", "part-vlm-3d" | first -%}
+{%- assign part_vwm = pubs.parts | where: "id", "part-vwm" | first -%}
 
 <section class="k-section k-section--alt" id="research">
   <div class="k-wrap">
 
-    <!-- ---- Panel 1: PhD research line (Offset Token) ---- -->
-    <div class="k-direction-panel is-active" data-direction-panel="offset">
+    <!-- ---- Panel 1 (default): memory in video world models ---- -->
+    <div class="k-direction-panel is-active" data-direction-panel="vwm">
+      <div class="k-section-head k-reveal">
+        <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_current_focus.en zh=t.sec_current_focus.zh -%}</p>
+        <h2>{%- include kspace/i18n.html en="Teaching a video world model to remember" zh="让视频世界模型学会记忆" -%}</h2>
+      </div>
+
+      <blockquote class="k-quote k-reveal">
+        {%- include kspace/i18n.html en=part_vwm.summary.en zh=part_vwm.summary.zh -%}
+      </blockquote>
+
+      <div class="k-pills k-reveal">
+        {%- for item in part_vwm.working -%}
+        <a class="k-pill k-pill--wip" href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">
+          <span class="k-pill__name">
+            <span class="k-badge k-badge--warn">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</span>
+          </span>
+          <span class="k-pill__note">{%- include kspace/i18n.html en=item.theme.en zh=item.theme.zh -%}</span>
+        </a>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <!-- ---- Panel 2: multimodal LLMs for 3D scenes + reinforcement learning ---- -->
+    <div class="k-direction-panel" data-direction-panel="rl3d">
+      <div class="k-section-head k-reveal">
+        <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_research_line.en zh=t.sec_research_line.zh -%}</p>
+        <h2>{%- include kspace/i18n.html en="Multimodal LLMs meet 3D scene understanding" zh="多模态大模型与 3D 场景理解" -%}</h2>
+      </div>
+
+      <blockquote class="k-quote k-reveal">
+        {%- include kspace/i18n.html en=part_3d.summary.en zh=part_3d.summary.zh -%}
+      </blockquote>
+
+      <div class="k-pills k-reveal">
+        {%- for ch in part_3d.chapters -%}
+        <a class="k-pill" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">
+          <span class="k-pill__name">{{ ch.paper.short_name }}</span>
+          <span class="k-pill__note">{%- include kspace/i18n.html en=ch.theme.en zh=ch.theme.zh -%}</span>
+        </a>
+        {%- endfor -%}
+        {%- for item in part_3d.working -%}
+        <a class="k-pill k-pill--wip" href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">
+          <span class="k-pill__name">
+            <span class="k-badge k-badge--warn">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</span>
+          </span>
+          <span class="k-pill__note">{%- include kspace/i18n.html en=item.theme.en zh=item.theme.zh -%}</span>
+        </a>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <!-- ---- Panel 3: PhD research line (Offset Token) ---- -->
+    <div class="k-direction-panel" data-direction-panel="offset">
       <div class="k-section-head k-reveal">
         <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_research_line.en zh=t.sec_research_line.zh -%}</p>
         <h2>{%- include kspace/i18n.html en="Offset Token: from a concept to a system" zh="偏移量词元：从一个概念到一套体系" -%}</h2>
       </div>
 
       <blockquote class="k-quote k-reveal">
-        {%- include kspace/i18n.html en=part1.summary.en zh=part1.summary.zh -%}
+        {%- include kspace/i18n.html en=part_offset.summary.en zh=part_offset.summary.zh -%}
       </blockquote>
 
       <div class="k-flow k-reveal">
@@ -27,39 +86,10 @@
       </div>
 
       <div class="k-pills k-reveal">
-        {%- for ch in part1.chapters -%}
+        {%- for ch in part_offset.chapters -%}
         <a class="k-pill" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">
           <span class="k-pill__name">{{ ch.paper.short_name }}</span>
           <span class="k-pill__note">{%- include kspace/i18n.html en=ch.theme.en zh=ch.theme.zh -%}</span>
-        </a>
-        {%- endfor -%}
-      </div>
-    </div>
-
-    <!-- ---- Panel 2: reinforcement learning & 3D indoor reconstruction ---- -->
-    <div class="k-direction-panel" data-direction-panel="rl3d">
-      <div class="k-section-head k-reveal">
-        <p class="k-eyebrow">{%- include kspace/i18n.html en=t.sec_research_line.en zh=t.sec_research_line.zh -%}</p>
-        <h2>{%- include kspace/i18n.html en="Reinforcement learning meets 3D indoor understanding" zh="强化学习与 3D 室内场景理解" -%}</h2>
-      </div>
-
-      <blockquote class="k-quote k-reveal">
-        {%- include kspace/i18n.html en=part2.summary.en zh=part2.summary.zh -%}
-      </blockquote>
-
-      <div class="k-pills k-reveal">
-        {%- for ch in part2.chapters -%}
-        <a class="k-pill" href="{{ '/publications/' | relative_url }}#{{ ch.anchor }}">
-          <span class="k-pill__name">{{ ch.paper.short_name }}</span>
-          <span class="k-pill__note">{%- include kspace/i18n.html en=ch.theme.en zh=ch.theme.zh -%}</span>
-        </a>
-        {%- endfor -%}
-        {%- for item in part2.working -%}
-        <a class="k-pill k-pill--wip" href="{{ '/publications/' | relative_url }}#{{ item.anchor }}">
-          <span class="k-pill__name">
-            <span class="k-badge k-badge--warn">{%- include kspace/i18n.html en=t.lbl_on_working.en zh=t.lbl_on_working.zh -%}</span>
-          </span>
-          <span class="k-pill__note">{%- include kspace/i18n.html en=item.theme.en zh=item.theme.zh -%}</span>
         </a>
         {%- endfor -%}
       </div>

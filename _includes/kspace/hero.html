@@ -78,12 +78,15 @@
     <div class="k-directions k-reveal">
       <p class="k-directions__label">{%- include kspace/i18n.html en=t.lbl_directions.en zh=t.lbl_directions.zh -%}</p>
       <div class="k-directions__row">
-        <a class="k-btn is-active" href="#research" data-direction-tab="offset">
-          {%- include kspace/i18n.html en=t.direction_offset.en zh=t.direction_offset.zh -%}
+        <a class="k-btn is-active" href="#research" data-direction-tab="vwm">
+          {%- include kspace/icon.html name="spark" -%}
+          {%- include kspace/i18n.html en=t.direction_vwm.en zh=t.direction_vwm.zh -%}
         </a>
         <a class="k-btn" href="#research" data-direction-tab="rl3d">
-          {%- include kspace/icon.html name="spark" -%}
           {%- include kspace/i18n.html en=t.direction_rl3d.en zh=t.direction_rl3d.zh -%}
+        </a>
+        <a class="k-btn" href="#research" data-direction-tab="offset">
+          {%- include kspace/i18n.html en=t.direction_offset.en zh=t.direction_offset.zh -%}
         </a>
       </div>
     </div>

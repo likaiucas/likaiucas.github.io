@@ -355,13 +355,13 @@ parts:
   # --------------------------------------------------------------- PART II ---
   - id: part-vlm-3d
     numeral: "II"
-    accent: "violet"
+    accent: "cyan"
     title:
-      en: "Frontier: Reinforcement Learning &amp; 3D Indoor Scene Understanding with Vision-Language Models"
-      zh: "前沿探索：强化学习与视觉语言大模型驱动的 3D 室内场景理解"
+      en: "Multimodal LLMs for 3D Scene Understanding, with Reinforcement Learning"
+      zh: "多模态大模型驱动的 3D 场景理解与强化学习"
     subtitle:
-      en: "Independent exploration"
-      zh: "独立探索篇章"
+      en: "Spatial understanding"
+      zh: "空间维度"
     summary:
       en: >-
         After accumulating substantial experience in 3D spatial understanding, this line
@@ -435,6 +435,8 @@ parts:
     # "On Working" card instead of a full chapter accordion.
     working:
       - anchor: "wip-rl-indoor"
+        short_name_en: "RL for consistency"
+        short_name_zh: "强化学习一致性"
         theme:
           en: "Extending Scene Programs with reinforcement learning for cross-view consistency"
           zh: "在场景程序基础上引入强化学习，实现稀疏视角下的一致性重建"
@@ -453,13 +455,71 @@ parts:
             保持跨视角一致。
         status: "wip"
 
+  # -------------------------------------------------------------- PART III ---
+  # Current focus. No paper out yet, so this part only carries "working" items.
+  - id: part-vwm
+    numeral: "III"
+    accent: "violet"
+    title:
+      en: "Current Focus: Memory in Video World Models"
+      zh: "当前重心：视频世界模型中的记忆机制"
+    subtitle:
+      en: "Ongoing research"
+      zh: "在研方向"
+    summary:
+      en: >-
+        Video world models learn to predict how a scene evolves, but they largely lack a
+        persistent notion of what they have already seen. My current work asks how such a
+        model should <strong>remember</strong>: how to retain scene state over long horizons,
+        stay consistent when the camera revisits a place, and keep memory affordable as the
+        rollout grows. This is the temporal counterpart to the spatial understanding I built
+        during my PhD.
+      zh: >-
+        视频世界模型能够预测场景如何演化，却普遍缺少对「已经看到过什么」的持久表征。
+        我目前的研究关注这类模型应当如何<strong>记忆</strong>：如何在长时序上保持场景状态、
+        如何在镜头重新回到同一位置时维持一致、以及如何在推演变长时控制记忆开销。
+        这与我博士期间构建的空间理解能力，构成时间维度上的呼应。
+
+    chapters: []
+
+    working:
+      - anchor: "wip-vwm-memory"
+        short_name_en: "VWM memory"
+        short_name_zh: "世界模型记忆"
+        theme:
+          en: "How should a video world model remember what it has already seen?"
+          zh: "视频世界模型应当如何记住它已经看到过的内容？"
+        title:
+          en: "Memory Mechanisms for Video World Models"
+          zh: "视频世界模型的记忆机制"
+        note:
+          en: >-
+            Ongoing research on <strong>memory in video world models</strong>: giving a
+            generative video model a persistent representation of scene state so that
+            long-horizon rollouts stay self-consistent, revisited viewpoints agree with what
+            was generated before, and the cost of remembering does not grow unchecked with
+            sequence length.
+          zh: >-
+            正在进行的<strong>视频世界模型记忆机制</strong>研究：为生成式视频模型引入对场景状态的
+            持久表征，使长时序推演保持自洽、镜头回到旧视角时与先前生成的内容一致，
+            并让记忆开销不随序列长度无约束增长。
+        status: "wip"
+
 # =============================================================================
 # Other publications (co-authored work outside the two research lines).
 #
 # Source: Google Scholar profile 32Zu9-8AAAAJ, ordered newest first.
 # Keep this list in sync with Scholar; "citation" is rendered verbatim.
+# Last synced: 2026-09 (19 entries, 152 citations, h-index 7).
 # =============================================================================
 others:
+  # First-authored by Zigan Zhou, the CityU master's student I co-mentor.
+  - title: "Remote-Sensing City Layout Extraction with MLLM"
+    citation: "Z. Zhou, K. Li, Y. Deng. arXiv preprint arXiv:2608.16484, 2026."
+    venue_short: "arXiv"
+    year: 2026
+    url: "https://arxiv.org/abs/2608.16484"
+
   - title: "ConsistNav: Closing the Action Consistency Gap in Zero-Shot Object Navigation with Semantic Executive Control"
     citation: "H. Wang, Z. Li, Y. Zhang, Z. He, L. Jiang, K. Li, Y. Zhao, L. Fan, W. Hou, T. Liang, et al. arXiv preprint arXiv:2605.09869, 2026."
     venue_short: "arXiv"
