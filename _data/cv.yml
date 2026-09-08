@@ -82,7 +82,7 @@ experience:
       - en: "Surveyed 3D object detection and 3D reconstruction algorithms."
         zh: "调研 3D 目标检测与 3D 重建相关算法。"
 
-# Master's students co-mentored alongside Prof. Xiangyu Zhao (CityU, AML Lab).
+# Students co-mentored during my research at AIRCAS/UCAS and CityU (AML Lab).
 mentorship:
   - when: ""
     what:
@@ -108,6 +108,19 @@ mentorship:
     notes:
       - en: "Interned at the Chinese Academy of Sciences (CAS)."
         zh: "曾于中国科学院实习。"
+
+  - when: ""
+    what:
+      en: "Weizhi Chen"
+      zh: "Weizhi Chen"
+    where:
+      en: "University of Chinese Academy of Sciences (AIRCAS) &middot; co-mentored with Prof. Jingbo Chen"
+      zh: "中国科学院大学（空天信息创新研究院）&middot; 与陈静波教授联合指导"
+    notes:
+      - en: "Published two papers in <strong>IEEE JSTARS</strong> on CLIP-based remote sensing image-text alignment."
+        zh: "以 CLIP 图文对齐为研究方向，发表两篇 <strong>IEEE JSTARS</strong> 论文。"
+      - en: "Now an LLM Algorithm Researcher at Zhonggong Education."
+        zh: "现任中公教育大模型算法研究员。"
 
 # TODO: confirm term/year and Prof. James's full name.
 teaching:
