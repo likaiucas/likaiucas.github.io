@@ -303,53 +303,75 @@ parts:
           en: "Low-dimensional, efficient Offset Tokens"
           zh: "底层机制优化与降维推导：低维高效的偏移标识"
         contribution:
-          en: "Derives the underlying mathematics from a 3D-vision standpoint: the ideal offset mapping is fully described by 7 variables, which collapses terminal compute cost."
-          zh: "从三维视觉（3DV）角度深入剖析偏移量词元的底层数学推导：理想的 offset 映射可由 7 维变量充分描述，从而大幅降低终端计算复杂度。"
+          en: "Proves that, under a local pinhole-projection and vertical-extrusion assumption, the ideal roof-to-footprint offset mapping admits a 5-parameter sufficient statistic, and designs a dual-branch model (LoDEOT) plus a denoising-query target-alignment training scheme around it, reaching SOTA among end-to-end methods on BONAI."
+          zh: "在局部针孔投影与垂直拉伸假设下证明屋顶到足迹偏移映射存在五参数充分描述子，并据此设计双分支模型 LoDEOT 与去噪 query 目标对齐训练策略，在 BONAI 上取得端到端方法中的最优表现。"
         paper:
           short_name: "LODEOT"
-          title: "LODEOT: Low-Dimensional and Efficient Offset Tokens for Building Footprint Extraction from Off-Nadir Imagery"
-          # TODO: not yet indexed on Google Scholar — fill in the author list and venue.
-          authors: "K. Li, et al."
+          title: "LoDEOT: Low-Dimensional and Efficient Offset Tokens for Building Footprint Extraction from Off-Nadir Imagery"
+          authors: "K. Li, Z. Zhou, Z. Li, H. Shan, Z. Chen, Y. Deng, Z. Xi, Y. Meng, Y. Peng, X. Zhao"
           me: "K. Li"
           venue:
-            en: ""
-            zh: ""
-          venue_short: ""
-          year: 2025
+            en: "arXiv preprint arXiv:2610.05899"
+            zh: "arXiv 预印本 arXiv:2610.05899"
+          venue_short: "arXiv"
+          year: 2026
           status: "preprint"
           teaser: "/images/papers/lodeot.png"
           abstract:
             en: >-
-              Why should a displacement need a high-dimensional token at all? Viewed through
-              3D vision, the ideal roof-to-footprint mapping of a whole scene is sufficiently
-              described by only <strong>7 variables</strong>. LODEOT exploits this to pair
-              high-dimensional queries (detection / segmentation) with a
-              <strong>low-dimensional offset token</strong>, cutting inference cost on the
-              terminal side while keeping accuracy.
+              Instance-level roof-to-footprint offset (RFO) prediction is central to extracting
+              building footprints from off-nadir imagery. Query-based methods typically rely on
+              high-dimensional instance tokens to predict the signed 2D RFO; this work asks
+              whether a compact offset token can do the job instead. Under a local
+              pinhole-projection and vertical-extrusion assumption, the idealized RFO mapping is
+              shown to admit a <strong>5-parameter sufficient description</strong> &mdash;
+              intrinsic shape, compound magnitude, and relative geometry &mdash; motivating a
+              <strong>5-dimensional offset token</strong> whose channels are learned end-to-end.
+              Building on this, LoDEOT keeps high-dimensional instance tokens for detection and
+              segmentation, but maps them &mdash; together with concentration-gated roof cues and
+              box-mask evidence &mdash; into a 5D offset token, decoded by an independent 2D
+              readout head. A denoising-query target-index scheme further aligns every supervised
+              decoder layer's prediction to the same clean instance's RFO. Across five real-world
+              building datasets, LoDEOT attains the best bAP/bAP50 among end-to-end methods on
+              BONAI and leads on all five offset-corrected footprint metrics, reaching
+              <strong>FAP50&nbsp;=&nbsp;54.58</strong> and <strong>mEPE&nbsp;=&nbsp;5.23&nbsp;px</strong>,
+              7.56&ndash;16.85 points ahead of end-to-end baselines on FAP50.
             zh: >-
-              位移信息真的需要高维词元来承载吗？从三维视觉的角度看，整幅场景理想的
-              屋顶到足迹映射仅需<strong>7 个变量</strong> 即可充分描述。LODEOT 据此
-              将高维查询（检测 / 分割）与<strong>低维偏移标识</strong>高效结合，
-              在保持精度的同时显著降低终端推理开销。
+              实例级屋顶到建筑轮廓偏移量（RFO）预测是从非正射影像中提取建筑物轮廓的核心环节。
+              基于 query 的方法通常用高维实例令牌预测带符号的二维 RFO，本文探讨能否用一个紧凑
+              的偏移令牌替代。在局部针孔投影与垂直拉伸假设下，理想化的 RFO 映射被证明具有
+              <strong>五参数充分描述子</strong>（内在形状、复合幅值、相对几何），据此设计了
+              各通道可端到端学习的<strong>五维偏移令牌</strong>。LoDEOT 据此保留高维实例令牌用于
+              检测与分割，并将其与浓度门控屋顶信息、框-掩膜证据一并映射为五维偏移令牌，由独立的
+              二维读出模块完成最终预测；并利用去噪 query 的目标索引，使各监督解码层的预测都与
+              同一干净实例的 RFO 对齐。在五个真实建筑数据集上，LoDEOT 在 BONAI 上取得端到端方法中
+              最优的 bAP/bAP50，并在全部五项偏移校正后的轮廓提取指标上领先，达到
+              <strong>FAP50&nbsp;=&nbsp;54.58</strong>、<strong>mEPE&nbsp;=&nbsp;5.23&nbsp;像素</strong>，
+              FAP50 相比端到端基线高出 7.56&ndash;16.85 个百分点。
           highlights:
-            - en: "Gives a 3D-vision derivation showing 7 degrees of freedom suffice."
-              zh: "给出三维视觉推导，证明 7 个自由度已足够。"
-            - en: "Pairs high-dimensional queries with a low-dimensional offset representation."
-              zh: "实现高维查询与低维偏移标识的高效结合。"
-            - en: "Substantially reduces terminal-side computational complexity."
-              zh: "大幅降低终端侧计算复杂度。"
+            - en: "Proves a 5-parameter sufficient statistic for the ideal RFO mapping from a pinhole-projection / vertical-extrusion model."
+              zh: "基于针孔投影/垂直拉伸模型证明理想 RFO 映射的五参数充分统计量。"
+            - en: "Dual-branch design: high-dimensional tokens for detection/segmentation, a 5D offset token with an independent 2D readout for RFO."
+              zh: "双分支设计：高维令牌负责检测/分割，五维偏移令牌经独立二维读出模块预测 RFO。"
+            - en: "Denoising-query target-index alignment keeps every decoder layer's prediction consistent with the same clean instance."
+              zh: "去噪 query 目标索引对齐机制，使各解码层预测与同一干净实例保持一致。"
+            - en: "SOTA among end-to-end methods on BONAI: FAP50 = 54.58, mEPE = 5.23 px, 7.56&ndash;16.85 pts ahead of baselines."
+              zh: "在 BONAI 上取得端到端方法中的最优表现：FAP50 = 54.58，mEPE = 5.23 像素，领先基线 7.56&ndash;16.85 个百分点。"
           links:
             pdf: "/files/lodeot.pdf"
-            arxiv: ""
+            arxiv: "https://arxiv.org/abs/2610.05899"
             code: ""
             project: ""
             doi: ""
           bibtex: |
-            @article{li2025lodeot,
-              title  = {LODEOT: Low-Dimensional and Efficient Offset Tokens for Building
+            @article{li2026lodeot,
+              title  = {LoDEOT: Low-Dimensional and Efficient Offset Tokens for Building
                         Footprint Extraction from Off-Nadir Imagery},
-              author = {Li, Kai and others},
-              year   = {2025}
+              author = {Li, Kai and Zhou, Zigan and Li, Zhenyang and Shan, Hui and Chen, Zhe
+                        and Deng, Yupeng and Xi, Zhihao and Meng, Yu and Peng, Yifan
+                        and Zhao, Xiangyu},
+              journal = {arXiv preprint arXiv:2610.05899},
+              year   = {2026}
             }
 
   # --------------------------------------------------------------- PART II ---
