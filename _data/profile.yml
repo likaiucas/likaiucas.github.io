@@ -79,17 +79,17 @@ cv_pdf_zh: "/files/cv-zh.pdf"
 # Leave `value` empty to hide a card.
 # Citations / h-index come from Google Scholar (32Zu9-8AAAAJ) and are a manual
 # snapshot — refresh them whenever you update the publication list.
-# Last synced with Scholar: 2026-09.
+# Last synced with Scholar: 2026-10.
 metrics:
   - value: "19"
     label:
       en: "Publications"
       zh: "发表论文"
-  - value: "152"
+  - value: "163"
     label:
       en: "Citations"
       zh: "论文引用"
-  - value: "7"
+  - value: "8"
     label:
       en: "h-index"
       zh: "h 指数"
